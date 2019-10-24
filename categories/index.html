@@ -462,9 +462,9 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
+      <span class="post-meta-item-text">网站字数&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="网站字数">4.7k</span>
   
 </div>
 
@@ -629,7 +629,12 @@
 
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+  
+   
+  
+  
+  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
@@ -643,11 +648,17 @@
         notify: true,
         appId: '4hwsKS94cnh5XlaFbRfq0c8N-gzGzoHsz',
         appKey: 'CKzSBJhP5snOTe7QkYxsxAgC',
-        placeholder: 'Just go go',
+        placeholder: '说点什么吧！',
         avatar:'/images/avatar.png',
-        guest_info:guest,
+        guest_info:['nick','mail'],
         pageSize:'10' || 10,
     });
+	 var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
   </script>
 
 

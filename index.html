@@ -396,6 +396,8 @@
             <div class="post-wordcount">
               
                 
+                  <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
@@ -403,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  4.7k 字
                 </span>
               
 
@@ -419,7 +421,7 @@
                   <span class="post-meta-item-text">阅读时长 ;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  19 分钟
                 </span>
               
             </div>
@@ -442,7 +444,6 @@
       
         
           <p>这是我博客的第一篇文章，记录搭建博客的过程。。。</p>
-<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 是高效的静态站点生成框架，她基于 <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">标签插件</a> 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/10/21/hello-world/#more" rel="contents">
@@ -620,9 +621,9 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
+      <span class="post-meta-item-text">网站字数&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="网站字数">4.7k</span>
   
 </div>
 
@@ -783,7 +784,12 @@
 
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+  
+   
+  
+  
+  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
@@ -797,11 +803,17 @@
         notify: true,
         appId: '4hwsKS94cnh5XlaFbRfq0c8N-gzGzoHsz',
         appKey: 'CKzSBJhP5snOTe7QkYxsxAgC',
-        placeholder: 'Just go go',
+        placeholder: '说点什么吧！',
         avatar:'/images/avatar.png',
-        guest_info:guest,
+        guest_info:['nick','mail'],
         pageSize:'10' || 10,
     });
+	 var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
   </script>
 
 
