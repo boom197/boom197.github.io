@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="博客," />
+  <meta name="keywords" content="Hexo," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="这是我博客的第一篇文章，记录搭建博客的过程。。。">
-<meta name="keywords" content="博客">
+<meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World">
 <meta property="og:url" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;index.html">
@@ -96,7 +96,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;8.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;9.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;10.png">
-<meta property="og:updated_time" content="2019-10-25T03:18:06.637Z">
+<meta property="og:updated_time" content="2019-10-25T06:20:13.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;1.png">
 
@@ -394,8 +394,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.5k 字
+                  5.7k 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 ;</span>
                 
                 <span title="阅读时长">
-                  24 分钟
+                  25 分钟
                 </span>
               
             </div>
@@ -480,7 +480,9 @@
       
 
       
-        <p>这是我博客的第一篇文章，记录搭建博客的过程。。。</p>
+        <blockquote>
+<p>这是我博客的第一篇文章，记录搭建博客的过程。。。</p>
+</blockquote>
 <a id="more"></a>
 
 <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 是高效的静态站点生成框架，她基于 <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">标签插件</a> 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
@@ -520,6 +522,8 @@
 <p>下载后的主题都在Themes文件夹里</p>
 <p>修改_config.yml中的theme: landscape改为theme: yilia，然后重新执行hexo g来重新生成。</p>
 <p>如果出现一些莫名其妙的问题，可以先执行hexo clean来清理一下public的内容，然后再来重新生成和发布。</p>
+<h2 id="主题目录详解"><a href="#主题目录详解" class="headerlink" title="主题目录详解"></a>主题目录详解</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">├── .github            #git信息</span><br><span class="line">├── languages          #多语言</span><br><span class="line">|   ├── default.yml    #默认语言</span><br><span class="line">|   └── zh-Hans.yml      #简体中文</span><br><span class="line">|   └── zh-tw.yml      #繁体中文</span><br><span class="line">├── layout             #布局，根目录下的*.ejs文件是对主页，分页，存档等的控制</span><br><span class="line">|   ├── _custom        #可以自己修改的模板，覆盖原有模板</span><br><span class="line">|   |   ├── _header.swig    #头部样式</span><br><span class="line">|   |   ├── _sidebar.swig   #侧边栏样式</span><br><span class="line">|   ├── _macro        #可以自己修改的模板，覆盖原有模板</span><br><span class="line">|   |   ├── post.swig    #文章模板</span><br><span class="line">|   |   ├── reward.swig    #打赏模板</span><br><span class="line">|   |   ├── sidebar.swig   #侧边栏模板</span><br><span class="line">|   ├── _partial       #局部的布局</span><br><span class="line">|   |   ├── head       #头部模板</span><br><span class="line">|   |   ├── search     #搜索模板</span><br><span class="line">|   |   ├── share      #分享模板</span><br><span class="line">|   ├── _script        #局部的布局</span><br><span class="line">|   ├── _third-party   #第三方模板</span><br><span class="line">|   ├── _layout.swig   #主页面模板</span><br><span class="line">|   ├── index.swig     #主页面模板</span><br><span class="line">|   ├── page           #页面模板</span><br><span class="line">|   └── tag.swig       #tag模板</span><br><span class="line">├── scripts            #script源码</span><br><span class="line">|   ├── tags           #tags的script源码</span><br><span class="line">|   ├── marge.js       #页面模板</span><br><span class="line">├── source             #源码</span><br><span class="line">|   ├── css            #css源码</span><br><span class="line">|   |   ├── _common    #*.styl基础css</span><br><span class="line">|   |   ├── _custom    #*.styl局部css</span><br><span class="line">|   |   └── _mixins    #mixins的css</span><br><span class="line">|   ├── fonts          #字体</span><br><span class="line">|   ├── images         #图片</span><br><span class="line">|   ├── uploads        #添加的文件</span><br><span class="line">|   └── js             #javascript源代码</span><br><span class="line">├── _config.yml        #主题配置文件</span><br><span class="line">└── README.md          #用GitHub的都知道</span><br></pre></td></tr></table></figure>
+
 <h2 id="上传之前"><a href="#上传之前" class="headerlink" title="上传之前"></a>上传之前</h2><p>在上传代码到github之前，一定要记得先把你以前所有代码下载下来（虽然github有版本管理，但备份一下总是好的），因为从hexo提交代码时会把你以前的所有代码都删掉。</p>
 <h2 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h2><p>如果你一切都配置好了，发布上传很容易，一句hexo d就搞定，当然关键还是你要把所有东西配置好。</p>
 <p>首先，ssh key肯定要配置好。</p>
@@ -728,11 +732,11 @@
       
        <div class="post-tags" id="post-tags">
 		
-          <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"> 博客</a>
+          <a href="/tags/Hexo/" rel="tag"> Hexo</a>
 		
 		</div>
 		<script type="text/javascript">
-			var tagsall=document.getElementsById('post-tags')
+			var tagsall=document.getElementsByClass("post-tags")
 			for (var i = tagsall.length - 1; i >= 0; i--){
 			var tags=tagsall[i].getElementsByTagName('a');
 			for (var j = tags.length - 1; j >= 0; j--) {
@@ -749,6 +753,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/25/Markdown/" rel="prev" title="Markdown">
+                Markdown <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -836,7 +856,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -847,7 +867,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -858,7 +878,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -907,7 +927,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Hexo写博客"><span class="nav-number">3.</span> <span class="nav-text">使用Hexo写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo简介"><span class="nav-number">3.1.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">3.2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">3.3.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">3.5.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改主题"><span class="nav-number">3.6.</span> <span class="nav-text">修改主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传之前"><span class="nav-number">3.7.</span> <span class="nav-text">上传之前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传到github"><span class="nav-number">3.8.</span> <span class="nav-text">上传到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的Hexo命令"><span class="nav-number">3.9.</span> <span class="nav-text">常用的Hexo命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签页"><span class="nav-number">3.10.</span> <span class="nav-text">标签页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类页"><span class="nav-number">3.11.</span> <span class="nav-text">分类页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写博客"><span class="nav-number">3.12.</span> <span class="nav-text">写博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片问题"><span class="nav-number">3.13.</span> <span class="nav-text">图片问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章连接文本样式"><span class="nav-number">3.14.</span> <span class="nav-text">文章连接文本样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章字体的颜色、大小、居中"><span class="nav-number">3.15.</span> <span class="nav-text">文章字体的颜色、大小、居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点访问计数"><span class="nav-number">3.16.</span> <span class="nav-text">站点访问计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去掉文章目录标题的自动编号"><span class="nav-number">3.17.</span> <span class="nav-text">去掉文章目录标题的自动编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章字数统计、阅读时长"><span class="nav-number">3.18.</span> <span class="nav-text">文章字数统计、阅读时长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章评论"><span class="nav-number">3.19.</span> <span class="nav-text">文章评论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Valine配置"><span class="nav-number">3.19.1.</span> <span class="nav-text">Valine配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Valine评论系统邮件提醒"><span class="nav-number">3.19.2.</span> <span class="nav-text">Valine评论系统邮件提醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-1"><span class="nav-number">3.19.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题美化"><span class="nav-number">4.</span> <span class="nav-text">主题美化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置友情链接"><span class="nav-number">4.1.</span> <span class="nav-text">设置友情链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置侧边栏头像"><span class="nav-number">4.2.</span> <span class="nav-text">设置侧边栏头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置微信公众号"><span class="nav-number">4.3.</span> <span class="nav-text">设置微信公众号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加天气"><span class="nav-number">4.4.</span> <span class="nav-text">添加天气</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签美化"><span class="nav-number">4.5.</span> <span class="nav-text">标签美化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Hexo写博客"><span class="nav-number">3.</span> <span class="nav-text">使用Hexo写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo简介"><span class="nav-number">3.1.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">3.2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">3.3.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">3.5.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改主题"><span class="nav-number">3.6.</span> <span class="nav-text">修改主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题目录详解"><span class="nav-number">3.7.</span> <span class="nav-text">主题目录详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传之前"><span class="nav-number">3.8.</span> <span class="nav-text">上传之前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传到github"><span class="nav-number">3.9.</span> <span class="nav-text">上传到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的Hexo命令"><span class="nav-number">3.10.</span> <span class="nav-text">常用的Hexo命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签页"><span class="nav-number">3.11.</span> <span class="nav-text">标签页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类页"><span class="nav-number">3.12.</span> <span class="nav-text">分类页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写博客"><span class="nav-number">3.13.</span> <span class="nav-text">写博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片问题"><span class="nav-number">3.14.</span> <span class="nav-text">图片问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章连接文本样式"><span class="nav-number">3.15.</span> <span class="nav-text">文章连接文本样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章字体的颜色、大小、居中"><span class="nav-number">3.16.</span> <span class="nav-text">文章字体的颜色、大小、居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点访问计数"><span class="nav-number">3.17.</span> <span class="nav-text">站点访问计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去掉文章目录标题的自动编号"><span class="nav-number">3.18.</span> <span class="nav-text">去掉文章目录标题的自动编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章字数统计、阅读时长"><span class="nav-number">3.19.</span> <span class="nav-text">文章字数统计、阅读时长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章评论"><span class="nav-number">3.20.</span> <span class="nav-text">文章评论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Valine配置"><span class="nav-number">3.20.1.</span> <span class="nav-text">Valine配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Valine评论系统邮件提醒"><span class="nav-number">3.20.2.</span> <span class="nav-text">Valine评论系统邮件提醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-1"><span class="nav-number">3.20.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题美化"><span class="nav-number">4.</span> <span class="nav-text">主题美化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置友情链接"><span class="nav-number">4.1.</span> <span class="nav-text">设置友情链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置侧边栏头像"><span class="nav-number">4.2.</span> <span class="nav-text">设置侧边栏头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置微信公众号"><span class="nav-number">4.3.</span> <span class="nav-text">设置微信公众号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加天气"><span class="nav-number">4.4.</span> <span class="nav-text">添加天气</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签美化"><span class="nav-number">4.5.</span> <span class="nav-text">标签美化</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -941,7 +961,7 @@
     
       <span class="post-meta-item-text">网站字数&#58;</span>
     
-    <span title="网站字数">5.5k</span>
+    <span title="网站字数">6k</span>
   
 </div>
 <div>
