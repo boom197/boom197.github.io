@@ -120,7 +120,21 @@
 
 
 
-
+<div id="tp-weather-widget"></div>
+  <script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t=15719"));
+    window.SeniverseWeatherWidget('show', {
+      flavor: "bubble",
+      location: "WX4FBXXFKE4F",
+      geolocation: true,
+      language: "zh-Hans",
+      unit: "c",
+      theme: "auto",
+      token: "f081dd41-e843-4252-9ee0-92896f604900",
+      hover: "enabled",
+      container: "tp-weather-widget"
+    })
+  </script>
 
 
   <script>
@@ -150,6 +164,16 @@
   
     
   
+  <script type="text/javascript" src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+
+  <!-- 雪花特效 -->
+<script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+</script>
+
 
   <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
@@ -379,98 +403,112 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
 
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="Mr.Li" />
-            
-              <p class="site-author-name" itemprop="name">Mr.Li</p>
-              <p class="site-description motion-element" itemprop="description">总有一天你会放下稍许不舍和遗憾， 开始新的生活</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/boom197/boom197.github.io" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:1274540919@qq.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
+<div class="author-overview">
+    <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
+        <p class="site-author-name" itemprop="name"></p>
+        <div class="site-description motion-element" itemprop="description"></div>
     </div>
+
+    
+
+    
+        <div class="links-of-author motion-element">
+        
+            <span class="links-of-author-item">
+            
+            
+            
+            
+            
+            
+            
+            
+            </span>
+        
+            <span class="links-of-author-item">
+            
+            
+            
+            
+            
+            
+            
+            
+            </span>
+        
+        </div>
+    
+
+    
+
+    
+
+    
+</div>
+<div class="card-announcement">
+    <div class="card-content">
+        <div class="item_headline">
+        <i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i>
+        <span>公告</span>
+    </div>
+        <div class="announcement_content">
+        谢谢你这么帅，这么漂亮还来看我的博客，如果喜欢的话记得收藏哦
+        </div>
+    </div>
+</div>
+<div class="blog-overview">
+    <div class="item_headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div>
+    <div class="blog-info">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <li class="blog-info-list">
+        <span class="blog-info-name">文章数目</span>
+        <span class="blogs-count">1</span>
+        </li>
+        <li class="blog-info-list">
+        <span class="blog-info-name">运行天数</span>
+        <span class="days-count" id="sitedays"></span>
+        <script language=javascript>
+            function siteTime(){
+                window.setTimeout("siteTime()", 1000);
+                var seconds = 1000;
+                var minutes = seconds * 60;
+                var hours = minutes * 60;
+                var days = hours * 24;
+                var years = days * 365;
+                var today = new Date();
+                var todayYear = today.getFullYear();
+                var todayMonth = today.getMonth()+1;
+                var todayDate = today.getDate();
+                var todayHour = today.getHours();
+                var todayMinute = today.getMinutes();
+                var todaySecond = today.getSeconds();
+                var t1 = Date.UTC(2019,07,26,00,00,00); //北京时间2018-2-13 00:00:00
+                var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                var diff = t2-t1;
+                var diffYears = Math.floor(diff/years);
+                var diffDays = Math.floor((diff/days)-diffYears*365);
+                document.getElementById("sitedays").innerHTML=diffDays+" 天 ";
+            }
+            siteTime();
+        </script>
+        </li>
+        <li class="blog-info-list">
+        <span class="blog-info-list">访问数</span>
+        <span class="site-uv" title="footer.total_visitors">
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        </li>
+        <li class="blog-info-list">
+        <span class="blog-info-name">点击量</span>
+        <span class="site-pv" title="footer.total_views">
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+        </li>
+    </div>
+</div>
+
   </aside>
 
 
@@ -494,7 +532,7 @@
     
       <span class="post-meta-item-text">网站字数&#58;</span>
     
-    <span title="网站字数">4.7k</span>
+    <span title="网站字数">5.5k</span>
   
 </div>
 <div>

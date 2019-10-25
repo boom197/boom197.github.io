@@ -1836,7 +1836,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffff4;
+  background: #53ffad;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2987,6 +2987,11 @@ pre .javascript .function {
   background: initial;
   box-shadow: initial;
   border-radius: initial;
+}
+.tag-cloud a {
+  border: 0px;
+  padding: 0px 10px;
+  border-radius: 10px;
 }
 .post-block {
   padding: 40px;
