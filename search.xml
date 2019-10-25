@@ -204,7 +204,7 @@
 <p>在每篇文章的末尾显示微信公众号二维码，扫一扫，轻松订阅博客。将公众号二维码存放于博客<code>source/uploads/</code>目录下。然后编辑 主题配置文件，示例如下：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Wechat Subscriber</span></span><br><span class="line"><span class="attr">wechat_subscriber:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  qcode:</span> <span class="string">/uploads/wechat.jpg</span></span><br><span class="line"><span class="attr">  description:</span> <span class="string">欢迎扫描二维码关注公众号一起成长~</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="添加天气"><a href="#添加天气" class="headerlink" title="添加天气"></a>添加天气</h2><p>使用的是心知<a href="https://www.seniverse.com/" target="_blank" rel="noopener">天气</a>，主要是免费，哈哈</p>
+<h2 id="添加天气"><a href="#添加天气" class="headerlink" title="添加天气"></a>添加天气</h2><p>使用的是<a href="https://www.seniverse.com/" target="_blank" rel="noopener">心知天气</a>，主要是免费，哈哈</p>
 <p>首先注册，然后添加产品，选择天气插件，配置：</p>
 <img src="/2019/10/21/hello-world/10.png" class>
 

@@ -96,7 +96,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;8.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;9.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;10.png">
-<meta property="og:updated_time" content="2019-10-25T01:53:40.850Z">
+<meta property="og:updated_time" content="2019-10-25T03:18:06.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;1.png">
 
@@ -132,9 +132,10 @@
 
 
 
+
 <div id="tp-weather-widget"></div>
   <script>
-    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t=15719"));
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
     window.SeniverseWeatherWidget('show', {
       flavor: "bubble",
       location: "WX4FBXXFKE4F",
@@ -149,10 +150,11 @@
   </script>
 
 
+
   <script>
-  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/2857eac0.js","daovoice")
   daovoice('init', {
-      app_id: "q9phes7jq4lnmkopo1mj0301dtyua2lrcr9cb7bd"
+      app_id: "2857eac0"
     });
   daovoice('update');
   </script>
@@ -679,7 +681,7 @@
 <p>在每篇文章的末尾显示微信公众号二维码，扫一扫，轻松订阅博客。将公众号二维码存放于博客<code>source/uploads/</code>目录下。然后编辑 主题配置文件，示例如下：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Wechat Subscriber</span></span><br><span class="line"><span class="attr">wechat_subscriber:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  qcode:</span> <span class="string">/uploads/wechat.jpg</span></span><br><span class="line"><span class="attr">  description:</span> <span class="string">欢迎扫描二维码关注公众号一起成长~</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="添加天气"><a href="#添加天气" class="headerlink" title="添加天气"></a>添加天气</h2><p>使用的是心知<a href="https://www.seniverse.com/" target="_blank" rel="noopener">天气</a>，主要是免费，哈哈</p>
+<h2 id="添加天气"><a href="#添加天气" class="headerlink" title="添加天气"></a>添加天气</h2><p>使用的是<a href="https://www.seniverse.com/" target="_blank" rel="noopener">心知天气</a>，主要是免费，哈哈</p>
 <p>首先注册，然后添加产品，选择天气插件，配置：</p>
 <img src="/2019/10/21/hello-world/10.png" class>
 
@@ -725,22 +727,22 @@
     <footer class="post-footer">
       
        <div class="post-tags" id="post-tags">
-
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"> 博客</a>
-
-</div>
-<script type="text/javascript">
-var tagsall=document.getElementsById('post-tags')
-for (var i = tagsall.length - 1; i >= 0; i--){
-    var tags=tagsall[i].getElementsByTagName('a');
-    for (var j = tags.length - 1; j >= 0; j--) {
-        var r=Math.floor(Math.random()*75+130);
-        var g=Math.floor(Math.random()*75+100);
-        var b=Math.floor(Math.random()*75+80);
-        tags[j].style.background = "rgb("+r+","+g+","+b+")";
-    }
-}                        
-</script>
+		
+          <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"> 博客</a>
+		
+		</div>
+		<script type="text/javascript">
+			var tagsall=document.getElementsById('post-tags')
+			for (var i = tagsall.length - 1; i >= 0; i--){
+			var tags=tagsall[i].getElementsByTagName('a');
+			for (var j = tags.length - 1; j >= 0; j--) {
+			var r=Math.floor(Math.random()*75+130);
+			var g=Math.floor(Math.random()*75+100);
+			var b=Math.floor(Math.random()*75+80);
+			tags[j].style.background = "rgb("+r+","+g+","+b+")";
+				}
+			}                        
+		</script>
       
 
       
@@ -799,112 +801,123 @@ for (var i = tagsall.length - 1; i >= 0; i--){
   </div>
 
   <aside id="sidebar" class="sidebar">
-
-<div class="author-overview">
-    <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        
-        <p class="site-author-name" itemprop="name"></p>
-        <div class="site-description motion-element" itemprop="description"></div>
-    </div>
-
     
+    <div class="sidebar-inner">
 
-    
-        <div class="links-of-author motion-element">
-        
-            <span class="links-of-author-item">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Mr.Li" />
             
+              <p class="site-author-name" itemprop="name">Mr.Li</p>
+              <p class="site-description motion-element" itemprop="description">总有一天你会放下稍许不舍和遗憾， 开始新的生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
             
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
             
+
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
+
             
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
-            </span>
-        
-            <span class="links-of-author-item">
-            
-            
-            
-            
-            
-            
-            
-            
-            </span>
-        
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/boom197/boom197.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1274540919@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-    
+      </section>
 
-    
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
 
-    
+            
+              
+            
 
-    
-</div>
-<div class="card-announcement">
-    <div class="card-content">
-        <div class="item_headline">
-        <i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i>
-        <span>公告</span>
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Hexo写博客"><span class="nav-number">3.</span> <span class="nav-text">使用Hexo写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo简介"><span class="nav-number">3.1.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">3.2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">3.3.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">3.5.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改主题"><span class="nav-number">3.6.</span> <span class="nav-text">修改主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传之前"><span class="nav-number">3.7.</span> <span class="nav-text">上传之前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传到github"><span class="nav-number">3.8.</span> <span class="nav-text">上传到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的Hexo命令"><span class="nav-number">3.9.</span> <span class="nav-text">常用的Hexo命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签页"><span class="nav-number">3.10.</span> <span class="nav-text">标签页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类页"><span class="nav-number">3.11.</span> <span class="nav-text">分类页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写博客"><span class="nav-number">3.12.</span> <span class="nav-text">写博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片问题"><span class="nav-number">3.13.</span> <span class="nav-text">图片问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章连接文本样式"><span class="nav-number">3.14.</span> <span class="nav-text">文章连接文本样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章字体的颜色、大小、居中"><span class="nav-number">3.15.</span> <span class="nav-text">文章字体的颜色、大小、居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点访问计数"><span class="nav-number">3.16.</span> <span class="nav-text">站点访问计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去掉文章目录标题的自动编号"><span class="nav-number">3.17.</span> <span class="nav-text">去掉文章目录标题的自动编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章字数统计、阅读时长"><span class="nav-number">3.18.</span> <span class="nav-text">文章字数统计、阅读时长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章评论"><span class="nav-number">3.19.</span> <span class="nav-text">文章评论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Valine配置"><span class="nav-number">3.19.1.</span> <span class="nav-text">Valine配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Valine评论系统邮件提醒"><span class="nav-number">3.19.2.</span> <span class="nav-text">Valine评论系统邮件提醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-1"><span class="nav-number">3.19.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题美化"><span class="nav-number">4.</span> <span class="nav-text">主题美化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置友情链接"><span class="nav-number">4.1.</span> <span class="nav-text">设置友情链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置侧边栏头像"><span class="nav-number">4.2.</span> <span class="nav-text">设置侧边栏头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置微信公众号"><span class="nav-number">4.3.</span> <span class="nav-text">设置微信公众号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加天气"><span class="nav-number">4.4.</span> <span class="nav-text">添加天气</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签美化"><span class="nav-number">4.5.</span> <span class="nav-text">标签美化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
     </div>
-        <div class="announcement_content">
-        谢谢你这么帅，这么漂亮还来看我的博客，如果喜欢的话记得收藏哦
-        </div>
-    </div>
-</div>
-<div class="blog-overview">
-    <div class="item_headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div>
-    <div class="blog-info">
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-        <li class="blog-info-list">
-        <span class="blog-info-name">文章数目</span>
-        <span class="blogs-count">1</span>
-        </li>
-        <li class="blog-info-list">
-        <span class="blog-info-name">运行天数</span>
-        <span class="days-count" id="sitedays"></span>
-        <script language=javascript>
-            function siteTime(){
-                window.setTimeout("siteTime()", 1000);
-                var seconds = 1000;
-                var minutes = seconds * 60;
-                var hours = minutes * 60;
-                var days = hours * 24;
-                var years = days * 365;
-                var today = new Date();
-                var todayYear = today.getFullYear();
-                var todayMonth = today.getMonth()+1;
-                var todayDate = today.getDate();
-                var todayHour = today.getHours();
-                var todayMinute = today.getMinutes();
-                var todaySecond = today.getSeconds();
-                var t1 = Date.UTC(2019,07,26,00,00,00); //北京时间2018-2-13 00:00:00
-                var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-                var diff = t2-t1;
-                var diffYears = Math.floor(diff/years);
-                var diffDays = Math.floor((diff/days)-diffYears*365);
-                document.getElementById("sitedays").innerHTML=diffDays+" 天 ";
-            }
-            siteTime();
-        </script>
-        </li>
-        <li class="blog-info-list">
-        <span class="blog-info-list">访问数</span>
-        <span class="site-uv" title="footer.total_visitors">
-            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-        </span>
-        </li>
-        <li class="blog-info-list">
-        <span class="blog-info-name">点击量</span>
-        <span class="site-pv" title="footer.total_views">
-            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-        </span>
-        </li>
-    </div>
-</div>
-
   </aside>
 
 
