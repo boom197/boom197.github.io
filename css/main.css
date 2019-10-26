@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #752a49;
+  background: #2281ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3253,4 +3253,7 @@ pre .deletion {
 p {
   text-indent: 2em;
   margin: 0 0 5px 0;
+}
+site-author-name {
+  margin: 0 2em 0 0;
 }
