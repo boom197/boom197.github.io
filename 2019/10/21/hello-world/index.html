@@ -45,6 +45,32 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -96,7 +122,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;8.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;9.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;10.png">
-<meta property="og:updated_time" content="2019-10-25T06:20:13.599Z">
+<meta property="og:updated_time" content="2019-10-26T06:34:18.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;21&#x2F;hello-world&#x2F;1.png">
 
@@ -108,7 +134,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":10,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -129,7 +155,6 @@
 
 
   <link rel="canonical" href="https://boom197.github.io/2019/10/21/hello-world/"/>
-
 
 
 
@@ -481,9 +506,7 @@
       
 
       
-        <blockquote>
-<p>这是我博客的第一篇文章，记录搭建博客的过程。。。</p>
-</blockquote>
+        <p>这是我博客的第一篇文章，记录搭建博客的过程。。。</p>
 <a id="more"></a>
 
 <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 是高效的静态站点生成框架，她基于 <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">标签插件</a> 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
@@ -493,7 +516,7 @@
 <li>安装git for windows</li>
 </ul>
 <h1 id="使用Hexo写博客"><a href="#使用Hexo写博客" class="headerlink" title="使用Hexo写博客"></a>使用Hexo写博客</h1><h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题。</p>
-<p>官网： <a href="http://hexo.io/" target="_blank" rel="noopener">http://hexo.io</a> github: <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">https://github.com/hexojs/hexo</a></p>
+<p>官网： <a href="http://hexo.io/" target="_blank" rel="noopener">http://hexo.io</a>    github: <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">https://github.com/hexojs/hexo</a></p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>由于github pages存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，相信谁都会疯掉，所以hexo所做的就是将这些md文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。</p>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
 <li>很多命令既可以用Windows的cmd来完成，也可以使用git bash来完成，但是部分命令会有一些问题，为避免不必要的问题，建议全部使用git bash来执行；</li>
@@ -737,7 +760,7 @@
 		
 		</div>
 		<script type="text/javascript">
-			var tagsall=document.getElementByClass("post-tags")
+			var tagsall=document.getElementsByClass("post-tags")
 			for (var i = tagsall.length - 1; i >= 0; i--){
 			var tags=tagsall[i].getElementByTagName('a');
 			for (var j = tags.length - 1; j >= 0; j--) {
