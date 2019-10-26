@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #25d11c;
+  background: #752a49;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3250,6 +3250,7 @@ pre .addition {
 pre .deletion {
   background: #ffeef0;
 }
-.p {
-  margin: 0 0 10px 0;
+p {
+  text-indent: 2em;
+  margin: 0 0 5px 0;
 }
