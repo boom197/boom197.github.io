@@ -1,6 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Spring</title>
+    <url>/2019/10/26/Spring/</url>
+    <content><![CDATA[<p> Spring是一个开源框架， 它是由于软件开发的复杂性而创建的。Spring使用的是基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅仅限于服端的开发。从简单性、可测试性和松耦合性角度而言，绝大部分Java应用都可以从Spring中受益。 </p>
+<a id="more"></a>
+
+<div class="note danger no-icon"><p>Spring的核心是控制反转（IoC）和面向切面（AOP）</p></div>
+
+<h1 id="Spring的优点"><a href="#Spring的优点" class="headerlink" title="Spring的优点"></a>Spring的优点</h1><p><strong>（1）方便解耦，简化开发（高内聚低耦合）</strong></p>
+<p>​    Spring就是一个大工厂（容器），可以将所有对象创建和依赖关系维护，交给Spring管理。</p>
+<p>​    Spring工厂是用于生产Bean</p>
+<p><strong>（2）AOP编程的之支持</strong></p>
+<p>​    Spring提供面向切面编程，可以方便的实现对程序进行权限拦截、运行监控等功能</p>
+<p><strong>（3）声明式事务的支持</strong> </p>
+<p>​    只需要通过配置就可以完成对事务的管理，而无需手动编程</p>
+<p><strong>（4）方便程序的测试</strong></p>
+<p>​    Spring对Junit4支持，可以通过注解方便的测试Spring程序</p>
+<p><strong>（5）方便集成各种优秀的框架</strong></p>
+<p>​    Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架（如：Struts、Hibernate、MyBatis、Quartz等）的直接支持</p>
+<p><strong>（6）降低JavaEE API的使用难度</strong> </p>
+<p>​    Spring 对JavaEE开发中非常难用的一些API（JDBC、JavaMail、远程调用等），都提供了封装，使这些API应用难度大大降低</p>
+<h1 id="如何实现简化java开发的目标"><a href="#如何实现简化java开发的目标" class="headerlink" title="如何实现简化java开发的目标?"></a><strong>如何实现简化java开发的目标?</strong></h1><p>为了降低java开发的复杂性，spring主要采取以下4种关键策略：</p>
+<ul>
+<li>基于POJO的轻量级和最小侵入性编程。</li>
+<li>通过依赖注入和面向接口编程实现松耦合。</li>
+<li>基于切面和惯例进行声明式编程。</li>
+<li>通过切面和模版减少样式代码。</li>
+</ul>
+<h1 id="使用Spring的好处？"><a href="#使用Spring的好处？" class="headerlink" title="使用Spring的好处？"></a>使用Spring的好处？</h1><ul>
+<li><strong>轻量：</strong>Spring 是轻量的，基本的版本大约2MB。</li>
+<li><strong>控制反转：</strong>Spring通过控制反转实现了松散耦合，对象们给出它们的依赖，而不是创建或查找依赖的对象们。</li>
+<li><strong>面向切面的编程(AOP)：</strong>Spring支持面向切面的编程，并且把应用业务逻辑和系统服务分开，并使系统服务模块化。</li>
+<li><strong>容器：</strong>Spring 包含并管理应用中对象的生命周期和配置。</li>
+<li><strong>MVC框架</strong>：Spring的WEB框架是个精心设计的框架，是Web框架的一个很好的替代品。</li>
+<li><strong>事务管理：</strong>Spring 提供一个持续的事务管理接口，可以扩展到上至本地事务下至全局事务（JTA）。</li>
+<li><strong>异常处理：</strong>Spring 提供方便的API把具体技术相关的异常（比如由JDBC，Hibernate or JDO抛出的）转化为一致的unchecked 异常。</li>
+<li><strong>提供模版</strong>：减少了样板式代码</li>
+</ul>
+<h1 id="Spring由哪些模块组成"><a href="#Spring由哪些模块组成" class="headerlink" title="Spring由哪些模块组成?"></a><strong>Spring由哪些模块组成</strong>?</h1><p>Spring Core：核心类库，提供IOC服务；</p>
+<p>Spring Context：提供框架式的Bean访问方式，以及企业级功能（JNDI、定时任务等）；</p>
+<p>Spring AOP：AOP服务；</p>
+<p>Spring DAO：对JDBC的抽象，简化了数据访问异常的处理；</p>
+<p>Spring ORM：对现有的ORM框架的支持；</p>
+<p>Spring Web：提供了基本的面向Web的综合特性，例如多方文件上传；</p>
+<p>Spring MVC：提供面向Web应用的Model-View-Controller实现。</p>
+<h2 id="常用的几个应用上下文"><a href="#常用的几个应用上下文" class="headerlink" title="常用的几个应用上下文"></a>常用的几个应用上下文</h2><ul>
+<li>ClassPathXmlApplicationContext:从类路径下的xml配置文件中加载上下文定义.</li>
+<li>FileSystemXmlApplicationContext:读取文件系统下xml配置文件并加载</li>
+<li>XmlＷebApplicationContext:读取Web应用下的Xml配置文件并加载上下文定义</li>
+</ul>
+<h1 id="Spring思想"><a href="#Spring思想" class="headerlink" title="Spring思想"></a><strong>Spring思想</strong></h1><h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><p>IOC就是<strong>控制反转</strong>，是指创建对象的控制权的转移，以前创建对象的主动权和时机是由自己把控的，而现在这种权力转移到Spring容器中，并由容器根据配置文件去创建实例和管理各个实例之间的依赖关系，对象与对象之间松散耦合，也利于功能的复用。DI依赖注入，和控制反转是同一个概念的不同角度的描述，即应用程序在运行时依赖IoC容器来动态注入对象需要的外部资源。</p>
+<p>最直观的表达就是，IOC让对象的创建不用去new了，可以由spring自动生产，使用java的反射机制，根据配置文件在运行时动态的去创建对象以及管理对象，并调用对象的方法的。</p>
+<p>Spring的IOC有三种注入方式 ：构造器注入、setter方法注入、根据注解注入。</p>
+<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>OOP面向对象，允许开发者定义纵向的关系，但并适用于定义横向的关系，导致了大量代码的重复，而不利于各个模块的重用。</p>
+<p>AOP，一般称为<strong>面向切面</strong>，作为面向对象的一种补充，用于将那些与业务无关，但却对多个对象产生影响的公共行为和逻辑，抽取并封装为一个可重用的模块，这个模块被命名为“切面”（Aspect），减少系统中的重复代码，降低了模块间的耦合度，同时提高了系统的可维护性。可用于权限认证、日志、事务处理。</p>
+<h3 id="通知（Advice-："><a href="#通知（Advice-：" class="headerlink" title="通知（Advice)："></a>通知（Advice)：</h3><p> 切面的工作被称为通知。通知定义了切面是什么及何时使用。</p>
+<p>许多AOP框架（包括Spring）都是以拦截器做通知模型，并维护一个以连接点为中心的拦截器链。</p>
+<p>Spring切面可以应用5种类型的通知：</p>
+<p>​    前置通知（Before）：在目标方法被调用之前调用通知功能；</p>
+<p>​    后置通知（After）：在目标方法完成之后调用通知，此时不会关心方法的输出是什么；</p>
+<p>​    返回通知（After-returning）：在目标方法成功执行之后调用通知；</p>
+<p>​    异常通知（After-throwing）：在目标方法抛出异常后调用通知；</p>
+<p>​    环绕通知（Around）：通知包裹了被通知的方法，在被通知的方法调用之前和调用之后执行自定义的行为。</p>
+<p>对应注解：</p>
+<ul>
+<li>@After        通知方法会在目标方法返回或抛出异常后调用</li>
+<li>@AfterReturning        通知方法会在目标方法返回后调用</li>
+<li>@AfterThrowing        通知方法会在目标方法抛出异常后调用</li>
+<li>@Around        通知方法会将目标方法封装起来</li>
+<li>@Before        通知方法会在目标方法调用之前执行</li>
+</ul>
+<h3 id="连接点（Join-point）"><a href="#连接点（Join-point）" class="headerlink" title="连接点（Join point）"></a>连接点（Join point）</h3><p>连接点是在应用执行过程中能够插入切面的一个点。这个点可以是调用方法时、抛出异常时、甚至修改一个字段时。切面代码可以利用这些点插入到应用的正常流程之中，并添加新的行为。</p>
+<h3 id="切点（Pointcut）"><a href="#切点（Pointcut）" class="headerlink" title="切点（Pointcut）"></a>切点（Pointcut）</h3><p>如果说通知定义了切面的“什么”和“何时”的话，那么切点就定义了“何处” 。切点的定义会匹配通知所要织入的一个或多个连接点。我们通常使用明确的类和方法名称，或是利用正则表达式定义所匹配的类和方法名称来指定这些切点。有些AOP框架允许我们创建动态的切点，可以根据运行时的决策（比如方法的参数值）来决定是否应用通知。</p>
+<h3 id="切面（Aspect）"><a href="#切面（Aspect）" class="headerlink" title="切面（Aspect）"></a>切面（Aspect）</h3><p>通知+切点=切面</p>
+<h3 id="引入（Introduction）"><a href="#引入（Introduction）" class="headerlink" title="引入（Introduction）"></a>引入（Introduction）</h3><p>引入允许我们向现有的类添加新方法或属性</p>
+<h3 id="织入（Weaving）"><a href="#织入（Weaving）" class="headerlink" title="织入（Weaving）"></a>织入（Weaving）</h3><p>织入是把切面应用到目标对象并创建新的代理对象的过程。切面在指定的连接点被织入到目标对象中。在目标对象的生命周期里有多个点可以进行织入：</p>
+<p>编译期：切面在目标类编译时被织入。这种方式需要特殊的编译器。AspectJ的织入编译器就是以这种方式织入切面的。</p>
+<p>类加载期：切面在目标类加载到JVM时被织入。这种方式需要特殊的类加载器（ClassLoader），它可以在目标类被引入应用之前增强该目标类的字节码。AspectJ 5的加载时织入（load-time weaving，LTW）就支持以这种方式织入切面。</p>
+<p>运行期：切面在应用运行的某个时刻被织入。一般情况下，在织入切面时，AOP容器会为目标对象动态地创建一个代理对象。Spring AOP就是以这种方式织入切面的。</p>
+<h3 id="Spring对AOP的支持"><a href="#Spring对AOP的支持" class="headerlink" title="Spring对AOP的支持"></a>Spring对AOP的支持</h3><ol>
+<li>基于代理的经典Spring AOP；</li>
+<li>纯POJO切面（4.x版本需要XML配置）；</li>
+<li>@AspectJ注解驱动的切面；</li>
+<li>注入式AspectJ切面（适用于Spring各版本）。</li>
+</ol>
+<h1 id="Spring容器"><a href="#Spring容器" class="headerlink" title="Spring容器"></a>Spring容器</h1><p>BeanFactory和ApplicationContext是Spring的两大核心接口，都可以当做Spring的容器。其中ApplicationContext是BeanFactory的子接口。</p>
+<h2 id="BeanFactory"><a href="#BeanFactory" class="headerlink" title="BeanFactory"></a>BeanFactory</h2><p>是Spring里面最底层的接口，包含了各种Bean的定义，读取bean配置文档，管理bean的加载、实例化，控制bean的生命周期，维护bean之间的依赖关系。</p>
+<p>BeanFactroy采用的是延迟加载形式来注入Bean的，即只有在使用到某个Bean时(调用getBean())，才对该Bean进行加载实例化。这样，我们就不能发现一些存在的Spring的配置问题。如果Bean的某一个属性没有注入，BeanFacotry加载后，直至第一次使用调用getBean方法才会抛出异常。</p>
+<h2 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h2><p>ApplicationContext接口作为BeanFactory的派生，除了提供BeanFactory所具有的功能外，还提供了更完整的框架功能：</p>
+<ul>
+<li>继承MessageSource，因此支持国际化。</li>
+<li>统一的资源文件访问方式。</li>
+<li>提供在监听器中注册bean的事件。</li>
+<li>同时加载多个配置文件。</li>
+<li>载入多个（有继承关系）上下文 ，使得每一个上下文都专注于一个特定的层次，比如应用的web层。</li>
+</ul>
+<p>ApplicationContext，它是在容器启动时，一次性创建了所有的Bean。这样，在容器启动时，我们就可以发现Spring中存在的配置错误，这样有利于检查所依赖属性是否注入。 ApplicationContext启动后预载入所有的单实例Bean，通过预载入单实例bean ,确保当你需要的时候，你就不用等待，因为它们已经创建好了。</p>
+<h1 id="Bean"><a href="#Bean" class="headerlink" title="Bean"></a>Bean</h1><p> 基于Spring的应用中，，应用对象生存于Spring容器中。Spring容器负责创建对象，装配对象，配置他们并管理他们的整个生命周期，从new到finalize()。</p>
+<p> bean可以通过@Component(“beanName”)或@Named(“beanName”)来命名。其中@Named是Java依赖注入规范中提供的。</p>
+<p>Spring容器不只有一个，Spring自带了多个容器实现，可以归为两种不同类型：</p>
+<p>​    –bean工厂：最简单的容器，提供基本DI支持；</p>
+<p>​    –应用上下文：基于BeanFactory构建，并提供应用框架级别的服务。（应用较多）</p>
+<p>​    BeanFactory是一个工厂类，用于管理Bean的一个工厂。BeanFactory是IOC容器的核心接口，负责实例化，定位，配置应用程序中的对象及建立这些对象间的依赖。</p>
+<p>​    FactoryBean是实现了FactoryBean<T>接口的Bean。根据该Bean的ID从BeanFactory中获取的实际上是FactoryBean的getObject()返回的对象，而不是FactoryBean本身，若要获取FactoryBean本身需要在id前面加一个&amp;符号。</T></p>
+<h2 id="自动扫描组件"><a href="#自动扫描组件" class="headerlink" title="自动扫描组件"></a><strong>自动扫描组件</strong></h2><p>@Controller控制器：注入服务</p>
+<p>@Service服务：注入Dao</p>
+<p>@Repository Dao：实现Dao访问</p>
+<p>@Component：把普通的POJO实例化到Spring容器中，相当于配置文件中的<bean id class></bean></p>
+<p>@Controller，@Service，@Repository，@Component注解的类，并把这些类纳入进Spring容器中进行管理。</p>
+<p> 引入Component的扫描组件：</p>
+<p> 其中base-package是需要扫描的包（含所有子包）</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.best"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>   可以使用@Configuration替代xml配置，@ComponentScan(basePackages={“”,””})指定扫描组件的包及子包下带有@Component注解的类。@ComponentScan默认扫描所在类的包及子包。</p>
+<ul>
+<li><strong>@Controller：用于标注控制层组件</strong></li>
+<li><strong>@Service：用于标注业务层组件</strong></li>
+<li><strong>@Repository：用于标注数据访问层组件，即DAO组件</strong></li>
+<li><strong>@Component：泛指组件，当组件不好归类时，可使用该注解进行标注。</strong></li>
+<li><strong>@Controller，@Service，@Repository，@Component注解的类，并把这些类纳入进Spring容器中进行管理。</strong></li>
+</ul>
+<h2 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h2><p>  <strong>@Autowired可以用在构造方法和类的方法上。spring会满足方法参数上所声明的依赖。</strong></p>
+<p>  – 如果没有匹配的bean：在应用上下文创建的时候，Spring会抛出异常，为避免异常可以使用@Autowired(required=false)</p>
+<p>   – 有匹配的bean时：若使用了@Autowired(required=false)，在代码没有进行null检查时，这个处于未装配状态的属性可能会抛出NullPointException。</p>
+<p> @Inject也可以完成自动装配，是Java依赖注入规范中提供的。</p>
+<p> 使用自动装配让Spring完全负责将bean引用注入到构造参数和属性中，能够减少装配应用程序组件时所需的显示配置的数量。如果有多个bean能够匹配结果时Spring会抛出NoUniqueBeanDefinitionException。此时可以将可选bean中的某一个设为首选(@Primary，Primary与@Component或@Bean一起使用)的bean 或使用限定符(@Qualifier(“xxxbeanName”)，Qualifier与@Autowired一起使用)来帮助Spring将可选的bean范围缩小到只有一个bean。Qualifier也可以与@Component或@Bean一起使用，为某一个bean设置beanName即创建自定义的限定符，以防止bean类名修改导致找不到Qualifier指定beanName。</p>
+<h2 id="bean的作用域"><a href="#bean的作用域" class="headerlink" title="bean的作用域"></a><strong>bean的作用域</strong></h2><p>  默认情况下，Spring应用上下文中所有bean都是作为一单例(singleton)的形式创建的。即不管给定的一个bean被注入到其他bean多少次，每次所注入的都是同一个实例。</p>
+<p>当所使用的类是异变的(mutable)，他们会保持一些状态，此时重用是不安全的。</p>
+<p>Spring定义了多种作用域，可以基于这些作用域创建bean：</p>
+<p>​    – 单例（Singleton）：在整个应用中，只创建bean的一个实例；</p>
+<p>​    – 原型（Prototype）：每次注入或通过Spring应用上下文获取的时候，都会创建一个bean实例；</p>
+<p>​    – 会话（Session）：在Web应用中，为每个会话创建一个bean实例；</p>
+<p>​    – 请求（Request）：在Web应用中，为每个请求创建一个bean实例。</p>
+<p>单例是默认作用域，如果要选择其他作用域，要使用@Scope注解，与@Component或@Bean一起使用：</p>
+<p>​    – 原型：@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)或@Scope(“prototype”)</p>
+<p>​    – 会话：@Scope(value=WebApplicationContext.SCOPE_SESSION, proxyMode=ScopedProxyMode.INTERFACES)</p>
+<p>​    – 请求：@Scope(value=WebApplicationContext.SCOPE_REQUEST, proxyMode=ScopedProxyMode.INTERFACES)</p>
+<p>  当一个会话或者请求作用域的bean（BeanSession）要注入到单例作用域的bean（BeanSingle）中时，会出现一些问题：</p>
+<p>​    – BeanSingle在Spring应用上下文加载的时候创建，此时Spring会试图将BeanSession注入到BeanSingle中，而此时BeanSession还不存在（当有用户进入系统，创建会话后才会被创建）。</p>
+<p>​    – 系统中可能会存在多个BeanSession，大多数情况下我们不希望注入一个固定的BeanSession到BeanSingle中，而是当前Session中的那个。</p>
+<p>​    为了解决这个问题，Spring不会将实际的BeanSession注入到BeanSingle中去，而是注入一个BeanSession的代理。这个代理会暴露出和BeanSession相同的方法，BeanSingle会认为它是一个普通的BeanSession。</p>
+<h2 id="Bean的生命周期"><a href="#Bean的生命周期" class="headerlink" title="Bean的生命周期"></a>Bean的生命周期</h2><p>（1）实例化Bean：</p>
+<p>对于BeanFactory容器，当客户向容器请求一个尚未初始化的bean时，或初始化bean的时候需要注入另一个尚未初始化的依赖时，容器就会调用createBean进行实例化。对于ApplicationContext容器，当容器启动结束后，通过获取BeanDefinition对象中的信息，实例化所有的bean。</p>
+<p>（2）设置对象属性（依赖注入）：</p>
+<p>实例化后的对象被封装在BeanWrapper对象中，紧接着，Spring根据BeanDefinition中的信息 以及 通过BeanWrapper提供的设置属性的接口完成依赖注入。</p>
+<p>（3）处理Aware接口：</p>
+<p>接着，Spring会检测该对象是否实现了xxxAware接口，并将相关的xxxAware实例注入给Bean：</p>
+<p>①如果这个Bean已经实现了BeanNameAware接口，会调用它实现的setBeanName(String beanId)方法，此处传递的就是Spring配置文件中Bean的id值；</p>
+<p>②如果这个Bean已经实现了BeanFactoryAware接口，会调用它实现的setBeanFactory()方法，传递的是Spring工厂自身。</p>
+<p>③如果这个Bean已经实现了ApplicationContextAware接口，会调用setApplicationContext(ApplicationContext)方法，传入Spring上下文；</p>
+<p>（4）BeanPostProcessor：</p>
+<p>如果想对Bean进行一些自定义的处理，那么可以让Bean实现了BeanPostProcessor接口，那将会调用postProcessBeforeInitialization(Object obj, String s)方法。由于这个方法是在Bean初始化结束时调用的，所以可以被应用于内存或缓存技术；</p>
+<p>（5）InitializingBean 与 init-method：</p>
+<p>如果Bean在Spring配置文件中配置了 init-method 属性，则会自动调用其配置的初始化方法。</p>
+<p>（6）如果这个Bean实现了BeanPostProcessor接口，将会调用postProcessAfterInitialization(Object obj, String s)方法；</p>
+<p>以上几个步骤完成后，Bean就已经被正确创建了，之后就可以使用这个Bean了。</p>
+<p>（7）DisposableBean：</p>
+<p>当Bean不再需要时，会经过清理阶段，如果Bean实现了DisposableBean这个接口，会调用其实现的destroy()方法；</p>
+<p>（8）destroy-method：</p>
+<p>最后，如果这个Bean的Spring配置中配置了destroy-method属性，会自动调用其配置的销毁方法。</p>
+<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:tx</span>=<span class="string">"http://www.springframework.org/schema/tx"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">  	 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string"> 	 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- 扫描包 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span></span></span><br><span class="line"><span class="tag">			<span class="attr">expression</span>=<span class="string">"org.springframework.stereotype.Component"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span></span></span><br><span class="line"><span class="tag">			<span class="attr">expression</span>=<span class="string">"org.springframework.stereotype.Repository"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span></span></span><br><span class="line"><span class="tag">			<span class="attr">expression</span>=<span class="string">"org.springframework.stereotype.Service"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- 加载配数据源配置文件 db.properties --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"classpath:config/db.properties"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- 配置 C3P0 数据源 --&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"com.mchange.v2.c3p0.ComboPooledDataSource"</span> <span class="attr">destroy-method</span>=<span class="string">"close"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClass"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.driver_class&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcUrl"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.url&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.username&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.password&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"minPoolSize"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.minPoolSize&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--连接池中保留的最大连接数。Default: 15 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxPoolSize"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.maxPoolSize&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxIdleTime"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.maxIdleTime&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"acquireIncrement"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.acquireIncrement&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements 属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。</span></span><br><span class="line"><span class="comment">            如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxStatements"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.maxStatements&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--maxStatementsPerConnection定义了连接池内单个连接所拥有的最大缓存statements数。Default: 0 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxStatementsPerConnection"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.maxStatementsPerConnection&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"initialPoolSize"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.initialPoolSize&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--每60秒检查所有连接池中的空闲连接。Default: 0 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"idleConnectionTestPeriod"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.idleConnectionTestPeriod&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"acquireRetryAttempts"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.acquireRetryAttempts&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。但是数据源仍有效 保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试</span></span><br><span class="line"><span class="comment">            获取连接失败后该数据源将申明已断开并永久关闭。Default: false --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"breakAfterAcquireFailure"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.breakAfterAcquireFailure&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--因性能消耗大请只在需要的时候使用它。如果设为true那么在每个connection提交的 时候都将校验其有效性。建议使用idleConnectionTestPeriod或automaticTestTable</span></span><br><span class="line"><span class="comment">            等方法来提升连接测试的性能。Default: false --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"testConnectionOnCheckout"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.testConnectionOnCheckout&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"checkoutTimeout"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.checkoutTimeout&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"testConnectionOnCheckin"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.testConnectionOnCheckin&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"automaticTestTable"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.automaticTestTable&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"acquireRetryDelay"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.acquireRetryDelay&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--自动超时回收Connection--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"unreturnedConnectionTimeout"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.unreturnedConnectionTimeout&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--超时自动断开--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxIdleTimeExcessConnections"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.maxIdleTimeExcessConnections&#125;"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxConnectionAge"</span> <span class="attr">value</span>=<span class="string">"$&#123;datasource.connection.maxConnectionAge&#125;"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- 事务管理器 （JDBC） --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"transactionManager"</span></span></span><br><span class="line"><span class="tag">		<span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- 启动声明式事务驱动 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tx:annotation-driven</span> <span class="attr">transaction-manager</span>=<span class="string">"transactionManager"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- spring 通过 sqlSessionFactoryBean 获取 sqlSessionFactory 工厂类 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlSessionFactory"</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 扫描 po 包，使用别名 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"typeAliasesPackage"</span> <span class="attr">value</span>=<span class="string">"com.entity"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 扫描映射文件 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"mapperLocations"</span> <span class="attr">value</span>=<span class="string">"classpath:config/mybatis/mapper/admin/*.xml"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- 配置扫描 dao 包，动态实现 dao 接口，注入到 spring 容器中 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.mapper.MapperScannerConfigurer"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"basePackage"</span> <span class="attr">value</span>=<span class="string">"com.dao"</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 注意使用 sqlSessionFactoryBeanName 避免出现spring 扫描组件失效问题 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"sqlSessionFactoryBeanName"</span> <span class="attr">value</span>=<span class="string">"sqlSessionFactory"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"gson"</span> <span class="attr">class</span>=<span class="string">"com.google.gson.Gson"</span> <span class="attr">scope</span>=<span class="string">"prototype"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown</title>
     <url>/2019/10/25/Markdown/</url>
     <content><![CDATA[<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
