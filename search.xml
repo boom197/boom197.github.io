@@ -1,6 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux安装软件</title>
+    <url>/2019/10/31/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<p>本文将介绍Linux安装JDK、MySql、Tomcat……</p>
+<a id="more"></a>
+
+<h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h2><p> 这种办法简单粗暴，就像盖伦丢技能一样。废话不多说，直接开始操作。 </p>
+<p> 首先执行以下命令查看可安装的jdk版本： </p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">yum -y <span class="built_in">list</span> java*</span><br></pre></td></tr></table></figure>
+
+<p> 执行成功后可看到如下界面： </p>
+<p><img src="https://s2.ax1x.com/2019/10/31/KIUvE8.png" alt></p>
+<p> 选择自己需要的jdk版本进行安装，比如这里安装1.8，执行以下命令： </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">yum</span> <span class="selector-tag">install</span> <span class="selector-tag">-y</span> <span class="selector-tag">java-1</span><span class="selector-class">.8</span><span class="selector-class">.0-openjdk-devel</span><span class="selector-class">.x86_64</span></span><br></pre></td></tr></table></figure>
+
+<p> 等待安装完成即可。     </p>
+<p> 安装完成之后，查看安装的jdk版本，输入以下指令： </p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">java -<span class="built_in">version</span></span><br></pre></td></tr></table></figure>
+
+<p> 此处便可以看到自己安装的jdk版本信息。</p>
+<p>你如果好奇这个自动安装把jdk安装到哪里去了，其实你可以在usr/lib/jvm下找到它们。 </p>
+<h2 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h2><p> 如果觉得yum一键安装不大好，其实可以手动安装的，个人建议还是手动安装更好，可以安装到想要安装的目录下，更能加深自己的体会。ok，接下里开始手动安装！ </p>
+<p> 进入 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">Oracle 官方网站</a> 下载合适的 JDK 版本，准备安装。 我这里用的是jdk-8u181-linux-x64.tar.gz </p>
+<p>查看有没有安装JDK:  echo $JAVA_HOME</p>
+<p>有的话就卸载：rpm -e –nodeps java-1.6.0-openjdk-1.6.0.0-1.50.1.11.5.el6_3.x86_64</p>
+<p>​                        rpm -e –nodeps java-1.7.0-openjdk-1.7.0.9-2.3.4.1.el6_3.x86_64</p>
+<p>​                        rpm -e –nodeps tzdata-java-2012j-1.el6.noarch</p>
+<p>创建目录</p>
+<p> 在<code>/usr/</code>目录下创建<code>java</code>目录 </p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">mkdir <span class="string">/usr/java</span></span><br><span class="line"><span class="keyword">cd</span> <span class="string">/usr/java</span></span><br></pre></td></tr></table></figure>
+
+<p>把下载的文件jdk-8u181-linux-x64.tar.gz 放在/usr/java/目录下。 </p>
+<p>解压JDK：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">tar -zxvf jdk-<span class="number">8</span>u181-linux-x64<span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+
+<p>设置环境变量：</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vim</span> /etc/<span class="keyword">profile</span></span><br></pre></td></tr></table></figure>
+
+<p>输入完毕并回车，在文件尾部添加如下信息：</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=<span class="regexp">/usr/local</span><span class="regexp">/jdk/jdk</span>1.<span class="number">8.0_181</span></span><br><span class="line">export CLASSPATH=$:<span class="symbol">CLASSPATH:</span>$JAVA_HOME/<span class="class"><span class="keyword">lib</span>/ </span></span><br><span class="line">export PATH=$<span class="symbol">PATH:</span>$JAVA_HOME/bin</span><br><span class="line"></span><br><span class="line">--或者</span><br><span class="line">set java environment</span><br><span class="line">JAVA_HOME=<span class="regexp">/usr/java</span><span class="regexp">/jdk1.8.0_151        </span></span><br><span class="line"><span class="regexp">JRE_HOME=/usr</span><span class="regexp">/java/jdk</span>1.<span class="number">8.0_151</span>/jre     </span><br><span class="line">CLASS_PATH=.:$JAVA_HOME/<span class="class"><span class="keyword">lib</span>/<span class="title">dt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">tools</span>.<span class="title">jar</span>:$<span class="title">JRE_HOME</span>/<span class="title">lib</span></span></span><br><span class="line">PATH=$<span class="symbol">PATH:</span>$JAVA_HOME/<span class="symbol">bin:</span>$JRE_HOME/bin</span><br><span class="line">export JAVA_HOME JRE_HOME CLASS_PATH PATH</span><br></pre></td></tr></table></figure>
+
+<p> <strong>注意：其中 JAVA_HOME， JRE_HOME 请根据自己的实际安装路径及 JDK 版本配置。</strong> </p>
+<p> 让修改生效： </p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">source</span> <span class="regexp">/etc/</span>profile</span><br></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">java -<span class="built_in">version</span></span><br></pre></td></tr></table></figure>
+
+<p> 显示 java 版本信息，则说明 JDK 安装成功： </p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">openjdk version <span class="string">"1.8.0_232"</span></span><br><span class="line">OpenJDK Runtime Environment (build 1.8.0_232-b09)</span><br><span class="line">OpenJDK 64-Bit<span class="built_in"> Server </span>VM (build 25.232-b09, mixed mode)</span><br></pre></td></tr></table></figure>
+
+<p>查看已经安装的jdk：rpm -qa|grep jdk</p>
+<h1 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h1><h2 id="下载Tomcat"><a href="#下载Tomcat" class="headerlink" title="下载Tomcat"></a>下载Tomcat</h2><p> 首先在Tomcat的官网上面下载tomcat <a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">http://tomcat.apache.org/download-80.cgi</a> </p>
+<p><img src="https://s2.ax1x.com/2019/10/31/KIW84s.png" alt></p>
+<p> 将tomcat压缩包解压到新建的tomcat文件夹中 </p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">tar -xvf apache-tomcat-<span class="number">8.5</span>.<span class="number">14</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span> -C /usr/java/tomcat/</span><br></pre></td></tr></table></figure>
+
+<p> 你会看到tomcat的一些目录 </p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">bin 目录中存放 Tomcat 的一些脚本文件，最重要的也是用的最多就是启动和关系 tomcat 服务脚本。</span><br><span class="line">conf：存放 Tomcat 服务器的各种全局配置文件，其中最重要的是 server.<span class="keyword">xml</span> <span class="title">和 web</span>.xml。</span><br><span class="line">webapps：Tomcat 的主要 Web 发布目录，默认情况下把 Web 应用文件放于此目录。</span><br><span class="line">logs：存放 Tomcat 执行时的日志文件</span><br></pre></td></tr></table></figure>
+
+<p> 然后接下来进入到Tomcat的bin目录下面：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">[root@iZj1fkye8uu7o0Z apache-tomcat<span class="number">-8.5</span><span class="number">.14</span>]# cd bin/</span><br><span class="line">[root@iZj1fkye8uu7o0Z bin]# ls</span><br><span class="line">bootstrap.jar  catalina-tasks.xml            configtest.bat  digest.bat        setclasspath.sh  startup.bat      tomcat-native.tar.gz  <span class="keyword">version</span>.bat</span><br><span class="line">catalina.bat   commons-daemon.jar            configtest.sh   digest.sh         shutdown.bat     startup.sh       tool-<span class="keyword">wrapper</span>.bat      <span class="keyword">version</span>.sh</span><br><span class="line">catalina.sh    commons-daemon-native.tar.gz  daemon.sh       setclasspath.bat  shutdown.sh      tomcat-juli.jar  tool-<span class="keyword">wrapper</span>.sh</span><br><span class="line">[root@iZj1fkye8uu7o0Z bin]#</span><br></pre></td></tr></table></figure>
+
+<p>启动tomcat：<strong>./startup.sh</strong></p>
+<p>然后在浏览器上输入 <a href="http://localhost:8080/查看信息" target="_blank" rel="noopener">http://localhost:8080/查看信息</a> （如果不是本机则输入对应IP，比如我输入服务器IP 47.97.189.117:8080） </p>
+<p><img src="https://s2.ax1x.com/2019/10/31/KIhqHS.png" alt></p>
+<p>关闭tomcat：<strong>./shutdown.sh</strong></p>
+<h2 id="发布项目"><a href="#发布项目" class="headerlink" title="发布项目"></a>发布项目</h2><p> 你的项目都是放在webapps这个目录下面的，发布时只需要在8080/后面加上你的项目名。</p>
+<br>
+
+<h1 id="安装MySql"><a href="#安装MySql" class="headerlink" title="安装MySql"></a>安装MySql</h1><h2 id="下载MySql"><a href="#下载MySql" class="headerlink" title="下载MySql"></a>下载MySql</h2><p>下载安装包：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">wget <span class="string">http:</span><span class="comment">//repo.mysql.com/mysql57-community-release-el7-8.noarch.rpm</span></span><br></pre></td></tr></table></figure>
+
+<p> 未安装wget的话执行以下命令安装 </p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> wget</span><br></pre></td></tr></table></figure>
+
+<p>安装：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo rpm -ivh mysql57-community-release-el7-<span class="number">8</span><span class="selector-class">.noarch</span><span class="selector-class">.rpm</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> mysql-<span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+
+<p>安装完成！</p>
+<p>设置密码：</p>
+<p> 当第一次启动MySQL服务器时，为MySQL根用户生成一个临时密码。 您可以通过运行以下命令找到密码： </p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line">sudo grep <span class="string">'temporary password'</span> /<span class="built_in">var</span>/<span class="keyword">log</span>/mysqld.<span class="keyword">log</span></span><br></pre></td></tr></table></figure>
+
+<p> 如果这个文件为空：</p>
+<p>1.删除原来安装过的mysql残留的数据（这一步非常重要，问题就出在这）</p>
+<p>rm -rf /var/lib/mysql</p>
+<p>2.重启mysqld服务 </p>
+<p> systemctl restart mysqld </p>
+<p> 3.再去找临时密码 </p>
+<p> grep ‘temporary password’ /var/log/mysqld.log </p>
+<p> localhost：后边的就是临时密码，先复制下来 </p>
+<p> 配置mysql安装项： </p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> mysql_secure_installation</span><br></pre></td></tr></table></figure>
+
+<p>输入刚才的临时密码</p>
+<p>接下来mysql会提示你输入新的密码，和一下其他设置，一般情况下我们都会输入y（密码必须至少包含8个字符并且至少包含一个大写字母，一个小写字母，一个数字和一个特殊字符。）</p>
+<p> 看到All done!表示配置已经完成，尝试远程访问一下。</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mysql -uroot -p</span></span><br></pre></td></tr></table></figure>
+
+<p>输入密码，访问成功。</p>
+<h2 id="Navicat远程连接MySql"><a href="#Navicat远程连接MySql" class="headerlink" title="Navicat远程连接MySql"></a>Navicat远程连接MySql</h2><p> 登录mysql 设置远程ip地址可以登录的权限 </p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mysql -uroot -p</span></span><br></pre></td></tr></table></figure>
+
+<p>输入密码</p>
+<p>切换MySQL库：</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> mysql；   (注意： 执行mysql命令时 ，记得带 ； 号  )</span><br></pre></td></tr></table></figure>
+
+<p> 赋予权限 ：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'root'</span>@<span class="string">'% '</span><span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'xx'</span> <span class="keyword">with</span>  <span class="keyword">grant</span> <span class="keyword">option</span>;</span><br><span class="line"><span class="comment">--xx是密码</span></span><br></pre></td></tr></table></figure>
+
+<p>刷新权限表：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>；</span><br></pre></td></tr></table></figure>
+
+<p>打开Navicat，新建连接，输入公网IP，密码就可以连接成功！！</p>
+<br>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux入门</title>
     <url>/2019/10/31/Linux/</url>
     <content><![CDATA[<p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
@@ -746,6 +871,12 @@
 <h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a><strong>网络</strong></h2><figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">连接网络：ifup eth0</span><br><span class="line">查看网络信息：ifconfig</span><br><span class="line"></span><br><span class="line">ifconfig eth0 显示一个以太网卡的配置 </span><br><span class="line">ifup eth0 启用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifdown eth0 禁用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> 控制IP地址 </span><br><span class="line">ifconfig eth0 promisc 设置 <span class="string">'eth0'</span> 成混杂模式以嗅探数据包 (sniffing) </span><br><span class="line">dhclient eth0 以dhcp模式启用 <span class="string">'eth0'</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>IDEA入门</title>
@@ -972,10 +1103,10 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
