@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #69ff87;
+  background: #778fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1939,7 +1939,7 @@ pre .javascript .function {
   line-height: 1.8;
 }
 .post-toc .nav .nav-child {
-  display: block;
+  display: none;
 }
 .post-toc .nav .active > .nav-child {
   display: block;
@@ -3249,9 +3249,6 @@ pre .addition {
 }
 pre .deletion {
   background: #ffeef0;
-}
-.post-toc .nav .nav-child {
-  display: none;
 }
 .highlight {
   position: relative;
