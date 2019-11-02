@@ -235,6 +235,11 @@
 <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">cd 你的 hexo 目录</span><br><span class="line">hexo clean</span><br><span class="line">hexo <span class="keyword">generate</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>打开你的公网 IP，看是不是已经部署成功了。</p>
+<p>&lt;br / &gt;</p>
+<blockquote>
+<p>非常感谢以下文章：</p>
+<p> <a href="https://www.jianshu.com/p/271449df801f" target="_blank" rel="noopener">https://www.jianshu.com/p/271449df801f</a> </p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Linux</category>
