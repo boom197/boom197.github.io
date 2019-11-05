@@ -6,12 +6,13 @@
     <content><![CDATA[<p> <em>Nginx</em> (engine x) 是一个高性能的<a href="https://baike.baidu.com/item/HTTP" target="_blank" rel="noopener">HTTP</a>和<a href="https://baike.baidu.com/item/反向代理/7793488" target="_blank" rel="noopener">反向代理</a>web服务器，同时也提供了IMAP/POP3/SMTP<a href="https://baike.baidu.com/item/服务/100571" target="_blank" rel="noopener">服务</a>。 它是 一款<a href="https://baike.baidu.com/item/轻量级/10002835" target="_blank" rel="noopener">轻量级</a>的<a href="https://baike.baidu.com/item/Web/150564" target="_blank" rel="noopener">Web</a> 服务器/<a href="https://baike.baidu.com/item/反向代理/7793488" target="_blank" rel="noopener">反向代理</a>服务器及<a href="https://baike.baidu.com/item/电子邮件/111106" target="_blank" rel="noopener">电子邮件</a>（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，<a href="https://baike.baidu.com/item/并发/11024806" target="_blank" rel="noopener">并发</a>能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、<a href="https://baike.baidu.com/item/京东/210931" target="_blank" rel="noopener">京东</a>、<a href="https://baike.baidu.com/item/新浪/125692" target="_blank" rel="noopener">新浪</a>、<a href="https://baike.baidu.com/item/网易/185754" target="_blank" rel="noopener">网易</a>、<a href="https://baike.baidu.com/item/腾讯/112204" target="_blank" rel="noopener">腾讯</a>、<a href="https://baike.baidu.com/item/淘宝/145661" target="_blank" rel="noopener">淘宝</a>等。 </p>
 <a id="more"></a>
 
+<p>Nginx可以作为静态页面的Web服务器，同时还支持CGI协议的动态语言，比如perl、php等。但是不支持Java。Java程序之恶能通过与Tomcat配合完成。Nginx专为性能优化而开发，性能是其最重要的考量，实现上非常注重效率，能经受高负载的考验，有报告表明能支持高达50，000个并发连接数。</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为什么要用nginx服务器代理，不直接用tomcat，还做多了一次请求？</p>
 <p>在传统的Web项目中，并发量小，用户使用的少。所以在低并发的情况下，用户可以直接访问tomcat服务器，然后tomcat服务器返回消息给用户。比如，我们上传图片： </p>
 <p><img src="https://s2.ax1x.com/2019/11/03/KOZd5d.png" alt></p>
-<p> 当然我们知道，为了解决并发，可以使用负载均衡：也就是我们多增加几个tomcat服务器。当用户访问的时候，请求可以提交到空闲的tomcat服务器上。 </p>
+<p>当然我们知道，为了解决并发，可以使用负载均衡：也就是我们多增加几个tomcat服务器。当用户访问的时候，请求可以提交到空闲的tomcat服务器上。 </p>
 <p><img src="https://s2.ax1x.com/2019/11/03/KOZyKf.png" alt></p>
-<p> 但是这种情况下可能会有一种这样的问题：上传图片操作。我们把图片上传到了tomcat1上了，当我们要访问这个图片的时候，tomcat1正好在工作，所以访问的请求就交给其他的tomcat操作，而tomcat之间的数据没有进行同步，所以就<strong>发生了我们要请求的图片找不到</strong>。 </p>
+<p>但是这种情况下可能会有一种这样的问题：上传图片操作。我们把图片上传到了tomcat1上了，当我们要访问这个图片的时候，tomcat1正好在工作，所以访问的请求就交给其他的tomcat操作，而tomcat之间的数据没有进行同步，所以就<strong>发生了我们要请求的图片找不到</strong>。 </p>
 <p> 为了解决这种情况，我们就想出了分布式。我们专门建立一个图片服务器，用来存储图片。这样当我们都把图片上传的时候，不管是哪个服务器接收到图片，都把图片上传到图片服务器。 </p>
 <p> 图片服务器上需要安装一个http服务器，可以使用tomcat、apache、nginx。 </p>
 <p><img src="https://s2.ax1x.com/2019/11/03/KOZRaQ.png" alt></p>
@@ -20,9 +21,53 @@
 <blockquote>
 <p>借鉴博客：<a href="http://www.cnblogs.com/flypie/p/5153702.html" target="_blank" rel="noopener">nginx和tomcat的区别</a> </p>
 </blockquote>
+<h1 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h1><p>正向代理：如果把局域网外的Internet想象成一个巨大的资源库，则局域网中的客户端要访问Internet，则需通过代理服务器来访问，这种代理服务器就成为正向代理。需要在客户端配置代理服务器进行指定网站的访问。</p>
 <h1 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h1><p> 反向代理服务器位于用户与目标服务器之间，但是对于用户而言，反向代理服务器就相当于目标服务器，即用户直接访问反向代理服务器就可以获得目标服务器的资源。同时，用户不需要知道目标服务器的地址，也无须在用户端作任何设定。反向代理服务器通常可用来作为Web加速，即使用反向代理作为Web服务器的前置机来降低网络和服务器的负载，提高访问效率。 </p>
 <p> 代理服务是指内部网络对Internet发出连接请求，需要制定代理服务将原本直接传输至Web服务器的HTTP发送至代理服务器中。换句话来说，代理服务就是网络信息的中转站。代理服务器作为浏览器与Web服务器之间的另一类服务器，配备代理服务器，浏览器无需直接至Web服务器获取网页，只需向代理服务器发出所需的请求，由代理服务器传送给访问者所需的浏览器。普通的Web代理服务器仅支持对内部网络的访问请求，反向代理服务与普通的代理方法并不存在明显冲突。如果一个代理服务器可以代理外部网络主机访问内部网络，这类代理服务模式称之为反向代理服务。 </p>
-<h1 id="Nginx的应用场景"><a href="#Nginx的应用场景" class="headerlink" title="Nginx的应用场景"></a>Nginx的应用场景</h1>]]></content>
+<h1 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h1><p>增加服务器的数量，然后将请求分发到各个服务器上，将原先请求集中到单个服务器上的情况改变为将请求分发到多个服务器上，将负载分发到不同的服务器，也就是我们所说的负载均衡。</p>
+<h1 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h1><p>为了加快网站的解析速度，可以把动态页面和静态页面由不同的服务器来解析，加快解析速度。降低原来单个服务器的压力。</p>
+<h1 id="Nginx的安装"><a href="#Nginx的安装" class="headerlink" title="Nginx的安装"></a>Nginx的安装</h1><h2 id="Nginx下载"><a href="#Nginx下载" class="headerlink" title="Nginx下载"></a>Nginx下载</h2><p>官网：<a href="http://nginx.org/" target="_blank" rel="noopener">http://nginx.org/</a></p>
+<p>需要到的素材：</p>
+<ol>
+<li>pcre-8.37.tar.gz</li>
+<li>openssl-1.0.1.tar.gz</li>
+<li>zlib-1.2.8.tar.gz</li>
+<li>nginx-1.11.1.tar.gz</li>
+</ol>
+<h2 id="Nginx安装"><a href="#Nginx安装" class="headerlink" title="Nginx安装"></a>Nginx安装</h2><h3 id="安装pcre依赖"><a href="#安装pcre依赖" class="headerlink" title="安装pcre依赖"></a>安装pcre依赖</h3><p>联网下载pcre压缩文件依赖：</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget http:<span class="regexp">//</span>downloads.sourceforge.net<span class="regexp">/project/</span>pcre<span class="regexp">/pcre/</span><span class="number">8.37</span><span class="regexp">/pcre-8.37.tar.gz</span></span><br></pre></td></tr></table></figure>
+
+<p>解压压缩文件：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xvf</span> <span class="selector-tag">pcre-8</span><span class="selector-class">.37</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+
+<p><code>./configure</code>完成后，回到pcre目录下执行<code>make</code>，最后执行<code>make install</code>，查看：<code>pcre-config --version</code></p>
+<h3 id="安装openssl、zlib、gcc依赖"><a href="#安装openssl、zlib、gcc依赖" class="headerlink" title="安装openssl、zlib、gcc依赖"></a>安装openssl、zlib、gcc依赖</h3><figure class="highlight nsis"><table><tr><td class="code"><pre><span class="line">yum -y install make <span class="literal">zlib</span> <span class="literal">zlib</span>-devel gcc-c++ libtool  openssl openssl-devel</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><p>使用命令解压</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xvf</span> <span class="selector-tag">nginx-1</span><span class="selector-class">.11</span><span class="selector-class">.1</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+
+<p><code>./configure</code>之后执行<code>make</code>和<code>make install</code></p>
+<p>进入目录启动<code>/usr/local/nginx/sbin/nginx</code>启动服务</p>
+<p>在widows系统中访问Linux中Nginx，默认是不能访问的，因为防火墙问题</p>
+<ul>
+<li>关闭防火墙</li>
+<li>开放访问的端口，80端口</li>
+</ul>
+<p>查看开放的端口号：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">firewall-<span class="keyword">cmd</span><span class="bash"> --list-all</span></span><br></pre></td></tr></table></figure>
+
+<p>设置开放的端口号：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">firewall-<span class="keyword">cmd</span><span class="bash"> --add-service=http -permanent</span></span><br><span class="line">firewall-<span class="keyword">cmd</span><span class="bash"> --add-port=80/tcp --permanent</span></span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">firewall-<span class="keyword">cmd</span><span class="bash"> -reload</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Nginx常用的命令"><a href="#Nginx常用的命令" class="headerlink" title="Nginx常用的命令"></a>Nginx常用的命令</h1><p>进入Nginx目录中：<code>cd /usr/local/nginx/sbin</code></p>
+<p>查看版本号：<code>./nginx -v</code></p>
+<p>启动Nginx：<code>./nginx</code></p>
+<p>停止Nginx：<code>./nginx  -s  stop</code></p>
+<p>重新加载Nginx：<code>./nginx -s reload</code></p>
+]]></content>
       <categories>
         <category>Nginx</category>
       </categories>
