@@ -122,7 +122,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;KOZd5d.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;KOZyKf.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;KOZRaQ.png">
-<meta property="og:updated_time" content="2019-11-05T03:41:44.240Z">
+<meta property="og:updated_time" content="2019-11-05T06:27:39.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;KOZd5d.png">
 
@@ -208,7 +208,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">①⑨⑨⑦</p>
+        <p class="site-subtitle">夜阑卧听风吹雨，铁马冰河入梦来。</p>
       
   </div>
 
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k 字
+                  1.7k 字
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 ;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -513,7 +513,10 @@
 <li>zlib-1.2.8.tar.gz</li>
 <li>nginx-1.11.1.tar.gz</li>
 </ol>
-<h2 id="Nginx安装"><a href="#Nginx安装" class="headerlink" title="Nginx安装"></a>Nginx安装</h2><h3 id="安装pcre依赖"><a href="#安装pcre依赖" class="headerlink" title="安装pcre依赖"></a>安装pcre依赖</h3><p>联网下载pcre压缩文件依赖：</p>
+<h2 id="Nginx安装"><a href="#Nginx安装" class="headerlink" title="Nginx安装"></a>Nginx安装</h2><h3 id="安装pcre依赖"><a href="#安装pcre依赖" class="headerlink" title="安装pcre依赖"></a>安装pcre依赖</h3><p>安装C++编译环境</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">yum</span> <span class="comment">install</span> <span class="literal">-</span><span class="comment">y</span> <span class="comment">gcc</span> <span class="comment">gcc</span><span class="literal">-</span><span class="comment">c</span><span class="literal">+</span><span class="literal">+</span></span><br></pre></td></tr></table></figure>
+
+<p>联网下载pcre压缩文件依赖：</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="regexp">//</span>downloads.sourceforge.net<span class="regexp">/project/</span>pcre<span class="regexp">/pcre/</span><span class="number">8.37</span><span class="regexp">/pcre-8.37.tar.gz</span></span><br></pre></td></tr></table></figure>
 
 <p>解压压缩文件：</p>
@@ -544,8 +547,10 @@
 <h1 id="Nginx常用的命令"><a href="#Nginx常用的命令" class="headerlink" title="Nginx常用的命令"></a>Nginx常用的命令</h1><p>进入Nginx目录中：<code>cd /usr/local/nginx/sbin</code></p>
 <p>查看版本号：<code>./nginx -v</code></p>
 <p>启动Nginx：<code>./nginx</code></p>
-<p>停止Nginx：<code>./nginx  -s  stop</code></p>
+<p>停止Nginx：<code>nginx -s quit</code></p>
 <p>重新加载Nginx：<code>./nginx -s reload</code></p>
+<p>查看 Nginx 的默认配置的安装位置：<code>nginx -t</code></p>
+<p>修改Nginx的默认配置：<code>vim /etc/nginx/nginx.conf</code></p>
 
       
     </div>

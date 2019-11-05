@@ -123,7 +123,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;KIPgOK.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;KIEXJe.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;KIGdv6.png">
-<meta property="og:updated_time" content="2019-10-31T05:51:14.998Z">
+<meta property="og:updated_time" content="2019-11-05T06:38:23.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;K5OFc4.jpg">
 
@@ -209,7 +209,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">①⑨⑨⑦</p>
+        <p class="site-subtitle">夜阑卧听风吹雨，铁马冰河入梦来。</p>
       
   </div>
 
@@ -1223,7 +1223,7 @@
 
 <h2 id="APT-软件工具-Debian-Ubuntu-以及类似系统"><a href="#APT-软件工具-Debian-Ubuntu-以及类似系统" class="headerlink" title="APT 软件工具 (Debian, Ubuntu 以及类似系统)"></a><strong>APT 软件工具 (Debian, Ubuntu 以及类似系统)</strong></h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install package_name 安装/更新一个 deb 包 </span><br><span class="line">apt-cdrom install package_name 从光盘安装/更新一个 deb 包 </span><br><span class="line">apt-<span class="builtin-name">get</span> update 升级列表中的软件包 </span><br><span class="line">apt-<span class="builtin-name">get</span><span class="built_in"> upgrade </span>升级所有已安装的软件 </span><br><span class="line">apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> package_name 从系统删除一个deb包 </span><br><span class="line">apt-<span class="builtin-name">get</span> check 确认依赖的软件仓库正确 </span><br><span class="line">apt-<span class="builtin-name">get</span> clean 从下载的软件包中清理缓存 </span><br><span class="line">apt-cache search searched-package 返回包含所要搜索字符串的软件包名称</span><br></pre></td></tr></table></figure>
 
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a><strong>网络</strong></h2><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">连接网络：ifup eth0</span><br><span class="line">查看网络信息：ifconfig</span><br><span class="line"></span><br><span class="line">ifconfig eth0 显示一个以太网卡的配置 </span><br><span class="line">ifup eth0 启用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifdown eth0 禁用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> 控制IP地址 </span><br><span class="line">ifconfig eth0 promisc 设置 <span class="string">'eth0'</span> 成混杂模式以嗅探数据包 (sniffing) </span><br><span class="line">dhclient eth0 以dhcp模式启用 <span class="string">'eth0'</span></span><br></pre></td></tr></table></figure>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a><strong>网络</strong></h2><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">连接网络：ifup eth0</span><br><span class="line">查看网络信息：ifconfig</span><br><span class="line">查看端口占用：netstat -ntlp|grep <span class="number">80</span></span><br><span class="line">杀死进程：kill <span class="number">-9</span> <span class="number">7043</span></span><br><span class="line"></span><br><span class="line">ifconfig eth0 显示一个以太网卡的配置 </span><br><span class="line">ifup eth0 启用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifdown eth0 禁用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> 控制IP地址 </span><br><span class="line">ifconfig eth0 promisc 设置 <span class="string">'eth0'</span> 成混杂模式以嗅探数据包 (sniffing) </span><br><span class="line">dhclient eth0 以dhcp模式启用 <span class="string">'eth0'</span></span><br></pre></td></tr></table></figure>
 
 
       

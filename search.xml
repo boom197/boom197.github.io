@@ -34,7 +34,10 @@
 <li>zlib-1.2.8.tar.gz</li>
 <li>nginx-1.11.1.tar.gz</li>
 </ol>
-<h2 id="Nginx安装"><a href="#Nginx安装" class="headerlink" title="Nginx安装"></a>Nginx安装</h2><h3 id="安装pcre依赖"><a href="#安装pcre依赖" class="headerlink" title="安装pcre依赖"></a>安装pcre依赖</h3><p>联网下载pcre压缩文件依赖：</p>
+<h2 id="Nginx安装"><a href="#Nginx安装" class="headerlink" title="Nginx安装"></a>Nginx安装</h2><h3 id="安装pcre依赖"><a href="#安装pcre依赖" class="headerlink" title="安装pcre依赖"></a>安装pcre依赖</h3><p>安装C++编译环境</p>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="comment">yum</span> <span class="comment">install</span> <span class="literal">-</span><span class="comment">y</span> <span class="comment">gcc</span> <span class="comment">gcc</span><span class="literal">-</span><span class="comment">c</span><span class="literal">+</span><span class="literal">+</span></span><br></pre></td></tr></table></figure>
+
+<p>联网下载pcre压缩文件依赖：</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget http:<span class="regexp">//</span>downloads.sourceforge.net<span class="regexp">/project/</span>pcre<span class="regexp">/pcre/</span><span class="number">8.37</span><span class="regexp">/pcre-8.37.tar.gz</span></span><br></pre></td></tr></table></figure>
 
 <p>解压压缩文件：</p>
@@ -65,8 +68,10 @@
 <h1 id="Nginx常用的命令"><a href="#Nginx常用的命令" class="headerlink" title="Nginx常用的命令"></a>Nginx常用的命令</h1><p>进入Nginx目录中：<code>cd /usr/local/nginx/sbin</code></p>
 <p>查看版本号：<code>./nginx -v</code></p>
 <p>启动Nginx：<code>./nginx</code></p>
-<p>停止Nginx：<code>./nginx  -s  stop</code></p>
+<p>停止Nginx：<code>nginx -s quit</code></p>
 <p>重新加载Nginx：<code>./nginx -s reload</code></p>
+<p>查看 Nginx 的默认配置的安装位置：<code>nginx -t</code></p>
+<p>修改Nginx的默认配置：<code>vim /etc/nginx/nginx.conf</code></p>
 ]]></content>
       <categories>
         <category>Nginx</category>
@@ -295,7 +300,10 @@
 
 <p> 按<code>i</code>键进入插入模式，将其中的 root 值改为 <code>/home/hexoBlog</code> （刚才创建的托管仓库目录）。 </p>
 <ol start="5">
-<li>重启 Nginx 服务</li>
+<li><p>重启 Nginx 服务</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">service nginx restart</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
 <p>至此，服务器端配置就结束了。接下来，就剩下本地 hexo 的配置更改了。</p>
 <p>修改 hexo 站点配置文件 git 相关设置</p>
@@ -1067,7 +1075,7 @@
 
 <h2 id="APT-软件工具-Debian-Ubuntu-以及类似系统"><a href="#APT-软件工具-Debian-Ubuntu-以及类似系统" class="headerlink" title="APT 软件工具 (Debian, Ubuntu 以及类似系统)"></a><strong>APT 软件工具 (Debian, Ubuntu 以及类似系统)</strong></h2><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install package_name 安装/更新一个 deb 包 </span><br><span class="line">apt-cdrom install package_name 从光盘安装/更新一个 deb 包 </span><br><span class="line">apt-<span class="builtin-name">get</span> update 升级列表中的软件包 </span><br><span class="line">apt-<span class="builtin-name">get</span><span class="built_in"> upgrade </span>升级所有已安装的软件 </span><br><span class="line">apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> package_name 从系统删除一个deb包 </span><br><span class="line">apt-<span class="builtin-name">get</span> check 确认依赖的软件仓库正确 </span><br><span class="line">apt-<span class="builtin-name">get</span> clean 从下载的软件包中清理缓存 </span><br><span class="line">apt-cache search searched-package 返回包含所要搜索字符串的软件包名称</span><br></pre></td></tr></table></figure>
 
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a><strong>网络</strong></h2><figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">连接网络：ifup eth0</span><br><span class="line">查看网络信息：ifconfig</span><br><span class="line"></span><br><span class="line">ifconfig eth0 显示一个以太网卡的配置 </span><br><span class="line">ifup eth0 启用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifdown eth0 禁用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> 控制IP地址 </span><br><span class="line">ifconfig eth0 promisc 设置 <span class="string">'eth0'</span> 成混杂模式以嗅探数据包 (sniffing) </span><br><span class="line">dhclient eth0 以dhcp模式启用 <span class="string">'eth0'</span></span><br></pre></td></tr></table></figure>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a><strong>网络</strong></h2><figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">连接网络：ifup eth0</span><br><span class="line">查看网络信息：ifconfig</span><br><span class="line">查看端口占用：netstat -ntlp|grep <span class="number">80</span></span><br><span class="line">杀死进程：kill <span class="number">-9</span> <span class="number">7043</span></span><br><span class="line"></span><br><span class="line">ifconfig eth0 显示一个以太网卡的配置 </span><br><span class="line">ifup eth0 启用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifdown eth0 禁用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> 控制IP地址 </span><br><span class="line">ifconfig eth0 promisc 设置 <span class="string">'eth0'</span> 成混杂模式以嗅探数据包 (sniffing) </span><br><span class="line">dhclient eth0 以dhcp模式启用 <span class="string">'eth0'</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
