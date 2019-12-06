@@ -576,6 +576,11 @@
 <p>然后在浏览器上输入 <a href="http://localhost:8080/查看信息" target="_blank" rel="noopener">http://localhost:8080/查看信息</a> （如果不是本机则输入对应IP，比如我输入服务器IP 47.97.189.117:8080） </p>
 <p><img src="https://s2.ax1x.com/2019/10/31/KIhqHS.png" alt></p>
 <p>关闭tomcat：<strong>./shutdown.sh</strong></p>
+<p><strong>注意</strong>：</p>
+<p>当浏览器无法访问时，可能是Centos7防火墙拦截了访问的8080端口</p>
+<p>解决方法：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent <span class="attribute">--zone</span>=public <span class="attribute">--add-port</span>=8080/tcp  </span><br><span class="line">firewall-cmd --reload  </span><br><span class="line">firewall-cmd <span class="attribute">--zone</span>=public <span class="attribute">--query-port</span>=8080/tcp</span><br></pre></td></tr></table></figure>
+
 <h2 id="发布项目"><a href="#发布项目" class="headerlink" title="发布项目"></a>发布项目</h2><p> 你的项目都是放在webapps这个目录下面的，发布时只需要在8080/后面加上你的项目名。</p>
 <h1 id="安装MySql"><a href="#安装MySql" class="headerlink" title="安装MySql"></a>安装MySql</h1><h2 id="下载MySql"><a href="#下载MySql" class="headerlink" title="下载MySql"></a>下载MySql</h2><p>下载安装包：</p>
 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">wget <span class="string">http:</span><span class="comment">//repo.mysql.com/mysql57-community-release-el7-8.noarch.rpm</span></span><br></pre></td></tr></table></figure>
