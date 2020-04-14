@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Linux上安装MySQL</title>
-    <url>/2019/12/16/Linux%E4%B8%8A%E5%AE%89%E8%A3%85MySQL/</url>
+    <url>/blog/2019/12/16/Linux%E4%B8%8A%E5%AE%89%E8%A3%85MySQL/</url>
     <content><![CDATA[<p>MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。</p>
 <a id="more"></a>
 
@@ -89,7 +89,7 @@
   </entry>
   <entry>
     <title>SSM整合(二)</title>
-    <url>/2019/11/12/SSM%E6%95%B4%E5%90%88-%E4%BA%8C/</url>
+    <url>/blog/2019/11/12/SSM%E6%95%B4%E5%90%88-%E4%BA%8C/</url>
     <content><![CDATA[<p>SSM整合有很多种方式，可能每个方式都不一样，但是都是这个思路。</p>
 <a id="more"></a>
 
@@ -385,7 +385,7 @@
   </entry>
   <entry>
     <title>SSM整合（一）</title>
-    <url>/2019/11/11/SSM%E6%95%B4%E5%90%88/</url>
+    <url>/blog/2019/11/11/SSM%E6%95%B4%E5%90%88/</url>
     <content><![CDATA[<p>SSM（Spring+SpringMVC+MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。</p>
 <a id="more"></a>
 
@@ -518,7 +518,7 @@
   </entry>
   <entry>
     <title>Nginx</title>
-    <url>/2019/11/03/Nginx/</url>
+    <url>/blog/2019/11/03/Nginx/</url>
     <content><![CDATA[<p> <em>Nginx</em> (engine x) 是一个高性能的<a href="https://baike.baidu.com/item/HTTP" target="_blank" rel="noopener">HTTP</a>和<a href="https://baike.baidu.com/item/反向代理/7793488" target="_blank" rel="noopener">反向代理</a>web服务器，同时也提供了IMAP/POP3/SMTP<a href="https://baike.baidu.com/item/服务/100571" target="_blank" rel="noopener">服务</a>。 它是 一款<a href="https://baike.baidu.com/item/轻量级/10002835" target="_blank" rel="noopener">轻量级</a>的<a href="https://baike.baidu.com/item/Web/150564" target="_blank" rel="noopener">Web</a> 服务器/<a href="https://baike.baidu.com/item/反向代理/7793488" target="_blank" rel="noopener">反向代理</a>服务器及<a href="https://baike.baidu.com/item/电子邮件/111106" target="_blank" rel="noopener">电子邮件</a>（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，<a href="https://baike.baidu.com/item/并发/11024806" target="_blank" rel="noopener">并发</a>能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、<a href="https://baike.baidu.com/item/京东/210931" target="_blank" rel="noopener">京东</a>、<a href="https://baike.baidu.com/item/新浪/125692" target="_blank" rel="noopener">新浪</a>、<a href="https://baike.baidu.com/item/网易/185754" target="_blank" rel="noopener">网易</a>、<a href="https://baike.baidu.com/item/腾讯/112204" target="_blank" rel="noopener">腾讯</a>、<a href="https://baike.baidu.com/item/淘宝/145661" target="_blank" rel="noopener">淘宝</a>等。 </p>
 <a id="more"></a>
 
@@ -598,7 +598,7 @@
   </entry>
   <entry>
     <title>Linux安装软件</title>
-    <url>/2019/10/31/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
+    <url>/blog/2019/10/31/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<p>本文将介绍Linux安装JDK、MySql、Tomcat、Nginx……</p>
 <a id="more"></a>
 
@@ -861,7 +861,7 @@
   </entry>
   <entry>
     <title>Linux入门</title>
-    <url>/2019/10/31/Linux/</url>
+    <url>/blog/2019/10/31/Linux/</url>
     <content><![CDATA[<p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
 <a id="more"></a>
 
@@ -1614,7 +1614,7 @@
   </entry>
   <entry>
     <title>IDEA入门</title>
-    <url>/2019/10/30/IDEA%E5%85%A5%E9%97%A8/</url>
+    <url>/blog/2019/10/30/IDEA%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<p> IDEA 全称IntelliJ IDEA，是java语言开发的集成环境，IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品。</p>
 <a id="more"></a>
 
@@ -1719,7 +1719,7 @@
   </entry>
   <entry>
     <title>Git的使用</title>
-    <url>/2019/10/28/Git/</url>
+    <url>/blog/2019/10/28/Git/</url>
     <content><![CDATA[<p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
 <a id="more"></a>
 
@@ -1734,7 +1734,7 @@
 <blockquote>
 <p>注意：git config –global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</p>
 </blockquote>
-<h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><p><img src="/2019/10/28/Git/1.jpg" alt="工作原理"></p>
+<h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><p><img src="/blog/2019/10/28/Git/1.jpg" alt="工作原理"></p>
 <ul>
 <li>Workspace：工作区（本地）</li>
 <li>Index / Stage：暂存区</li>
@@ -1766,14 +1766,14 @@
 
 <p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
 <p>第二步：登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
-<p><img src="/2019/10/28/Git/2.jpg" alt></p>
+<p><img src="/blog/2019/10/28/Git/2.jpg" alt></p>
 <p>点击 Add Key，你就应该可以看到已经添加的key。</p>
-<p><img src="/2019/10/28/Git/3.jpg" alt></p>
+<p><img src="/blog/2019/10/28/Git/3.jpg" alt></p>
 <p>如何添加远程库？现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创建一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为备份，又可以其他人通过该仓库来协作。</p>
 <p>首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下：</p>
-<p><img src="/2019/10/28/Git/4.jpg" alt></p>
+<p><img src="/blog/2019/10/28/Git/4.jpg" alt></p>
 <p>在Repository name填入testgit，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：</p>
-<p><img src="/2019/10/28/Git/5.jpg" alt></p>
+<p><img src="/blog/2019/10/28/Git/5.jpg" alt></p>
 <p>目前，在GitHub上的这个testgit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。</p>
 <h2 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h2><p>在本地仓库里，输入命令行：</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">git remote <span class="built_in">add</span> origin http<span class="variable">s:</span>//github.<span class="keyword">com</span>/boom197/boom197.github.io.git</span><br></pre></td></tr></table></figure>
@@ -1845,7 +1845,7 @@
   </entry>
   <entry>
     <title>Spring</title>
-    <url>/2019/10/26/Spring/</url>
+    <url>/blog/2019/10/26/Spring/</url>
     <content><![CDATA[<p> Spring是一个开源框架， 它是由于软件开发的复杂性而创建的。Spring使用的是基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅仅限于服端的开发。从简单性、可测试性和松耦合性角度而言，绝大部分Java应用都可以从Spring中受益。 </p>
 <a id="more"></a>
 
@@ -2015,7 +2015,7 @@
   </entry>
   <entry>
     <title>Markdown</title>
-    <url>/2019/10/25/Markdown/</url>
+    <url>/blog/2019/10/25/Markdown/</url>
     <content><![CDATA[<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
 <a id="more"></a>
 
@@ -2122,7 +2122,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2019/10/21/hello-world/</url>
+    <url>/blog/2019/10/21/hello-world/</url>
     <content><![CDATA[<p>这是我博客的第一篇文章，记录搭建博客的过程。。。</p>
 <a id="more"></a>
 
@@ -2147,12 +2147,12 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /f/Workspaces/hexo/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init</span></span><br></pre></td></tr></table></figure>
 
 <p>hexo会自动下载一些文件到这个目录，包括node_modules，目录结构如下图：</p>
-<img src="/2019/10/21/hello-world/1.png" class title="This is an example image">
+<img src="/blog/2019/10/21/hello-world/1.png" class title="This is an example image">
 
 <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo g <span class="comment"># 生成</span></span><br><span class="line"><span class="variable">$ </span>hexo s <span class="comment"># 启动服务</span></span><br></pre></td></tr></table></figure>
 
 <p>执行以上命令之后，hexo就会在public文件夹生成相关html文件，这些文件将来都是要提交到github去的：</p>
-<img src="/2019/10/21/hello-world/2.png" class title="This is an example image">
+<img src="/blog/2019/10/21/hello-world/2.png" class title="This is an example image">
 
 <p><code>hexo s</code>是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可看到内容，很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故，因为4000这个端口太常见了，解决端口冲突问题请参考这篇文章：<a href="http://blog.liuxianan.com/windows-port-bind.html" target="_blank" rel="noopener">http://blog.liuxianan.com/windows-port-bind.html</a></p>
 <h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>既然默认主题很丑，那我们别的不做，首先来替换一个好看点的主题。这是 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方主题</a>。</p>
@@ -2250,10 +2250,10 @@
 <p>然后将这段代码插入到里面：</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> is_pv %&#125;</span><br><span class="line">  &lt;span <span class="class"><span class="keyword">class</span>="<span class="title">post</span>-<span class="title">meta</span>-<span class="title">divider</span>"&gt;|&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="class">  &lt;<span class="title">span</span> <span class="title">id</span>="<span class="title">busuanzi_value_page_pv</span>"&gt;&lt;/<span class="title">span</span>&gt;次阅读</span></span><br><span class="line"><span class="class"></span>&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/10/21/hello-world/4.png" class title="This is an example image">
+<img src="/blog/2019/10/21/hello-world/4.png" class title="This is an example image">
 
 <p>最后再打开 <strong>themes/next/layout/index.swig</strong>，这个文件是首页的模板，给render方法传入参数（对应刚才添加的is_pv字段）</p>
-<img src="/2019/10/21/hello-world/5.png" class title="This is an example image">
+<img src="/blog/2019/10/21/hello-world/5.png" class title="This is an example image">
 
 <p>OK！设置完毕。</p>
 <h2 id="去掉文章目录标题的自动编号"><a href="#去掉文章目录标题的自动编号" class="headerlink" title="去掉文章目录标题的自动编号"></a>去掉文章目录标题的自动编号</h2><p>我们自己写文章的时候一般都会自己带上标题编号，但是默认的主题会给我们带上编号，很是别扭，如何去掉呢？<br>打开<strong>主题配置文件</strong>，找到<strong>toc</strong>字段，将<strong>number</strong>改为<strong>false</strong>即可</p>
@@ -2274,12 +2274,12 @@
 <h2 id="文章评论"><a href="#文章评论" class="headerlink" title="文章评论"></a>文章评论</h2><p>使用的是<a href="https://leancloud.cn/" target="_blank" rel="noopener">Leancloud</a>+Valine</p>
 <p>有Github账号的小伙伴可以用Github账号进行登陆然后绑定邮箱就可以啦！<br>进入之后点击创建应用</p>
 <p>创建好之后接着点击应用右上角的设置进入设置界面</p>
-<img src="/2019/10/21/hello-world/6.png" class title="This is an example image">
+<img src="/blog/2019/10/21/hello-world/6.png" class title="This is an example image">
 
 <p>选择应用key，这样就可以看到我们接下来需要使用到的key。</p>
 <p>接着进入应用中心绑定你的个人博客域名。</p>
 <h3 id="Valine配置"><a href="#Valine配置" class="headerlink" title="Valine配置"></a>Valine配置</h3><p>首先下载最新的<code>Valine.min.js</code>核心代码库到本地（下面是链接）<br><code>https://cdn.jsdelivr.net/npm/valine@1.1.9-beta9/dist/</code><br>右击<code>Valine.min.js</code>选择链接另存为即可</p>
-<img src="/2019/10/21/hello-world/7.png" class title="This is an example image">
+<img src="/blog/2019/10/21/hello-world/7.png" class title="This is an example image">
 
 <p>将下载好的 <code>Valine.min.js</code> 放置于 <code>next\source\js\src\</code> 下<br>接着，打开valine配置文件进行配置<br>valine配置文件路径：<code>next\layout\_third-party\comments\valine.swig</code></p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.valine.enable and theme.valine.appid and theme.valine.appkey %&#125;</span><br><span class="line">  &lt;script src=<span class="string">"//cdn1.lncld.net/static/js/3.0.4/av-min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=<span class="string">"//unjkp.com/valine/dist/Valine.min.js"</span>&gt;&lt;/script&gt;  <span class="comment">//删除Valine核心代码库外链调用</span></span><br><span class="line">  &lt;script src=<span class="string">"/js/src/Valine.min.js"</span>&gt;&lt;/script&gt;  <span class="comment">//调用刚下载的本地文件以加速加载速度</span></span><br><span class="line"></span><br><span class="line">  &#123;% <span class="keyword">set</span> valine_uri = '/js/src/<span class="type">Valine</span>.<span class="built_in">min</span>.js' %&#125;  <span class="comment">//这里改为从本地加载</span></span><br><span class="line">  &#123;% <span class="keyword">if</span> theme.vendors.valine %&#125;</span><br><span class="line">    &#123;% <span class="keyword">set</span> valine_uri = theme.vendors.valine %&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">  &lt;script src=<span class="string">"&#123;&#123; valine_uri &#125;&#125;"</span>&gt;&lt;/script&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> <span class="type">GUEST</span> = ['nick','mail','link'];</span><br><span class="line">    <span class="keyword">var</span> guest = '&#123;&#123; theme.valine.guest_info &#125;&#125;';</span><br><span class="line">    guest = guest.<span class="built_in">split</span>(',').<span class="built_in">filter</span>(function (item) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="type">GUEST</span>.indexOf(item)&gt;-<span class="number">1</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    new <span class="type">Valine</span>(&#123;</span><br><span class="line">        el: '#comments' ,</span><br><span class="line">        verify: &#123;&#123; theme.valine.verify &#125;&#125;,</span><br><span class="line">        notify: &#123;&#123; theme.valine.notify &#125;&#125;,</span><br><span class="line">        appId: '&#123;&#123; theme.valine.appid &#125;&#125;',</span><br><span class="line">        appKey: '&#123;&#123; theme.valine.appkey &#125;&#125;',</span><br><span class="line">        placeholder: '&#123;&#123; theme.valine.placeholder &#125;&#125;',</span><br><span class="line">        avatar:'&#123;&#123; theme.valine.avatar &#125;&#125;',</span><br><span class="line">        guest_info:['nick','mail'] ,  <span class="comment">//评论者只需要提供评论的昵称和邮箱即可</span></span><br><span class="line">        pageSize:'&#123;&#123; theme.valine.pageSize &#125;&#125;' || <span class="number">10</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//增加以下六行代码去除 power by valine</span></span><br><span class="line">    <span class="keyword">var</span> infoEle = document.querySelector('#comments .info');</span><br><span class="line">    <span class="keyword">if</span> (infoEle &amp;&amp; infoEle.childNodes &amp;&amp; infoEle.childNodes.length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      infoEle.childNodes.forEach(function(item) &#123;</span><br><span class="line">        item.parentNode.removeChild(item);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
@@ -2288,12 +2288,12 @@
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Valine.</span></span><br><span class="line"><span class="comment"># You can get your appid and appkey from https://leancloud.cn</span></span><br><span class="line"><span class="comment"># more info please open https://valine.js.org</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span> <span class="string">//打开valine评论功能</span></span><br><span class="line"><span class="attr">  appid:</span> <span class="string">你的leancloud</span> <span class="string">appid</span> </span><br><span class="line"><span class="attr">  appkey:</span> <span class="string">你的leancloud</span> <span class="string">appkey</span> </span><br><span class="line"><span class="attr">  notify:</span> <span class="literal">false</span> <span class="string">//邮件提醒</span></span><br><span class="line"><span class="attr">  verify:</span> <span class="literal">true</span> <span class="string">//评论时是否有验证码，需要在Leancloud</span> <span class="string">设置-&gt;安全中心</span> <span class="string">中打开</span></span><br><span class="line"><span class="attr">  placeholder:</span> <span class="string">说点什么吧！</span> <span class="string">//评论框默认显示</span></span><br><span class="line"><span class="attr">  avatar:</span> <span class="string">hide</span> <span class="string">//评论者的头像,我这里设置的不显示</span></span><br><span class="line"><span class="attr">  guest_info:</span> <span class="string">nick</span> <span class="comment"># custom comment header</span></span><br><span class="line"><span class="attr">  pageSize:</span> <span class="number">10</span> <span class="comment"># pagination size</span></span><br></pre></td></tr></table></figure>
 
 <p>到此，一个极简评论系统就完成啦！</p>
-<img src="/2019/10/21/hello-world/8.png" class>
+<img src="/blog/2019/10/21/hello-world/8.png" class>
 
 <h3 id="Valine评论系统邮件提醒"><a href="#Valine评论系统邮件提醒" class="headerlink" title="Valine评论系统邮件提醒"></a>Valine评论系统邮件提醒</h3><p>Valine评论功能是基于<a href="https://leancloud.cn/" target="_blank" rel="noopener">Leancloud</a>的，Valine评论功能还不能跑起来的可以看看上一个步骤，其中就有详细的使用说明，这里就不展开了。</p>
 <p>Valine官方提供的邮件提醒功能是基于<code>Leancloud的密码重置邮件提醒</code>，操作步骤如下：</p>
 <p>进入<code>Leancloud</code>&gt;选择你的评论所存放的<code>应用</code>&gt;<code>设置</code>&gt;<code>邮件模板</code>，按下图设置好用于<code>重置密码</code>的邮件主题&gt;然后保存:</p>
-<img src="/2019/10/21/hello-world/9.jpg" class>
+<img src="/blog/2019/10/21/hello-world/9.jpg" class>
 
 <p>1、修改邮件主题：<code>你在 的评论收到了新的评论</code></p>
 <p>2、修改内容：将下面的代码复制到“内容”中，并将其中的<code>你的网址首页链接</code>改为你的网址首页链接。</p>
@@ -2328,7 +2328,7 @@
 
 <h2 id="添加天气"><a href="#添加天气" class="headerlink" title="添加天气"></a>添加天气</h2><p>使用的是<a href="https://www.seniverse.com/" target="_blank" rel="noopener">心知天气</a>，主要是免费，哈哈</p>
 <p>首先注册，然后添加产品，选择天气插件，配置：</p>
-<img src="/2019/10/21/hello-world/10.png" class>
+<img src="/blog/2019/10/21/hello-world/10.png" class>
 
 <p>配置好后选择生成代码，将代码添加到<code>\themes\next\layout\_partials\head</code>文件下的<code>custom-head.swig</code>文件里。</p>
 <h2 id="标签美化"><a href="#标签美化" class="headerlink" title="标签美化"></a>标签美化</h2><p>首先先打开<code>/next/layout</code>文件夹下的page.swig文件，在文件中找到以下内容</p>
