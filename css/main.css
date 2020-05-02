@@ -404,7 +404,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   border: 1px solid #ddd;
-  font-size: 14px;
+  font-size: 16px;
   table-layout: fixed;
   word-wrap: break-all;
 }
@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #af9aab;
+  background: #a7ff41;
 }
 .links-of-blogroll {
   font-size: 13px;

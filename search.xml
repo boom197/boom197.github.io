@@ -2,84 +2,45 @@
 <search>
   <entry>
     <title>Linux上安装MySQL</title>
-    <url>/blog/2019/12/16/Linux%E4%B8%8A%E5%AE%89%E8%A3%85MySQL/</url>
+    <url>/2019/12/16/Linux%E4%B8%8A%E5%AE%89%E8%A3%85MySQL/</url>
     <content><![CDATA[<p>MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。</p>
 <a id="more"></a>
 
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>这里使用wget从官网下载MySQL5.7：</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>dev.mysql.com<span class="regexp">/get/</span>Downloads<span class="regexp">/MySQL-5.7/my</span>sql-<span class="number">5.7</span>.<span class="number">22</span>-linux-glibc2.<span class="number">12</span>-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+<h1 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h1><p>检测是否有安装数据库：rpm -qa | grep mysql</p>
+<p>删除数据库：rpm -e mysql-libs-5.1.52-1.el6_0.1.x86_64</p>
+<p>强力删除：rpm -e –nodeps mysql-libs-5.1.52-1.el6_0.1.x86_64</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p> 先要查看yum源是否有你想要的mysql版本 ： yum list | grep mysql</p>
+<p> 如果没有则先要更新yum源 ：yum -y update</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>yum安装mysql： yum -y install mysql-server </p>
+<p>设置开机自启： chkconfig mysqld on </p>
+<p>查看是否开机自启： chkconfig –list  | grep mysqld </p>
+<p>启动MySQL服务： service mysqld start</p>
+<h1 id="设置用户和密码"><a href="#设置用户和密码" class="headerlink" title="设置用户和密码"></a>设置用户和密码</h1><p>初次登陆，mysql的root用户默认没有密码： mysql -u root</p>
+<p>查看mysql所有信息 </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; select user,host,password from mysql.user;</span><br><span class="line"><span class="comment">--drop user命令会删除用户以及对应的权限</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">user</span> zhangsan@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
 
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>解压</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xvf</span> <span class="selector-tag">mysql-5</span><span class="selector-class">.7</span><span class="selector-class">.22-linux-glibc2</span><span class="selector-class">.12-x86_64</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+<p>设置用户名和密码</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; UPDATE mysql.user SET password=PASSWORD("新密码"), user="新用户名" WHERE user="root";</span><br></pre></td></tr></table></figure>
 
-<p>移动</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">mv mysql<span class="number">-5.7</span><span class="number">.22</span>-linux-glibc2<span class="number">.12</span>-x86_64 /usr/local/</span><br></pre></td></tr></table></figure>
+<p> 立即刷新生效</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
 
-<p>重命名</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">mv /usr/local/mysql<span class="number">-5.7</span><span class="number">.22</span>-linux-glibc2<span class="number">.12</span>-x86_64 /usr/local/mysql</span><br></pre></td></tr></table></figure>
+<p>退出</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; exit</span><br></pre></td></tr></table></figure>
 
-<p>新建<code>data</code>目录</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir <span class="regexp">/usr/</span>local<span class="regexp">/mysql/</span>data</span><br></pre></td></tr></table></figure>
+<p>忘记密码时，编辑vim /etc/my.cnf</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=/usr/local/mysql/data</span><br><span class="line">basedir=/usr/local/mysql</span><br><span class="line">socket=/tmp/mysql.sock</span><br><span class="line">user=mysql</span><br><span class="line">port=3306</span><br><span class="line">character-<span class="keyword">set</span>-<span class="keyword">server</span>=utf8</span><br><span class="line"><span class="comment"># 取消密码验证</span></span><br><span class="line"><span class="keyword">skip</span>-<span class="keyword">grant</span>-<span class="keyword">tables</span></span><br><span class="line"><span class="comment"># Disabling symbolic-links is recommended to prevent assorted security risks</span></span><br><span class="line">symbolic-links=<span class="number">0</span></span><br><span class="line"><span class="comment"># skip-grant-tables</span></span><br><span class="line">[mysqld_safe]</span><br><span class="line"><span class="keyword">log</span>-<span class="keyword">error</span>=/<span class="keyword">var</span>/<span class="keyword">log</span>/mysqld.log</span><br><span class="line">pid-<span class="keyword">file</span>=/<span class="keyword">var</span>/run/mysqld/mysql</span><br></pre></td></tr></table></figure>
 
-<p>新建myql用户组</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd mysql</span></span><br></pre></td></tr></table></figure>
+<p>可以无密码登陆：mysql -u root</p>
+<h1 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h1><p>使用新的用户和密码登陆： mysql -u 新用户名 -p </p>
+<p>基本命令</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>; //查看系统已存在的数据库</span><br><span class="line"><span class="keyword">use</span> databasesname;   //选择需要使用的数据库</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> databasename; //删除选定的数据库</span><br><span class="line">exit    //退出数据库的连接</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> test01;    //建立名为test的数据库</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;        // 列出当前数据库下的表</span><br></pre></td></tr></table></figure>
 
-<p>新建mysql用户</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">useradd mysql -g mysql</span></span><br></pre></td></tr></table></figure>
+<h1 id="开放远程登陆"><a href="#开放远程登陆" class="headerlink" title="开放远程登陆"></a>开放远程登陆</h1><p>要先登陆到mysql</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;</span><br><span class="line"><span class="comment">--root 用户  root用户密码</span></span><br><span class="line">mysql&gt; FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
 
-<p>如果不行就用这种方法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groupadd mysql     //创建mysql组</span><br><span class="line">useradd -g mysql mysql //创建mysql用户添加到mysql组</span><br></pre></td></tr></table></figure>
-
-<p> 将<code>/usr/local/mysql</code>的所有者及所属组改为mysql </p>
-<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">chown</span> -R mysql.mysql /usr/<span class="keyword">local</span>/mysql</span><br></pre></td></tr></table></figure>
-
-<p>配置</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/mysql/</span>bin<span class="regexp">/mysql_install_db --user=mysql --basedir=/u</span>sr<span class="regexp">/local/my</span>sql<span class="regexp">/ --datadir=/u</span>sr<span class="regexp">/local/my</span>sql<span class="regexp">/data</span></span><br></pre></td></tr></table></figure>
-
-<p>如果出现一下错误</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">2018-07-14 06:40:32 [<span class="builtin-name">WARNING</span>] mysql_install_db is deprecated. Please consider switching <span class="keyword">to</span> mysqld --initialize</span><br><span class="line">2018-07-14 06:40:32 [<span class="builtin-name">ERROR</span>]   Child process: /usr/local/mysql/bin/mysqldterminated prematurely with errno= 32</span><br><span class="line">2018-07-14 06:40:32 [<span class="builtin-name">ERROR</span>]   Failed <span class="keyword">to</span> execute /usr/local/mysql/bin/mysqld --bootstrap <span class="attribute">--datadir</span>=/usr/local/mysql/data <span class="attribute">--lc-messages-dir</span>=/usr/local/mysql/share <span class="attribute">--lc-messages</span>=en_US <span class="attribute">--basedir</span>=/usr/local/mysql</span><br><span class="line">--<span class="built_in"> server </span>log begin --</span><br><span class="line"></span><br><span class="line">--<span class="built_in"> server </span>log end --</span><br></pre></td></tr></table></figure>
-
-<p>则用以下命令</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/mysql/</span>bin<span class="regexp">/mysqld --user=mysql --basedir=/u</span>sr<span class="regexp">/local/my</span>sql<span class="regexp">/ --datadir=/u</span>sr<span class="regexp">/local/my</span>sql<span class="regexp">/data --initialize</span></span><br></pre></td></tr></table></figure>
-
-<p>如果出现以下错误</p>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">/usr/<span class="keyword">local</span>/mysql/bin/mysqld: <span class="keyword">error</span> <span class="keyword">while</span> loading shared libraries: libnuma.<span class="keyword">so</span>.1: cannot <span class="keyword">open</span> shared object <span class="keyword">file</span>: <span class="keyword">No</span> such <span class="keyword">file</span> or directory</span><br></pre></td></tr></table></figure>
-
-<p>则用以下命令</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum -y <span class="keyword">install</span> numactl</span><br></pre></td></tr></table></figure>
-
-<p>完成后继续安装</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/mysql/</span>bin<span class="regexp">/mysqld --user=mysql --basedir=/u</span>sr<span class="regexp">/local/my</span>sql<span class="regexp">/ --datadir=/u</span>sr<span class="regexp">/local/my</span>sql<span class="regexp">/data --initialize</span></span><br></pre></td></tr></table></figure>
-
-<p>编辑<code>vim /etc/my.cnf</code></p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"><span class="attribute">datadir</span>=/usr/local/mysql/data</span><br><span class="line"><span class="attribute">basedir</span>=/usr/local/mysql</span><br><span class="line"><span class="attribute">socket</span>=/tmp/mysql.sock</span><br><span class="line"><span class="attribute">user</span>=mysql</span><br><span class="line"><span class="attribute">port</span>=3306</span><br><span class="line"><span class="attribute">character-set-server</span>=utf8</span><br><span class="line"><span class="comment"># 取消密码验证</span></span><br><span class="line">skip-grant-tables</span><br><span class="line"><span class="comment"># Disabling symbolic-links is recommended to prevent assorted security risks</span></span><br><span class="line"><span class="attribute">symbolic-links</span>=0</span><br><span class="line"><span class="comment"># skip-grant-tables</span></span><br><span class="line">[mysqld_safe]</span><br><span class="line"><span class="attribute">log-error</span>=/var/log/mysqld.log</span><br><span class="line"><span class="attribute">pid-file</span>=/var/run/mysqld/mysqld.pid</span><br></pre></td></tr></table></figure>
-
-<h1 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h1><p>将mysql加入服务</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cp <span class="regexp">/usr/</span>local<span class="regexp">/mysql/</span>support-files<span class="regexp">/mysql.server /</span>etc<span class="regexp">/init.d/my</span>sql</span><br></pre></td></tr></table></figure>
-
-<p>开机自启</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">chkconfig mysql <span class="keyword">on</span></span><br></pre></td></tr></table></figure>
-
-<p>开启</p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">service mysql <span class="literal">start</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h1><p>登录（由于/etc/my.cnf中设置了取消密码验证，所以此处密码任意） </p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/mysql/</span>bin<span class="regexp">/mysql -u root -p</span></span><br></pre></td></tr></table></figure>
-
-<p>操作mysql数据库 </p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">mysql</span>;</span><br></pre></td></tr></table></figure>
-
-<p>修改密码 </p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">update<span class="built_in"> user </span><span class="builtin-name">set</span> <span class="attribute">authentication_string</span>=password('你的密码') where <span class="attribute">user</span>=<span class="string">'root'</span>;</span><br><span class="line">flush privileges;</span><br><span class="line">exit;</span><br></pre></td></tr></table></figure>
-
-<p> 将/etc/my.cnf中的skip-grant-tables删除 </p>
-<p> 登录再次设置密码 </p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">/usr/<span class="keyword">local</span>/mysql/bin/mysql -u root -p</span><br><span class="line">输入密码</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">'修改后的密码'</span>;</span><br><span class="line"><span class="keyword">exit</span>;</span><br></pre></td></tr></table></figure>
-
-<p>允许远程连接</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> mysql;</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> host=<span class="string">'%'</span> <span class="keyword">where</span> <span class="keyword">user</span> = <span class="string">'root'</span>;</span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br><span class="line">eixt;</span><br></pre></td></tr></table></figure>
-
-]]></content>
+<p>开放端口3306</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">/sbin/iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</span><br><span class="line">/etc/init.d/iptables save</span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Liunx</category>
       </categories>
@@ -89,7 +50,7 @@
   </entry>
   <entry>
     <title>SSM整合(二)</title>
-    <url>/blog/2019/11/12/SSM%E6%95%B4%E5%90%88-%E4%BA%8C/</url>
+    <url>/2019/11/12/SSM%E6%95%B4%E5%90%88-%E4%BA%8C/</url>
     <content><![CDATA[<p>SSM整合有很多种方式，可能每个方式都不一样，但是都是这个思路。</p>
 <a id="more"></a>
 
@@ -385,7 +346,7 @@
   </entry>
   <entry>
     <title>SSM整合（一）</title>
-    <url>/blog/2019/11/11/SSM%E6%95%B4%E5%90%88/</url>
+    <url>/2019/11/11/SSM%E6%95%B4%E5%90%88/</url>
     <content><![CDATA[<p>SSM（Spring+SpringMVC+MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。</p>
 <a id="more"></a>
 
@@ -518,8 +479,8 @@
   </entry>
   <entry>
     <title>Nginx</title>
-    <url>/blog/2019/11/03/Nginx/</url>
-    <content><![CDATA[<p> <em>Nginx</em> (engine x) 是一个高性能的<a href="https://baike.baidu.com/item/HTTP" target="_blank" rel="noopener">HTTP</a>和<a href="https://baike.baidu.com/item/反向代理/7793488" target="_blank" rel="noopener">反向代理</a>web服务器，同时也提供了IMAP/POP3/SMTP<a href="https://baike.baidu.com/item/服务/100571" target="_blank" rel="noopener">服务</a>。 它是 一款<a href="https://baike.baidu.com/item/轻量级/10002835" target="_blank" rel="noopener">轻量级</a>的<a href="https://baike.baidu.com/item/Web/150564" target="_blank" rel="noopener">Web</a> 服务器/<a href="https://baike.baidu.com/item/反向代理/7793488" target="_blank" rel="noopener">反向代理</a>服务器及<a href="https://baike.baidu.com/item/电子邮件/111106" target="_blank" rel="noopener">电子邮件</a>（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，<a href="https://baike.baidu.com/item/并发/11024806" target="_blank" rel="noopener">并发</a>能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、<a href="https://baike.baidu.com/item/京东/210931" target="_blank" rel="noopener">京东</a>、<a href="https://baike.baidu.com/item/新浪/125692" target="_blank" rel="noopener">新浪</a>、<a href="https://baike.baidu.com/item/网易/185754" target="_blank" rel="noopener">网易</a>、<a href="https://baike.baidu.com/item/腾讯/112204" target="_blank" rel="noopener">腾讯</a>、<a href="https://baike.baidu.com/item/淘宝/145661" target="_blank" rel="noopener">淘宝</a>等。 </p>
+    <url>/2019/11/03/Nginx/</url>
+    <content><![CDATA[<p> Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。 它是 一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。 </p>
 <a id="more"></a>
 
 <p>Nginx可以作为静态页面的Web服务器，同时还支持CGI协议的动态语言，比如perl、php等。但是不支持Java。Java程序之恶能通过与Tomcat配合完成。Nginx专为性能优化而开发，性能是其最重要的考量，实现上非常注重效率，能经受高负载的考验，有报告表明能支持高达50，000个并发连接数。</p>
@@ -598,7 +559,7 @@
   </entry>
   <entry>
     <title>Linux安装软件</title>
-    <url>/blog/2019/10/31/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
+    <url>/2019/10/31/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<p>本文将介绍Linux安装JDK、MySql、Tomcat、Nginx……</p>
 <a id="more"></a>
 
@@ -861,7 +822,7 @@
   </entry>
   <entry>
     <title>Linux入门</title>
-    <url>/blog/2019/10/31/Linux/</url>
+    <url>/2019/10/31/Linux/</url>
     <content><![CDATA[<p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
 <a id="more"></a>
 
@@ -1614,7 +1575,7 @@
   </entry>
   <entry>
     <title>IDEA入门</title>
-    <url>/blog/2019/10/30/IDEA%E5%85%A5%E9%97%A8/</url>
+    <url>/2019/10/30/IDEA%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<p> IDEA 全称IntelliJ IDEA，是java语言开发的集成环境，IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品。</p>
 <a id="more"></a>
 
@@ -1719,7 +1680,7 @@
   </entry>
   <entry>
     <title>Git的使用</title>
-    <url>/blog/2019/10/28/Git/</url>
+    <url>/2019/10/28/Git/</url>
     <content><![CDATA[<p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
 <a id="more"></a>
 
@@ -1734,7 +1695,7 @@
 <blockquote>
 <p>注意：git config –global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</p>
 </blockquote>
-<h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><p><img src="/blog/2019/10/28/Git/1.jpg" alt="工作原理"></p>
+<h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><p><img src="/2019/10/28/Git/1.jpg" alt="工作原理"></p>
 <ul>
 <li>Workspace：工作区（本地）</li>
 <li>Index / Stage：暂存区</li>
@@ -1766,14 +1727,14 @@
 
 <p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
 <p>第二步：登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
-<p><img src="/blog/2019/10/28/Git/2.jpg" alt></p>
+<p><img src="/2019/10/28/Git/2.jpg" alt></p>
 <p>点击 Add Key，你就应该可以看到已经添加的key。</p>
-<p><img src="/blog/2019/10/28/Git/3.jpg" alt></p>
+<p><img src="/2019/10/28/Git/3.jpg" alt></p>
 <p>如何添加远程库？现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创建一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为备份，又可以其他人通过该仓库来协作。</p>
 <p>首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下：</p>
-<p><img src="/blog/2019/10/28/Git/4.jpg" alt></p>
+<p><img src="/2019/10/28/Git/4.jpg" alt></p>
 <p>在Repository name填入testgit，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：</p>
-<p><img src="/blog/2019/10/28/Git/5.jpg" alt></p>
+<p><img src="/2019/10/28/Git/5.jpg" alt></p>
 <p>目前，在GitHub上的这个testgit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。</p>
 <h2 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h2><p>在本地仓库里，输入命令行：</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">git remote <span class="built_in">add</span> origin http<span class="variable">s:</span>//github.<span class="keyword">com</span>/boom197/boom197.github.io.git</span><br></pre></td></tr></table></figure>
@@ -1845,7 +1806,7 @@
   </entry>
   <entry>
     <title>Spring</title>
-    <url>/blog/2019/10/26/Spring/</url>
+    <url>/2019/10/26/Spring/</url>
     <content><![CDATA[<p> Spring是一个开源框架， 它是由于软件开发的复杂性而创建的。Spring使用的是基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅仅限于服端的开发。从简单性、可测试性和松耦合性角度而言，绝大部分Java应用都可以从Spring中受益。 </p>
 <a id="more"></a>
 
@@ -2015,7 +1976,7 @@
   </entry>
   <entry>
     <title>Markdown</title>
-    <url>/blog/2019/10/25/Markdown/</url>
+    <url>/2019/10/25/Markdown/</url>
     <content><![CDATA[<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
 <a id="more"></a>
 
@@ -2122,7 +2083,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/blog/2019/10/21/hello-world/</url>
+    <url>/2019/10/21/hello-world/</url>
     <content><![CDATA[<p>这是我博客的第一篇文章，记录搭建博客的过程。。。</p>
 <a id="more"></a>
 
@@ -2147,12 +2108,12 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /f/Workspaces/hexo/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init</span></span><br></pre></td></tr></table></figure>
 
 <p>hexo会自动下载一些文件到这个目录，包括node_modules，目录结构如下图：</p>
-<img src="/blog/2019/10/21/hello-world/1.png" class title="This is an example image">
+<img src="/2019/10/21/hello-world/1.png" class title="This is an example image">
 
 <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo g <span class="comment"># 生成</span></span><br><span class="line"><span class="variable">$ </span>hexo s <span class="comment"># 启动服务</span></span><br></pre></td></tr></table></figure>
 
 <p>执行以上命令之后，hexo就会在public文件夹生成相关html文件，这些文件将来都是要提交到github去的：</p>
-<img src="/blog/2019/10/21/hello-world/2.png" class title="This is an example image">
+<img src="/2019/10/21/hello-world/2.png" class title="This is an example image">
 
 <p><code>hexo s</code>是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可看到内容，很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故，因为4000这个端口太常见了，解决端口冲突问题请参考这篇文章：<a href="http://blog.liuxianan.com/windows-port-bind.html" target="_blank" rel="noopener">http://blog.liuxianan.com/windows-port-bind.html</a></p>
 <h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>既然默认主题很丑，那我们别的不做，首先来替换一个好看点的主题。这是 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方主题</a>。</p>
@@ -2250,10 +2211,10 @@
 <p>然后将这段代码插入到里面：</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> is_pv %&#125;</span><br><span class="line">  &lt;span <span class="class"><span class="keyword">class</span>="<span class="title">post</span>-<span class="title">meta</span>-<span class="title">divider</span>"&gt;|&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="class">  &lt;<span class="title">span</span> <span class="title">id</span>="<span class="title">busuanzi_value_page_pv</span>"&gt;&lt;/<span class="title">span</span>&gt;次阅读</span></span><br><span class="line"><span class="class"></span>&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 
-<img src="/blog/2019/10/21/hello-world/4.png" class title="This is an example image">
+<img src="/2019/10/21/hello-world/4.png" class title="This is an example image">
 
 <p>最后再打开 <strong>themes/next/layout/index.swig</strong>，这个文件是首页的模板，给render方法传入参数（对应刚才添加的is_pv字段）</p>
-<img src="/blog/2019/10/21/hello-world/5.png" class title="This is an example image">
+<img src="/2019/10/21/hello-world/5.png" class title="This is an example image">
 
 <p>OK！设置完毕。</p>
 <h2 id="去掉文章目录标题的自动编号"><a href="#去掉文章目录标题的自动编号" class="headerlink" title="去掉文章目录标题的自动编号"></a>去掉文章目录标题的自动编号</h2><p>我们自己写文章的时候一般都会自己带上标题编号，但是默认的主题会给我们带上编号，很是别扭，如何去掉呢？<br>打开<strong>主题配置文件</strong>，找到<strong>toc</strong>字段，将<strong>number</strong>改为<strong>false</strong>即可</p>
@@ -2274,12 +2235,12 @@
 <h2 id="文章评论"><a href="#文章评论" class="headerlink" title="文章评论"></a>文章评论</h2><p>使用的是<a href="https://leancloud.cn/" target="_blank" rel="noopener">Leancloud</a>+Valine</p>
 <p>有Github账号的小伙伴可以用Github账号进行登陆然后绑定邮箱就可以啦！<br>进入之后点击创建应用</p>
 <p>创建好之后接着点击应用右上角的设置进入设置界面</p>
-<img src="/blog/2019/10/21/hello-world/6.png" class title="This is an example image">
+<img src="/2019/10/21/hello-world/6.png" class title="This is an example image">
 
 <p>选择应用key，这样就可以看到我们接下来需要使用到的key。</p>
 <p>接着进入应用中心绑定你的个人博客域名。</p>
 <h3 id="Valine配置"><a href="#Valine配置" class="headerlink" title="Valine配置"></a>Valine配置</h3><p>首先下载最新的<code>Valine.min.js</code>核心代码库到本地（下面是链接）<br><code>https://cdn.jsdelivr.net/npm/valine@1.1.9-beta9/dist/</code><br>右击<code>Valine.min.js</code>选择链接另存为即可</p>
-<img src="/blog/2019/10/21/hello-world/7.png" class title="This is an example image">
+<img src="/2019/10/21/hello-world/7.png" class title="This is an example image">
 
 <p>将下载好的 <code>Valine.min.js</code> 放置于 <code>next\source\js\src\</code> 下<br>接着，打开valine配置文件进行配置<br>valine配置文件路径：<code>next\layout\_third-party\comments\valine.swig</code></p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.valine.enable and theme.valine.appid and theme.valine.appkey %&#125;</span><br><span class="line">  &lt;script src=<span class="string">"//cdn1.lncld.net/static/js/3.0.4/av-min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=<span class="string">"//unjkp.com/valine/dist/Valine.min.js"</span>&gt;&lt;/script&gt;  <span class="comment">//删除Valine核心代码库外链调用</span></span><br><span class="line">  &lt;script src=<span class="string">"/js/src/Valine.min.js"</span>&gt;&lt;/script&gt;  <span class="comment">//调用刚下载的本地文件以加速加载速度</span></span><br><span class="line"></span><br><span class="line">  &#123;% <span class="keyword">set</span> valine_uri = '/js/src/<span class="type">Valine</span>.<span class="built_in">min</span>.js' %&#125;  <span class="comment">//这里改为从本地加载</span></span><br><span class="line">  &#123;% <span class="keyword">if</span> theme.vendors.valine %&#125;</span><br><span class="line">    &#123;% <span class="keyword">set</span> valine_uri = theme.vendors.valine %&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">  &lt;script src=<span class="string">"&#123;&#123; valine_uri &#125;&#125;"</span>&gt;&lt;/script&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> <span class="type">GUEST</span> = ['nick','mail','link'];</span><br><span class="line">    <span class="keyword">var</span> guest = '&#123;&#123; theme.valine.guest_info &#125;&#125;';</span><br><span class="line">    guest = guest.<span class="built_in">split</span>(',').<span class="built_in">filter</span>(function (item) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="type">GUEST</span>.indexOf(item)&gt;-<span class="number">1</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    new <span class="type">Valine</span>(&#123;</span><br><span class="line">        el: '#comments' ,</span><br><span class="line">        verify: &#123;&#123; theme.valine.verify &#125;&#125;,</span><br><span class="line">        notify: &#123;&#123; theme.valine.notify &#125;&#125;,</span><br><span class="line">        appId: '&#123;&#123; theme.valine.appid &#125;&#125;',</span><br><span class="line">        appKey: '&#123;&#123; theme.valine.appkey &#125;&#125;',</span><br><span class="line">        placeholder: '&#123;&#123; theme.valine.placeholder &#125;&#125;',</span><br><span class="line">        avatar:'&#123;&#123; theme.valine.avatar &#125;&#125;',</span><br><span class="line">        guest_info:['nick','mail'] ,  <span class="comment">//评论者只需要提供评论的昵称和邮箱即可</span></span><br><span class="line">        pageSize:'&#123;&#123; theme.valine.pageSize &#125;&#125;' || <span class="number">10</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//增加以下六行代码去除 power by valine</span></span><br><span class="line">    <span class="keyword">var</span> infoEle = document.querySelector('#comments .info');</span><br><span class="line">    <span class="keyword">if</span> (infoEle &amp;&amp; infoEle.childNodes &amp;&amp; infoEle.childNodes.length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      infoEle.childNodes.forEach(function(item) &#123;</span><br><span class="line">        item.parentNode.removeChild(item);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
@@ -2288,12 +2249,12 @@
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Valine.</span></span><br><span class="line"><span class="comment"># You can get your appid and appkey from https://leancloud.cn</span></span><br><span class="line"><span class="comment"># more info please open https://valine.js.org</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span> <span class="string">//打开valine评论功能</span></span><br><span class="line"><span class="attr">  appid:</span> <span class="string">你的leancloud</span> <span class="string">appid</span> </span><br><span class="line"><span class="attr">  appkey:</span> <span class="string">你的leancloud</span> <span class="string">appkey</span> </span><br><span class="line"><span class="attr">  notify:</span> <span class="literal">false</span> <span class="string">//邮件提醒</span></span><br><span class="line"><span class="attr">  verify:</span> <span class="literal">true</span> <span class="string">//评论时是否有验证码，需要在Leancloud</span> <span class="string">设置-&gt;安全中心</span> <span class="string">中打开</span></span><br><span class="line"><span class="attr">  placeholder:</span> <span class="string">说点什么吧！</span> <span class="string">//评论框默认显示</span></span><br><span class="line"><span class="attr">  avatar:</span> <span class="string">hide</span> <span class="string">//评论者的头像,我这里设置的不显示</span></span><br><span class="line"><span class="attr">  guest_info:</span> <span class="string">nick</span> <span class="comment"># custom comment header</span></span><br><span class="line"><span class="attr">  pageSize:</span> <span class="number">10</span> <span class="comment"># pagination size</span></span><br></pre></td></tr></table></figure>
 
 <p>到此，一个极简评论系统就完成啦！</p>
-<img src="/blog/2019/10/21/hello-world/8.png" class>
+<img src="/2019/10/21/hello-world/8.png" class>
 
 <h3 id="Valine评论系统邮件提醒"><a href="#Valine评论系统邮件提醒" class="headerlink" title="Valine评论系统邮件提醒"></a>Valine评论系统邮件提醒</h3><p>Valine评论功能是基于<a href="https://leancloud.cn/" target="_blank" rel="noopener">Leancloud</a>的，Valine评论功能还不能跑起来的可以看看上一个步骤，其中就有详细的使用说明，这里就不展开了。</p>
 <p>Valine官方提供的邮件提醒功能是基于<code>Leancloud的密码重置邮件提醒</code>，操作步骤如下：</p>
 <p>进入<code>Leancloud</code>&gt;选择你的评论所存放的<code>应用</code>&gt;<code>设置</code>&gt;<code>邮件模板</code>，按下图设置好用于<code>重置密码</code>的邮件主题&gt;然后保存:</p>
-<img src="/blog/2019/10/21/hello-world/9.jpg" class>
+<img src="/2019/10/21/hello-world/9.jpg" class>
 
 <p>1、修改邮件主题：<code>你在 的评论收到了新的评论</code></p>
 <p>2、修改内容：将下面的代码复制到“内容”中，并将其中的<code>你的网址首页链接</code>改为你的网址首页链接。</p>
@@ -2328,7 +2289,7 @@
 
 <h2 id="添加天气"><a href="#添加天气" class="headerlink" title="添加天气"></a>添加天气</h2><p>使用的是<a href="https://www.seniverse.com/" target="_blank" rel="noopener">心知天气</a>，主要是免费，哈哈</p>
 <p>首先注册，然后添加产品，选择天气插件，配置：</p>
-<img src="/blog/2019/10/21/hello-world/10.png" class>
+<img src="/2019/10/21/hello-world/10.png" class>
 
 <p>配置好后选择生成代码，将代码添加到<code>\themes\next\layout\_partials\head</code>文件下的<code>custom-head.swig</code>文件里。</p>
 <h2 id="标签美化"><a href="#标签美化" class="headerlink" title="标签美化"></a>标签美化</h2><p>首先先打开<code>/next/layout</code>文件夹下的page.swig文件，在文件中找到以下内容</p>
