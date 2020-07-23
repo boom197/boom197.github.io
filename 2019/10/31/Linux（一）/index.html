@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="baidu-site-verification" content="HYTBb8Yy8t">
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|14:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux入门">
+<meta property="og:url" content="https:&#x2F;&#x2F;boom197.github.io&#x2F;2019&#x2F;10&#x2F;31&#x2F;Linux%EF%BC%88%E4%B8%80%EF%BC%89&#x2F;index.html">
+<meta property="og:site_name" content="LIDAPAO">
+<meta property="og:description" content="Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;K5OFc4.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;KIPgOK.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;KIEXJe.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;KIGdv6.png">
+<meta property="og:updated_time" content="2020-07-23T13:54:15.727Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;K5OFc4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":10,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://boom197.github.io/2019/10/31/Linux（一）/"/>
+
+
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/2857eac0.js","daovoice")
+  daovoice('init', {
+      app_id: "2857eac0"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <title>Linux入门 | LIDAPAO</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LIDAPAO</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://boom197.github.io/2019/10/31/Linux%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LIDAPAO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-31T10:35:46+08:00">
+                2019-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/31/Linux%EF%BC%88%E4%B8%80%EF%BC%89/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/10/31/Linux（一）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+		  
+		  
+			<span class="post-meta-divider">|</span>
+			<span id="busuanzi_value_page_pv"></span>次阅读
+		  
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  11.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 ;</span>
+                
+                <span title="阅读时长">
+                  42 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
+<a id="more"></a>
+
+<h1 id="Linux简介"><a href="#Linux简介" class="headerlink" title="Linux简介"></a>Linux简介</h1><p>Linux服务器是设计出来进行业务处理应用的，在网络和计算机系统当中有广泛的应用，可以提供数据库管理和网络服务等内容，是一种性能非常高的和开源的服务器，在我国的计算机系统的客户端当中，有很多采用的就是Linux系统，其使用的范围非常广泛，用户体验反应较好。但是对于一些希望计算机应用性能比较高的单位而言，windows系统需要经常进行资源整合和碎片化管理，系统在配置的时候经常需要重新启动，这就无法避免产生停机的问题。同时，由于Linux系统的处理能力非常强悍，具备不可比拟的稳定性特征，因而Linux系统就不用经常进行重启，Linux系统的变化可以在配置的过程中实现，所以Linux服务器出现故障的概率比较小，所以很多企业组织在计算机配置的过程中经常使用Linux系统，从而降低服务器发生崩溃的可能性，很多企业在配置Linux系统的时候，都是通过减少服务器的故障发生率，实现企业业务的高效运转。</p>
+<h2 id="Linux的发行版"><a href="#Linux的发行版" class="headerlink" title="Linux的发行版"></a>Linux的发行版</h2><p><img src="https://s2.ax1x.com/2019/10/31/K5OFc4.jpg" alt></p>
+<p>目前市面上较知名的发行版有：Ubuntu、RedHat、CentOS、Debian、Fedora、SuSE、OpenSUSE、Arch Linux、SolusOS 等。</p>
+<h2 id="Linux的应用领域"><a href="#Linux的应用领域" class="headerlink" title="Linux的应用领域"></a>Linux的应用领域</h2><p> 今天各种场合都有使用各种 Linux 发行版，从嵌入式设备到超级计算机，并且在服务器领域确定了地位，通常服务器使用 LAMP（Linux + Apache + MySQL + PHP）或 LNMP（Linux + Nginx+ MySQL + PHP）组合。 </p>
+<h1 id="Linux安装"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux安装</h1><p>可以去官网下载最新版本：<a href="https://www.centos.org/download/" target="_blank" rel="noopener">https://www.centos.org/download/</a></p>
+<p>以下针对各个版本的ISO镜像文件，进行一一说明：</p>
+<ul>
+<li><strong>CentOS-7.0-x86_64-DVD-1503-01.iso</strong> : 标准安装版，一般下载这个就可以了（推荐）</li>
+<li><strong>CentOS-7.0-x86_64-NetInstall-1503-01.iso</strong> : 网络安装镜像（从网络安装或者救援系统）</li>
+<li><strong>CentOS-7.0-x86_64-Everything-1503-01.iso</strong>: 对完整版安装盘的软件进行补充，集成所有软件。（包含centos7的一套完整的软件包，可以用来安装系统或者填充本地镜像）</li>
+<li><strong>CentOS-7.0-x86_64-GnomeLive-1503-01.iso</strong>: GNOME桌面版</li>
+<li><strong>CentOS-7.0-x86_64-KdeLive-1503-01.iso</strong>: KDE桌面版</li>
+<li><strong>CentOS-7.0-x86_64-livecd-1503-01.iso</strong> : 光盘上运行的系统，类拟于winpe</li>
+<li><strong>CentOS-7.0-x86_64-minimal-1503-01.iso</strong> : 精简版，自带的软件最少</li>
+</ul>
+<blockquote>
+<p><strong>注：</strong>建议安装64位Linux系统。</p>
+<p>旧版本下载地址：<a href="https://wiki.centos.org/Download" target="_blank" rel="noopener">https://wiki.centos.org/Download</a></p>
+</blockquote>
+<h2 id="Linux系统目录结构"><a href="#Linux系统目录结构" class="headerlink" title="Linux系统目录结构"></a>Linux系统目录结构</h2><p><img src="https://s2.ax1x.com/2019/10/31/KIPgOK.jpg" alt></p>
+<p> 以下是对这些目录的解释： </p>
+<div class="tabs" id="目录"><ul class="nav-tabs"><li class="tab active"><a href="#目录-1">目录 1</a></li><li class="tab"><a href="#目录-2">目录 2</a></li></ul><div class="tab-content"><div class="tab-pane active" id="目录-1"><ul>
+<li><p><strong>/boot：</strong>存放的启动Linux 时使用的内核文件，包括连接文件以及镜像文件。</p>
+</li>
+<li><p><strong>/etc：</strong>存放<strong>所有</strong>的系统需要的<strong>配置文件</strong>和<strong>子目录列表，</strong>更改目录下的文件可能会导致系统不能启动。</p>
+</li>
+<li><p><strong>/lib</strong>：存放基本代码库（比如c++库），其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。</p>
+</li>
+<li><p><strong>/sys</strong>： 这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。sysfs文件系统集成了下面3种文件系统的信息：针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统。该文件系统是内核设备树的一个直观反映。当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中</p>
+</li>
+</ul>
+<p><strong>指令集合：</strong></p>
+<ul>
+<li><p><strong>/bin：</strong>存放着最常用的程序和指令</p>
+</li>
+<li><p><strong>/sbin：</strong>只有系统管理员能使用的程序和指令。</p>
+</li>
+</ul>
+<p><strong>外部文件管理：</strong></p>
+<ul>
+<li><p><strong>/dev ：</strong>Device(设备)的缩写, 存放的是Linux的外部设备。<strong>注意：</strong>在Linux中访问设备和访问文件的方式是相同的。</p>
+</li>
+<li><p><strong>/media</strong>：类windows的<strong>其他设备，</strong>例如U盘、光驱等等，识别后linux会把设备放到这个目录下。</p>
+</li>
+<li><p><strong>/mnt</strong>：临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</p>
+</li>
+</ul>
+<p><strong>临时文件：</strong></p>
+<ul>
+<li><p><strong>/run</strong>：是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p>
+</li>
+<li><p><strong>/lost+found</strong>：一般情况下为空的，系统非法关机后，这里就存放一些文件。</p>
+</li>
+<li><p><strong>/tmp</strong>：这个目录是用来存放一些临时文件的。</p>
+</li>
+</ul>
+<p><strong>账户：</strong></p>
+<ul>
+<li><p><strong>/root</strong>：系统管理员的用户主目录。</p>
+</li>
+<li><p><strong>/home</strong>：用户的主目录，以用户的账号命名的。</p>
+</li>
+<li><p><strong>/usr</strong>：用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。</p>
+</li>
+<li><p><strong>/usr/bin：</strong>系统用户使用的应用程序与指令。</p>
+</li>
+<li><p><strong>/usr/sbin：</strong>超级用户使用的比较高级的管理程序和系统守护程序。</p>
+</li>
+<li><p><strong>/usr/src：</strong>内核源代码默认的放置目录。</p>
+</li>
+</ul>
+<p><strong>运行过程中要用：</strong></p>
+<ul>
+<li><p><strong>/var</strong>：存放经常修改的数据，比如程序运行的日志文件（/var/log 目录下）。</p>
+</li>
+<li><p><strong>/proc</strong>：管理<strong>内存空间！</strong>虚拟的目录，是系统内存的映射，我们可以直接访问这个目录来，获取系统信息。这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件来做修改。</p>
+</li>
+</ul>
+<p><strong>扩展用的：</strong></p>
+<ul>
+<li><p><strong>/opt</strong>：默认是空的，我们安装额外软件可以放在这个里面。</p>
+</li>
+<li><p><strong>/srv</strong>：存放服务启动后需要提取的数据<strong>（不用服务器就是空）</strong></p>
+</li>
+</ul>
+</div><div class="tab-pane" id="目录-2"><ul>
+<li><p><strong>/bin</strong>：<br>bin是Binary的缩写, 这个目录存放着最经常使用的命令。</p>
+</li>
+<li><p><strong>/boot：</strong><br>这里存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+</li>
+<li><p><strong>/dev ：</strong><br>dev是Device(设备)的缩写, 该目录下存放的是Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的。</p>
+</li>
+<li><p><strong>/etc：</strong><br>这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
+</li>
+<li><p><strong>/home</strong>：<br>用户的主目录，在Linux中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。</p>
+</li>
+<li><p><strong>/lib</strong>：<br>这个目录里存放着系统最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。</p>
+</li>
+<li><p><strong>/lost+found</strong>：<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+</li>
+<li><p><strong>/media</strong>：<br>linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。</p>
+</li>
+<li><p><strong>/mnt</strong>：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</p>
+</li>
+<li><p><strong>/opt</strong>：<br> 这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
+</li>
+<li><p><strong>/proc</strong>：<br>这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="number">1</span> &gt; <span class="regexp">/proc/</span>sys<span class="regexp">/net/i</span>pv4<span class="regexp">/icmp_echo_ignore_all</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>/root</strong>：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+</li>
+<li><p><strong>/sbin</strong>：<br>s就是Super User的意思，这里存放的是系统管理员使用的系统管理程序。</p>
+</li>
+<li><p><strong>/selinux</strong>：<br> 这个目录是Redhat/CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
+</li>
+<li><p><strong>/srv</strong>：<br> 该目录存放一些服务启动之后需要提取的数据。</p>
+</li>
+<li><p><strong>/sys</strong>：</p>
+<p> 这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。</p>
+<p>sysfs文件系统集成了下面3种文件系统的信息：针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统。</p>
+</li>
+</ul>
+<p>  该文件系统是内核设备树的一个直观反映。</p>
+<p>  当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p>
+<ul>
+<li><p><strong>/tmp</strong>：<br>这个目录是用来存放一些临时文件的。</p>
+</li>
+<li><p><strong>/usr</strong>：<br> 这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。</p>
+</li>
+<li><p><strong>/usr/bin：</strong><br>系统用户使用的应用程序。</p>
+</li>
+<li><p><strong>/usr/sbin：</strong><br>超级用户使用的比较高级的管理程序和系统守护程序。</p>
+</li>
+<li><p><strong>/usr/src：</strong><br>内核源代码默认的放置目录。</p>
+</li>
+<li><p><strong>/var</strong>：<br>这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+</li>
+<li><p><strong>/run</strong>：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p>
+</li>
+</ul>
+</div></div></div>
+
+<p>在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</p>
+<p><strong>/etc</strong>： 上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</p>
+<p><strong>/bin, /sbin, /usr/bin, /usr/sbin</strong>: 这是系统预设的执行文件的放置目录，比如 ls 就是在/bin/ls 目录下的。</p>
+<p>值得提出的是，/bin, /usr/bin 是给系统用户使用的指令（除root外的通用户），而/sbin, /usr/sbin 则是给root使用的指令。</p>
+<p><strong>/var</strong>： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在/var/log 目录下，另外mail的预设放置也是在这里。</p>
+<h1 id="Linux文件基本属性"><a href="#Linux文件基本属性" class="headerlink" title="Linux文件基本属性"></a>Linux文件基本属性</h1><p> Linux系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。为了保护系统的安全性，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。 </p>
+<p> 在Linux中我们可以使用ll或者ls –l命令来显示一个文件的属性以及文件所属的用户和组 ，如：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">root@</span>www /]# ls -l</span><br><span class="line">total <span class="number">64</span></span><br><span class="line">dr-xr-xr-x   <span class="number">2</span> root root <span class="number">4096</span> Dec <span class="number">14</span>  <span class="number">2012</span> bin</span><br><span class="line">dr-xr-xr-x   <span class="number">4</span> root root <span class="number">4096</span> Apr <span class="number">19</span>  <span class="number">2012</span> boot</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>实例中，bin文件的第一个属性用”d”表示。”d”在Linux中代表该文件是一个目录文件。</p>
+<p>在Linux中第一个字符代表这个文件是目录、文件或链接文件等等。</p>
+<ul>
+<li>当为[ <strong>d</strong> ]则是目录</li>
+<li>当为[ <strong>-</strong> ]则是文件；</li>
+<li>若是[ <strong>l</strong> ]则表示为链接文档(link file)；</li>
+<li>若是[ <strong>b</strong> ]则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；</li>
+<li>若是[ <strong>c</strong> ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。</li>
+</ul>
+<p>接下来的字符中，以三个为一组，且均为『rwx』 的三个参数的组合。其中，[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。 要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。</p>
+<p>每个文件的属性由左边第一部分的10个字符来确定（如下图）。</p>
+<p><img src="https://s2.ax1x.com/2019/10/31/KIEXJe.png" alt></p>
+<p>从左至右用0-9这些数字来表示。</p>
+<p>第0位确定文件类型，第1-3位确定属主（该文件的所有者）拥有该文件的权限。</p>
+<p>第4-6位确定属组（所有者的同组用户）拥有该文件的权限，第7-9位确定其他用户拥有该文件的权限。</p>
+<p>其中，第1、4、7位表示读权限，如果用”r”字符表示，则有读权限，如果用”-“字符表示，则没有读权限；</p>
+<p>第2、5、8位表示写权限，如果用”w”字符表示，则有写权限，如果用”-“字符表示没有写权限；第3、6、9位表示可执行权限，如果用”x”字符表示，则有执行权限，如果用”-“字符表示，则没有执行权限。</p>
+<h2 id="Linux文件属主和属组"><a href="#Linux文件属主和属组" class="headerlink" title="Linux文件属主和属组"></a>Linux文件属主和属组</h2><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">root@</span>www /]# ls -l</span><br><span class="line">total <span class="number">64</span></span><br><span class="line">drwxr-xr-x <span class="number">2</span> root  root  <span class="number">4096</span> Feb <span class="number">15</span> <span class="number">14</span>:<span class="number">46</span> cron</span><br><span class="line">drwxr-xr-x <span class="number">3</span> mysql mysql <span class="number">4096</span> Apr <span class="number">21</span>  <span class="number">2014</span> mysql</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>对于文件来说，它都有一个特定的所有者，也就是对该文件具有所有权的用户。</p>
+<p>同时，在Linux系统中，用户是按组分类的，一个用户属于一个或多个组。</p>
+<p>文件所有者以外的用户又可以分为文件所有者的同组用户和其他用户。</p>
+<p>因此，Linux系统按文件所有者、文件所有者同组用户和其他用户来规定了不同的文件访问权限。</p>
+<p>在以上实例中，mysql 文件是一个目录文件，属主和属组都为 mysql，属主有可读、可写、可执行的权限；与属主同组的其他用户有可读和可执行的权限；其他用户也有可读和可执行的权限。</p>
+<p>对于 root 用户来说，一般情况下，文件的权限对其不起作用。</p>
+<h2 id="Linux-文件与目录管理"><a href="#Linux-文件与目录管理" class="headerlink" title="Linux 文件与目录管理"></a>Linux 文件与目录管理</h2><p>我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。</p>
+<p>其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。</p>
+<p>在开始本教程前我们需要先知道什么是绝对路径与相对路径。</p>
+<ul>
+<li><strong>绝对路径：</strong><br>路径的写法，由根目录 / 写起，例如： /usr/share/doc 这个目录。</li>
+<li><strong>相对路径：</strong><br>路径的写法，不是由 / 写起，例如由 /usr/share/doc 要到 /usr/share/man 底下时，可以写成： cd ../man 这就是相对路径的写法啦！</li>
+</ul>
+<h1 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h1><p>接下来我们就来看几个常见的处理目录的命令吧：</p>
+<h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><p>列出目录：</p>
+<ul>
+<li>-a ：全部的文件，连同隐藏档( 开头为 . 的文件) 一起列出来(常用)</li>
+<li>-d ：仅列出目录本身，而不是列出目录内的文件数据(常用)</li>
+<li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
+</ul>
+<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2><p>切换目录</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#使用 mkdir 命令创建 runoob 目录</span></span><br><span class="line">[root<span class="symbol">@www</span> ~]<span class="meta"># mkdir runoob</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#使用绝对路径切换到 runoob 目录</span></span><br><span class="line">[root<span class="symbol">@www</span> ~]<span class="meta"># cd /root/runoob/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#使用相对路径切换到 runoob 目录</span></span><br><span class="line">[root<span class="symbol">@www</span> ~]<span class="meta"># cd ./runoob/</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 表示回到自己的家目录，亦即是 /root 这个目录</span></span><br><span class="line">[root<span class="symbol">@www</span> runoob]<span class="meta"># cd ~</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 表示去到目前的上一级目录，亦即是 /root 的上一级目录的意思；</span></span><br><span class="line">[root<span class="symbol">@www</span> ~]<span class="meta"># cd ..</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h2><p>显示目前得目录</p>
+<ul>
+<li>-P ：显示出确实的路径，而非使用连结 (link) 路径。</li>
+</ul>
+<h2 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h2><p>创建一个新的目录</p>
+<ul>
+<li><p>-m ：配置文件的权限喔！直接配置，不需要看默认权限 (umask) 的脸色～</p>
+</li>
+<li><p>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> [-mp] 目录名称</span><br><span class="line"><span class="built_in">mkdir</span> -p test1/test2/test3/test4  --创建多层目录</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h2><p>删除一个空的目录</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rmdir [-p] 目录名称   <span class="comment">--连同上一级『空的』目录也一起删除</span></span><br><span class="line">rmdir runoob/    <span class="comment">--删除 runoob 目录</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h2><p>复制文件或目录</p>
+<ul>
+<li><p>-a：相当於 -pdr 的意思，至於 pdr 请参考下列说明；(常用)</p>
+</li>
+<li><p>-d：若来源档为连结档的属性(link file)，则复制连结档属性而非文件本身；</p>
+</li>
+<li><p>-f：为强制(force)的意思，若目标文件已经存在且无法开启，则移除后再尝试一次；</p>
+</li>
+<li><p>-i：若目标档(destination)已经存在时，在覆盖时会先询问动作的进行(常用)</p>
+</li>
+<li><p>-l：进行硬式连结(hard link)的连结档创建，而非复制文件本身；</p>
+</li>
+<li><p>-p：连同文件的属性一起复制过去，而非使用默认属性(备份常用)；</p>
+</li>
+<li><p>-r：递归持续复制，用於目录的复制行为；(常用)</p>
+</li>
+<li><p>-s：复制成为符号连结档 (symbolic link)，亦即『捷径』文件；</p>
+</li>
+<li><p>-u：若 destination 比 source 旧才升级 destination ！</p>
+<p>用 root 身份，将 root 目录下的 .bashrc 复制到 /tmp 下，并命名为 bashrc </p>
+</li>
+</ul>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@www</span> ~]<span class="meta"># cp ~/.bashrc /tmp/bashrc</span></span><br><span class="line">[root<span class="symbol">@www</span> ~]<span class="meta"># cp -i ~/.bashrc /tmp/bashrc</span></span><br><span class="line">cp: overwrite `/tmp/bashrc<span class="string">'? n  &lt;==n不覆盖，y为覆盖</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h2><p>移除文件或目录：</p>
+<ul>
+<li>-f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息；</li>
+<li>-i ：互动模式，在删除前会询问使用者是否动作</li>
+<li>-r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！</li>
+</ul>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm <span class="string">[-fir]</span> 文件或目录</span><br></pre></td></tr></table></figure>
+
+<h2 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h2><p>移动文件与目录，或修改名字：</p>
+<ul>
+<li><p>-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；</p>
+</li>
+<li><p>-i ：若目标文件 (destination) 已经存在时，就会询问是否覆盖！</p>
+</li>
+<li><p>-u ：若目标文件已经存在，且 source 比较新，才会升级 (update)</p>
+<p>复制一文件，创建一目录，将文件移动到目录中 ：</p>
+</li>
+</ul>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@www</span> ~]<span class="meta"># cd /tmp</span></span><br><span class="line">[root<span class="symbol">@www</span> tmp]<span class="meta"># cp ~/.bashrc bashrc</span></span><br><span class="line">[root<span class="symbol">@www</span> tmp]<span class="meta"># mkdir mvtest</span></span><br><span class="line">[root<span class="symbol">@www</span> tmp]<span class="meta"># mv bashrc mvtest</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Linux-文件内容查看"><a href="#Linux-文件内容查看" class="headerlink" title="Linux 文件内容查看"></a>Linux 文件内容查看</h2><p> Linux系统中使用以下命令来查看文件的内容： </p>
+<ul>
+<li><p>cat 由第一行开始显示文件内容</p>
+</li>
+<li><p>tac 从最后一行开始显示，可以看出 tac 是 cat 的倒著写！</p>
+</li>
+<li><p>nl  显示的时候，顺道输出行号！</p>
+</li>
+<li><p>more 一页一页的显示文件内容</p>
+</li>
+<li><p>less 与 more 类似，但是比 more 更好的是，他可以往前翻页！</p>
+</li>
+<li><p>head 只看头几行</p>
+</li>
+<li><p>tail 只看尾巴几行</p>
+<p>你可以使用 <em>man [命令]</em>来查看各个命令的使用文档，如 ：man cp。 </p>
+</li>
+</ul>
+<h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><p> 由第一行开始显示文件内容 ：</p>
+<p>选项与参数：</p>
+<ul>
+<li>-A ：相当於 -vET 的整合选项，可列出一些特殊字符而不是空白而已；</li>
+<li>-b ：列出行号，仅针对非空白行做行号显示，空白行不标行号！</li>
+<li>-E ：将结尾的断行字节 $ 显示出来；</li>
+<li>-n ：列印出行号，连同空白行也会有行号，与 -b 的选项不同；</li>
+<li>-T ：将 [tab] 按键以 ^I 显示出来；</li>
+<li>-v ：列出一些看不出来的特殊字符</li>
+</ul>
+<h2 id="nl"><a href="#nl" class="headerlink" title="nl"></a>nl</h2><p> 显示行号 </p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl <span class="string">[-bnw]</span> 文件</span><br></pre></td></tr></table></figure>
+
+<p>选项与参数：</p>
+<ul>
+<li>-b ：指定行号指定的方式，主要有两种：<br>-b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)；<br>-b t ：如果有空行，空的那一行不要列出行号(默认值)；</li>
+<li>-n ：列出行号表示的方法，主要有三种：<br>-n ln ：行号在荧幕的最左方显示；<br>-n rn ：行号在自己栏位的最右方显示，且不加 0 ；<br>-n rz ：行号在自己栏位的最右方显示，且加 0 ；</li>
+<li>-w ：行号栏位的占用的位数。</li>
+</ul>
+<h2 id="more"><a href="#more" class="headerlink" title="more"></a>more</h2><p> 一页一页翻动 ：在 more 这个程序的运行过程中，你有几个按键可以按的：</p>
+<ul>
+<li>空白键 (space)：代表向下翻一页；</li>
+<li>Enter     ：代表向下翻『一行』；</li>
+<li>/字串     ：代表在这个显示的内容当中，向下搜寻『字串』这个关键字；</li>
+<li>:f      ：立刻显示出档名以及目前显示的行数；</li>
+<li>q       ：代表立刻离开 more ，不再显示该文件内容。</li>
+<li>b 或 [ctrl]-b ：代表往回翻页，不过这动作只对文件有用，对管线无用。</li>
+</ul>
+<h1 id="Linux-用户和用户组管理"><a href="#Linux-用户和用户组管理" class="headerlink" title="Linux 用户和用户组管理"></a>Linux 用户和用户组管理</h1><p>Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
+<p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。</p>
+<p>每个用户账号都拥有一个唯一的用户名和各自的口令。</p>
+<p>用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。</p>
+<p>实现用户账号的管理，要完成的工作主要有如下几个方面：</p>
+<ul>
+<li>用户账号的添加、删除与修改。</li>
+<li>用户口令的管理。</li>
+<li>用户组的管理。</li>
+</ul>
+<h2 id="Linux系统用户账号的管理"><a href="#Linux系统用户账号的管理" class="headerlink" title="Linux系统用户账号的管理"></a>Linux系统用户账号的管理</h2><p>用户账号的管理工作主要涉及到用户账号的添加、修改和删除。</p>
+<p>添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。刚添加的账号是被锁定的，无法使用。</p>
+<h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><p>添加新的用户账号使用useradd命令，其语法如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">useradd</span> 选项 用户名</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li><p>选项:</p>
+<ul>
+<li>-c comment 指定一段注释性描述。</li>
+<li>-d 目录 指定用户主目录，如果此目录不存在，则同时使用-m选项，可以创建主目录。</li>
+<li>-g 用户组 指定用户所属的用户组。</li>
+<li>-G 用户组，用户组 指定用户所属的附加组。</li>
+<li>-s Shell文件 指定用户的登录Shell。</li>
+<li>-u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。</li>
+</ul>
+</li>
+<li><p>用户名:</p>
+<p>指定新账号的登录名。</p>
+</li>
+</ul>
+<p>实例1：</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># useradd –d  /home/sam -m sam</span></span><br></pre></td></tr></table></figure>
+
+<p> 此命令创建了一个用户sam，其中-d和-m选项用来为登录名sam产生一个主目录 /home/sam（/home为默认的用户主目录所在的父目录）。 </p>
+<p>实列2：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># useradd -s <span class="regexp">/bin/</span>sh -g <span class="keyword">group</span> –G adm,root gem</span><br></pre></td></tr></table></figure>
+
+<p>此命令新建了一个用户gem，该用户的登录Shell是 <code>/bin/sh</code>，它属于group用户组，同时又属于adm和root用户组，其中group用户组是其主组。</p>
+<p>这里可能新建组：<code>#groupadd group及groupadd adm</code></p>
+<p>增加用户账号就是在/etc/passwd文件中为新用户增加一条记录，同时更新其他系统文件如/etc/shadow, /etc/group等。</p>
+<p>Linux提供了集成的系统管理工具userconf，它可以用来对用户账号进行统一管理。</p>
+<h3 id="删除账号"><a href="#删除账号" class="headerlink" title="删除账号"></a>删除账号</h3><p>如果一个用户的账号不再使用，可以从系统中删除。删除用户账号就是要将/etc/passwd等系统文件中的该用户记录删除，必要时还删除用户的主目录。</p>
+<p>删除一个已有的用户账号使用<code>userdel</code>命令，其格式如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">userdel</span> 选项 用户名</span><br></pre></td></tr></table></figure>
+
+<p> 常用的选项是 <strong>-r</strong>，它的作用是把用户的主目录一起删除。 </p>
+<p> 例如： </p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># userdel -r sam</span></span><br></pre></td></tr></table></figure>
+
+<p> 此命令删除用户sam在系统文件中（主要是/etc/passwd, /etc/shadow, /etc/group等）的记录，同时删除用户的主目录。 </p>
+<h3 id="修改账号"><a href="#修改账号" class="headerlink" title="修改账号"></a>修改账号</h3><p>修改用户账号就是根据实际情况更改用户的有关属性，如用户号、主目录、用户组、登录Shell等。</p>
+<p>修改已有用户的信息使用<code>usermod</code>命令，其格式如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">usermod</span> 选项 用户名</span><br></pre></td></tr></table></figure>
+
+<p>常用的选项包括<code>-c, -d, -m, -g, -G, -s, -u以及-o等</code>，这些选项的意义与<code>useradd</code>命令中的选项一样，可以为用户指定新的资源值。</p>
+<p>另外，有些系统可以使用选项：-l 新用户名</p>
+<p>这个选项指定一个新的账号，即将原来的用户名改为新的用户名。</p>
+<p>例如：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># usermod -s <span class="regexp">/bin/</span>ksh -d <span class="regexp">/home/</span>z –g developer sam</span><br></pre></td></tr></table></figure>
+
+<p>此命令将用户sam的登录Shell修改为ksh，主目录改为/home/z，用户组改为developer。</p>
+<h3 id="用户口令得管理"><a href="#用户口令得管理" class="headerlink" title="用户口令得管理"></a>用户口令得管理</h3><p>用户管理的一项重要内容是用户口令的管理。用户账号刚创建时没有口令，但是被系统锁定，无法使用，必须为其指定口令后才可以使用，即使是指定空口令。</p>
+<p>指定和修改用户口令的Shell命令是<code>passwd</code>。超级用户可以为自己和其他用户指定口令，普通用户只能用它修改自己的口令。命令的格式为：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">passwd</span> 选项 用户名</span><br></pre></td></tr></table></figure>
+
+<p>可使用的选项：</p>
+<ul>
+<li>-l 锁定口令，即禁用账号。</li>
+<li>-u 口令解锁。</li>
+<li>-d 使账号无口令。</li>
+<li>-f 强迫用户下次登录时修改口令。</li>
+</ul>
+<p>如果默认用户名，则修改当前用户的口令。</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># passwd -d sam</span></span><br></pre></td></tr></table></figure>
+
+<p>此命令将用户 sam 的口令删除，这样用户 sam 下一次登录时，系统就不再允许该用户登录了。</p>
+<p>passwd 命令还可以用 -l(lock) 选项锁定某一用户，使其不能登录，例如：</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># passwd -l sam</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Linux-vi-vim"><a href="#Linux-vi-vim" class="headerlink" title="Linux vi/vim"></a>Linux vi/vim</h1><p>所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在。</p>
+<p>但是目前我们使用比较多的是 vim 编辑器。</p>
+<p>vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计。</p>
+<p>相关文章：<a href="https://www.runoob.com/w3cnote/all-vim-cheatsheat.html" target="_blank" rel="noopener">史上最全Vim快捷键键位图 — 入门到进阶</a> </p>
+<h2 id="什么是-vim？"><a href="#什么是-vim？" class="headerlink" title="什么是 vim？"></a>什么是 vim？</h2><p>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。</p>
+<p>简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。</p>
+<p>连 vim 的官方网站 (<a href="http://www.vim.org/" target="_blank" rel="noopener">http://www.vim.org</a>) 自己也说 vim 是一个程序开发工具而不是文字处理软件。</p>
+<h2 id="vi-vim-的使用"><a href="#vi-vim-的使用" class="headerlink" title="vi/vim 的使用"></a>vi/vim 的使用</h2><p> 基本上 vi/vim 共分为三种模式，分别是<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）</strong>和<strong>底线命令模式（Last line mode）</strong>。 这三种模式的作用分别是： </p>
+<h3 id="命令模式："><a href="#命令模式：" class="headerlink" title="命令模式："></a>命令模式：</h3><p>用户刚刚启动 vi/vim，便进入了命令模式。</p>
+<p>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。</p>
+<p>以下是常用的几个命令：</p>
+<ul>
+<li><strong>i</strong> 切换到输入模式，以输入字符。</li>
+<li><strong>x</strong> 删除当前光标所在处的字符。</li>
+<li><strong>:</strong> 切换到底线命令模式，以在最底一行输入命令。</li>
+</ul>
+<p>若想要编辑文本：启动Vim，进入了命令模式，按下i，切换到输入模式。</p>
+<p>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
+<h3 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h3><p>在命令模式下按下i就进入了输入模式。</p>
+<p>在输入模式中，可以使用以下按键：</p>
+<ul>
+<li><strong>字符按键以及Shift组合</strong>，输入字符</li>
+<li><strong>ENTER</strong>，回车键，换行</li>
+<li><strong>BACK SPACE</strong>，退格键，删除光标前一个字符</li>
+<li><strong>DEL</strong>，删除键，删除光标后一个字符</li>
+<li><strong>方向键</strong>，在文本中移动光标</li>
+<li><strong>HOME</strong>/<strong>END</strong>，移动光标到行首/行尾</li>
+<li><strong>Page Up</strong>/<strong>Page Down</strong>，上/下翻页</li>
+<li><strong>Insert</strong>，切换光标为输入/替换模式，光标将变成竖线/下划线</li>
+<li><strong>ESC</strong>，退出输入模式，切换到命令模式</li>
+</ul>
+<h3 id="底线命令模式"><a href="#底线命令模式" class="headerlink" title="底线命令模式"></a>底线命令模式</h3><p>在命令模式下按下:（英文冒号）就进入了底线命令模式。</p>
+<p>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。</p>
+<p>在底线命令模式中，基本的命令有（已经省略了冒号）：</p>
+<ul>
+<li>q 退出程序</li>
+<li>w 保存文件</li>
+</ul>
+<p>按ESC键可随时退出底线命令模式。</p>
+<p>简单的说，我们可以将这三个模式想成底下的图标来表示：</p>
+<p><img src="https://s2.ax1x.com/2019/10/31/KIGdv6.png" alt></p>
+<h2 id="vi-vim-使用实例"><a href="#vi-vim-使用实例" class="headerlink" title="vi/vim 使用实例"></a>vi/vim 使用实例</h2><h3 id="使用-vi-vim-进入一般模式"><a href="#使用-vi-vim-进入一般模式" class="headerlink" title="使用 vi/vim 进入一般模式"></a>使用 vi/vim 进入一般模式</h3><p>如果你想要使用 vi 来建立一个名为 runoob.txt 的文件时，你可以这样做：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>vim runoob.txt</span><br></pre></td></tr></table></figure>
+
+<p>直接输入 <strong>vi 文件名</strong> 就能够进入 vi 的一般模式了。请注意，记得 vi 后面一定要加文件名，不管该文件存在与否！</p>
+<h2 id="vi-vim-按键说明"><a href="#vi-vim-按键说明" class="headerlink" title="vi/vim 按键说明"></a>vi/vim 按键说明</h2><p> 除了 i, Esc, :wq 之外，其实 vim 还有非常多的按键可以使用。 </p>
+<table>
+<thead>
+<tr>
+<th align="left">移动光标的方法</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">h 或 向左箭头键(←)</td>
+<td>光标向左移动一个字符</td>
+</tr>
+<tr>
+<td align="left">j 或 向下箭头键(↓)</td>
+<td>光标向下移动一个字符</td>
+</tr>
+<tr>
+<td align="left">k 或 向上箭头键(↑)</td>
+<td>光标向上移动一个字符</td>
+</tr>
+<tr>
+<td align="left">l 或 向右箭头键(→)</td>
+<td>光标向右移动一个字符</td>
+</tr>
+<tr>
+<td align="left">如果你将右手放在键盘上的话，你会发现 hjkl 是排列在一起的，因此可以使用这四个按钮来移动光标。 如果想要进行多次移动的话，例如向下移动 30 行，可以使用 “30j” 或 “30↓” 的组合按键， 亦即加上想要进行的次数(数字)后，按下动作即可！</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">[Ctrl] + [f]</td>
+<td>屏幕『向下』移动一页，相当于 [Page Down]按键 (常用)</td>
+</tr>
+<tr>
+<td align="left">[Ctrl] + [b]</td>
+<td>屏幕『向上』移动一页，相当于 [Page Up] 按键 (常用)</td>
+</tr>
+<tr>
+<td align="left">[Ctrl] + [d]</td>
+<td>屏幕『向下』移动半页</td>
+</tr>
+<tr>
+<td align="left">[Ctrl] + [u]</td>
+<td>屏幕『向上』移动半页</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td>光标移动到非空格符的下一行</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td>光标移动到非空格符的上一行</td>
+</tr>
+<tr>
+<td align="left">n<space></space></td>
+<td>那个 n 表示『数字』，例如 20 。按下数字后再按空格键，光标会向右移动这一行的 n 个字符。例如 20<space> 则光标会向后面移动 20 个字符距离。</space></td>
+</tr>
+<tr>
+<td align="left">0 或功能键[Home]</td>
+<td>这是数字『 0 』：移动到这一行的最前面字符处 (常用)</td>
+</tr>
+<tr>
+<td align="left">$ 或功能键[End]</td>
+<td>移动到这一行的最后面字符处(常用)</td>
+</tr>
+<tr>
+<td align="left">H</td>
+<td>光标移动到这个屏幕的最上方那一行的第一个字符</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td>光标移动到这个屏幕的中央那一行的第一个字符</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td>光标移动到这个屏幕的最下方那一行的第一个字符</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td>移动到这个档案的最后一行(常用)</td>
+</tr>
+<tr>
+<td align="left">nG</td>
+<td>n 为数字。移动到这个档案的第 n 行。例如 20G 则会移动到这个档案的第 20 行(可配合 :set nu)</td>
+</tr>
+<tr>
+<td align="left">gg</td>
+<td>移动到这个档案的第一行，相当于 1G 啊！ (常用)</td>
+</tr>
+<tr>
+<td align="left">n<Enter></Enter></td>
+<td>n 为数字。光标向下移动 n 行(常用)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">搜索替换</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">/word</td>
+<td>向光标之下寻找一个名称为 word 的字符串。例如要在档案内搜寻 vbird 这个字符串，就输入 /vbird 即可！ (常用)</td>
+</tr>
+<tr>
+<td align="left">?word</td>
+<td>向光标之上寻找一个字符串名称为 word 的字符串。</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td>这个 n 是英文按键。代表重复前一个搜寻的动作。举例来说， 如果刚刚我们执行 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为 vbird 的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为 vbird 的字符串！</td>
+</tr>
+<tr>
+<td align="left">N</td>
+<td>这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。 例如 /vbird 后，按下 N 则表示『向上』搜寻 vbird 。</td>
+</tr>
+<tr>
+<td align="left">使用 /word 配合 n 及 N 是非常有帮助的！可以让你重复的找到一些你搜寻的关键词！</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">:n1,n2s/word1/word2/g</td>
+<td>n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则： 『:100,200s/vbird/VBIRD/g』。(常用)</td>
+</tr>
+<tr>
+<td align="left"><strong>:1,$s/word1/word2/g</strong> 或 <strong>:%s/word1/word2/g</strong></td>
+<td>从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！(常用)</td>
+</tr>
+<tr>
+<td align="left"><strong>:1,$s/word1/word2/gc</strong> 或 <strong>:%s/word1/word2/gc</strong></td>
+<td>从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！且在取代前显示提示字符给用户确认 (confirm) 是否需要取代！(常用)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">删除、复制与贴上</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">x, X</td>
+<td>在一行字当中，x 为向后删除一个字符 (相当于 [del] 按键)， X 为向前删除一个字符(相当于 [backspace] 亦即是退格键) (常用)</td>
+</tr>
+<tr>
+<td align="left">nx</td>
+<td>n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符， 『10x』。</td>
+</tr>
+<tr>
+<td align="left">dd</td>
+<td>删除游标所在的那一整行(常用)</td>
+</tr>
+<tr>
+<td align="left">ndd</td>
+<td>n 为数字。删除光标所在的向下 n 行，例如 20dd 则是删除 20 行 (常用)</td>
+</tr>
+<tr>
+<td align="left">d1G</td>
+<td>删除光标所在到第一行的所有数据</td>
+</tr>
+<tr>
+<td align="left">dG</td>
+<td>删除光标所在到最后一行的所有数据</td>
+</tr>
+<tr>
+<td align="left">d$</td>
+<td>删除游标所在处，到该行的最后一个字符</td>
+</tr>
+<tr>
+<td align="left">d0</td>
+<td>那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符</td>
+</tr>
+<tr>
+<td align="left">yy</td>
+<td>复制游标所在的那一行(常用)</td>
+</tr>
+<tr>
+<td align="left">nyy</td>
+<td>n 为数字。复制光标所在的向下 n 行，例如 20yy 则是复制 20 行(常用)</td>
+</tr>
+<tr>
+<td align="left">y1G</td>
+<td>复制游标所在行到第一行的所有数据</td>
+</tr>
+<tr>
+<td align="left">yG</td>
+<td>复制游标所在行到最后一行的所有数据</td>
+</tr>
+<tr>
+<td align="left">y0</td>
+<td>复制光标所在的那个字符到该行行首的所有数据</td>
+</tr>
+<tr>
+<td align="left">y$</td>
+<td>复制光标所在的那个字符到该行行尾的所有数据</td>
+</tr>
+<tr>
+<td align="left">p, P</td>
+<td>p 为将已复制的数据在光标下一行贴上，P 则为贴在游标上一行！ 举例来说，我目前光标在第 20 行，且已经复制了 10 行数据。则按下 p 后， 那 10 行数据会贴在原本的 20 行之后，亦即由 21 行开始贴。但如果是按下 P 呢？ 那么原本的第 20 行会被推到变成 30 行。 (常用)</td>
+</tr>
+<tr>
+<td align="left">J</td>
+<td>将光标所在行与下一行的数据结合成同一行</td>
+</tr>
+<tr>
+<td align="left">c</td>
+<td>重复删除多个数据，例如向下删除 10 行，[ 10cj ]</td>
+</tr>
+<tr>
+<td align="left">u</td>
+<td>复原前一个动作。(常用)</td>
+</tr>
+<tr>
+<td align="left">[Ctrl]+r</td>
+<td>重做上一个动作。(常用)</td>
+</tr>
+<tr>
+<td align="left">这个 u 与 [Ctrl]+r 是很常用的指令！一个是复原，另一个则是重做一次～ 利用这两个功能按键，你的编辑，嘿嘿！很快乐的啦！</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td>不要怀疑！这就是小数点！意思是重复前一个动作的意思。 如果你想要重复删除、重复贴上等等动作，按下小数点『.』就好了！ (常用)</td>
+</tr>
+</tbody></table>
+<h3 id="一般模式切换到指令行模式的可用的按钮说明"><a href="#一般模式切换到指令行模式的可用的按钮说明" class="headerlink" title="一般模式切换到指令行模式的可用的按钮说明"></a>一般模式切换到指令行模式的可用的按钮说明</h3><table>
+<thead>
+<tr>
+<th align="left">指令行的储存、离开等指令</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:w</td>
+<td>将编辑的数据写入硬盘档案中(常用)</td>
+</tr>
+<tr>
+<td align="left">:w!</td>
+<td>若文件属性为『只读』时，强制写入该档案。不过，到底能不能写入， 还是跟你对该档案的档案权限有关啊！</td>
+</tr>
+<tr>
+<td align="left">:q</td>
+<td>离开 vi (常用)</td>
+</tr>
+<tr>
+<td align="left">:q!</td>
+<td>若曾修改过档案，又不想储存，使用 ! 为强制离开不储存档案。</td>
+</tr>
+<tr>
+<td align="left">注意一下啊，那个惊叹号 (!) 在 vi 当中，常常具有『强制』的意思～</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">:wq</td>
+<td>储存后离开，若为 :wq! 则为强制储存后离开 (常用)</td>
+</tr>
+<tr>
+<td align="left">ZZ</td>
+<td>这是大写的 Z 喔！若档案没有更动，则不储存离开，若档案已经被更动过，则储存后离开！</td>
+</tr>
+<tr>
+<td align="left">:w [filename]</td>
+<td>将编辑的数据储存成另一个档案（类似另存新档）</td>
+</tr>
+<tr>
+<td align="left">:r [filename]</td>
+<td>在编辑的数据中，读入另一个档案的数据。亦即将 『filename』 这个档案内容加到游标所在行后面</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 w [filename]</td>
+<td>将 n1 到 n2 的内容储存成 filename 这个档案。</td>
+</tr>
+<tr>
+<td align="left">:! command</td>
+<td>暂时离开 vi 到指令行模式下执行 command 的显示结果！例如 『:! ls /home』即可在 vi 当中察看 /home 底下以 ls 输出的档案信息！</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">vim 环境的变更</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:set nu</td>
+<td>显示行号，设定之后，会在每一行的前缀显示该行的行号</td>
+</tr>
+<tr>
+<td align="left">:set nonu</td>
+<td>与 set nu 相反，为取消行号！</td>
+</tr>
+</tbody></table>
+<p>特别注意，在 vi/vim 中，数字是很有意义的！数字通常代表重复做几次的意思！ 也有可能是代表去到第几个什么什么的意思。</p>
+<p>举例来说，要删除 50 行，则是用 『50dd』 对吧！ 数字加在动作之前，如我要向下移动 20 行呢？那就是『20j』或者是『20↓』即可。</p>
+<h1 id="Linux命令大全"><a href="#Linux命令大全" class="headerlink" title="Linux命令大全"></a>Linux命令大全</h1><h2 id="系统信息"><a href="#系统信息" class="headerlink" title="系统信息"></a><strong>系统信息</strong></h2><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">arch 显示机器的处理器架构(<span class="number">1</span>) </span><br><span class="line">uname -m 显示机器的处理器架构(<span class="number">2</span>) </span><br><span class="line">uname -r 显示正在使用的内核版本 </span><br><span class="line">dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI) </span><br><span class="line">hdparm -i /dev/hda 罗列一个磁盘的架构特性 </span><br><span class="line">hdparm -tT /dev/sda 在磁盘上执行测试性读取操作 </span><br><span class="line">cat /<span class="keyword">proc</span>/cpuinfo 显示CPU<span class="title"> info的信息</span> </span><br><span class="line">cat /<span class="keyword">proc</span>/interrupts 显示中断 </span><br><span class="line">cat /<span class="keyword">proc</span>/meminfo 校验内存使用 </span><br><span class="line">cat /<span class="keyword">proc</span>/swaps 显示哪些swap被使用 </span><br><span class="line">cat /<span class="keyword">proc</span>/version 显示内核的版本 </span><br><span class="line">cat /<span class="keyword">proc</span>/net/dev 显示网络适配器及统计 </span><br><span class="line">cat /<span class="keyword">proc</span>/mounts 显示已加载的文件系统 </span><br><span class="line">lspci -tv 罗列<span class="title"> PCI</span> 设备 </span><br><span class="line">lsusb -tv 显示<span class="title"> USB</span> 设备 </span><br><span class="line">date 显示系统日期 </span><br><span class="line">cal 2007 显示2007年的日历表 </span><br><span class="line">date 041217002007.00 设置日期和时间 - 月日时分年.秒 </span><br><span class="line">clock -w 将时间修改保存到<span class="title"> BIOS</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="关机-系统的关机、重启以及登出"><a href="#关机-系统的关机、重启以及登出" class="headerlink" title="关机 (系统的关机、重启以及登出 )"></a><strong>关机 (系统的关机、重启以及登出 )</strong></h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">shutdown</span> <span class="string">-h now 关闭系统(1) </span></span><br><span class="line"><span class="attr">init</span> <span class="string">0 关闭系统(2) </span></span><br><span class="line"><span class="attr">telinit</span> <span class="string">0 关闭系统(3) </span></span><br><span class="line"><span class="attr">shutdown</span> <span class="string">-h hours:minutes &amp; 按预定时间关闭系统 </span></span><br><span class="line"><span class="attr">shutdown</span> <span class="string">-c 取消按预定时间关闭系统 </span></span><br><span class="line"><span class="attr">shutdown</span> <span class="string">-r now 重启(1) </span></span><br><span class="line"><span class="attr">reboot</span> <span class="string">重启(2) </span></span><br><span class="line"><span class="attr">logout</span> <span class="string">注销</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">cd</span> <span class="string">/home 进入 '/ home' 目录' </span></span><br><span class="line"><span class="attr">cd</span> <span class="string">.. 返回上一级目录 </span></span><br><span class="line"><span class="attr">cd</span> <span class="string">../.. 返回上两级目录 </span></span><br><span class="line"><span class="attr">cd</span> <span class="string">进入个人的主目录 </span></span><br><span class="line"><span class="attr">cd</span> <span class="string">~user1 进入个人的主目录 </span></span><br><span class="line"><span class="attr">cd</span> <span class="string">- 返回上次所在的目录 </span></span><br><span class="line"><span class="attr">pwd</span> <span class="string">显示工作路径 </span></span><br><span class="line"><span class="attr">ls</span> <span class="string">查看目录中的文件 </span></span><br><span class="line"><span class="attr">ls</span> <span class="string">-F 查看目录中的文件 </span></span><br><span class="line"><span class="attr">ls</span> <span class="string">-l 显示文件和目录的详细资料 </span></span><br><span class="line"><span class="attr">ls</span> <span class="string">-a 显示隐藏文件 </span></span><br><span class="line"><span class="attr">ls</span> <span class="string">*[0-9]* 显示包含数字的文件名和目录名 </span></span><br><span class="line"><span class="attr">tree</span> <span class="string">显示文件和目录由根目录开始的树形结构(1) </span></span><br><span class="line"><span class="attr">lstree</span> <span class="string">显示文件和目录由根目录开始的树形结构(2) </span></span><br><span class="line"><span class="attr">mkdir</span> <span class="string">dir1 创建一个叫做 'dir1' 的目录' </span></span><br><span class="line"><span class="attr">mkdir</span> <span class="string">dir1 dir2 同时创建两个目录 </span></span><br><span class="line"><span class="attr">mkdir</span> <span class="string">-p /tmp/dir1/dir2 创建一个目录树 </span></span><br><span class="line"><span class="attr">rm</span> <span class="string">-f file1 删除一个叫做 'file1' 的文件' </span></span><br><span class="line"><span class="attr">rmdir</span> <span class="string">dir1 删除一个叫做 'dir1' 的目录' </span></span><br><span class="line"><span class="attr">rm</span> <span class="string">-rf dir1 删除一个叫做 'dir1' 的目录并同时删除其内容 </span></span><br><span class="line"><span class="attr">rm</span> <span class="string">-rf dir1 dir2 同时删除两个目录及它们的内容 </span></span><br><span class="line"><span class="attr">mv</span> <span class="string">dir1 new_dir 重命名/移动 一个目录 </span></span><br><span class="line"><span class="attr">cp</span> <span class="string">file1 file2 复制一个文件 </span></span><br><span class="line"><span class="attr">cp</span> <span class="string">dir/* . 复制一个目录下的所有文件到当前工作目录 </span></span><br><span class="line"><span class="attr">cp</span> <span class="string">-a /tmp/dir1 . 复制一个目录到当前工作目录 </span></span><br><span class="line"><span class="attr">cp</span> <span class="string">-a dir1 dir2 复制一个目录 </span></span><br><span class="line"><span class="attr">ln</span> <span class="string">-s file1 lnk1 创建一个指向文件或目录的软链接 </span></span><br><span class="line"><span class="attr">ln</span> <span class="string">file1 lnk1 创建一个指向文件或目录的物理链接 </span></span><br><span class="line"><span class="attr">touch</span> <span class="string">-t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm) </span></span><br><span class="line"><span class="attr">file</span> <span class="string">file1 outputs the mime type of the file as text </span></span><br><span class="line"><span class="attr">iconv</span> <span class="string">-l 列出已知的编码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a><strong>文件搜索</strong></h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">find</span> / -<span class="built_in">name</span> file1 从 <span class="string">'/'</span> 开始进入根文件系统搜索文件和目录 </span><br><span class="line"><span class="built_in">find</span> / -user user1 搜索属于用户 <span class="string">'user1'</span> 的文件和目录 </span><br><span class="line"><span class="built_in">find</span> /home/user1 -<span class="built_in">name</span> \*.bin 在目录 <span class="string">'/ home/user1'</span> 中搜索带有<span class="string">'.bin'</span> 结尾的文件 </span><br><span class="line"><span class="built_in">find</span> /usr/bin -<span class="built_in">type</span> f -atime +<span class="number">100</span> 搜索在过去<span class="number">100</span>天内未被使用过的执行文件 </span><br><span class="line"><span class="built_in">find</span> /usr/bin -<span class="built_in">type</span> f -mtime -<span class="number">10</span> 搜索在<span class="number">10</span>天内被创建或者修改过的文件 </span><br><span class="line"><span class="built_in">find</span> / -<span class="built_in">name</span> \*.rpm -<span class="built_in">exec</span> chmod <span class="number">755</span> <span class="string">'&#123;&#125;'</span> \; 搜索以 <span class="string">'.rpm'</span> 结尾的文件并定义其权限 </span><br><span class="line"><span class="built_in">find</span> / -xdev -<span class="built_in">name</span> \*.rpm 搜索以 <span class="string">'.rpm'</span> 结尾的文件，忽略光驱、捷盘等可移动设备 </span><br><span class="line">locate \*.ps 寻找以 <span class="string">'.ps'</span> 结尾的文件 - 先运行 <span class="string">'updatedb'</span> 命令 </span><br><span class="line">whereis <span class="built_in">halt</span> 显示一个二进制文件、源码或man的位置 </span><br><span class="line">which <span class="built_in">halt</span> 显示一个二进制文件或可执行文件的完整路径</span><br></pre></td></tr></table></figure>
+
+<h2 id="挂载一个文件系统"><a href="#挂载一个文件系统" class="headerlink" title="挂载一个文件系统"></a><strong>挂载一个文件系统</strong></h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mount <span class="regexp">/dev/</span>hda2 <span class="regexp">/mnt/</span>hda2 挂载一个叫做hda2的盘 - 确定目录 <span class="string">'/ mnt/hda2'</span> 已经存在 </span><br><span class="line">umount <span class="regexp">/dev/</span>hda2 卸载一个叫做hda2的盘 - 先从挂载点 <span class="string">'/ mnt/hda2'</span> 退出 </span><br><span class="line">fuser -km <span class="regexp">/mnt/</span>hda2 当设备繁忙时强制卸载 </span><br><span class="line">umount -n <span class="regexp">/mnt/</span>hda2 运行卸载操作而不写入 <span class="regexp">/etc/m</span>tab 文件- 当文件为只读或当磁盘写满时非常有用 </span><br><span class="line">mount <span class="regexp">/dev/</span>fd0 <span class="regexp">/mnt/</span>floppy 挂载一个软盘 </span><br><span class="line">mount <span class="regexp">/dev/</span>cdrom <span class="regexp">/mnt/</span>cdrom 挂载一个cdrom或dvdrom </span><br><span class="line">mount <span class="regexp">/dev/</span>hdc <span class="regexp">/mnt/</span>cdrecorder 挂载一个cdrw或dvdrom </span><br><span class="line">mount <span class="regexp">/dev/</span>hdb <span class="regexp">/mnt/</span>cdrecorder 挂载一个cdrw或dvdrom </span><br><span class="line">mount -o loop file.iso <span class="regexp">/mnt/</span>cdrom 挂载一个文件或ISO镜像文件 </span><br><span class="line">mount -t vfat <span class="regexp">/dev/</span>hda5 <span class="regexp">/mnt/</span>hda5 挂载一个Windows FAT32文件系统 </span><br><span class="line">mount <span class="regexp">/dev/</span>sda1 <span class="regexp">/mnt/u</span>sbdisk 挂载一个usb 捷盘或闪存设备 </span><br><span class="line">mount -t smbfs -o username=user,password=pass <span class="regexp">//</span>WinClient<span class="regexp">/share /m</span>nt<span class="regexp">/share 挂载一个windows网络共享</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="磁盘空间"><a href="#磁盘空间" class="headerlink" title="磁盘空间"></a><strong>磁盘空间</strong></h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df -<span class="keyword">h</span> 显示已经挂载的分区列表 </span><br><span class="line"><span class="keyword">ls</span> -lSr |<span class="keyword">more</span> 以尺寸大小排列文件和目录 </span><br><span class="line">du -<span class="keyword">sh</span> dir1 估算目录 'dir1' 已经使用的磁盘空间' </span><br><span class="line">du -sk * | <span class="keyword">sort</span> -rn 以容量大小为依据依次显示文件和目录的大小 </span><br><span class="line">rpm -q -a --qf '%10&#123;SIZE&#125;t%&#123;NAME&#125;<span class="keyword">n</span>' | <span class="keyword">sort</span> -k1,1n 以大小为依据依次显示已安装的rpm包所使用的空间 (fedora, redhat类系统) </span><br><span class="line">dpkg-<span class="keyword">query</span> -W -f='<span class="variable">$&#123;Installed</span>-Size;10&#125;t<span class="variable">$&#123;Package&#125;</span><span class="keyword">n</span>' | <span class="keyword">sort</span> -k1,1n 以大小为依据显示已安装的deb包所使用的空间 (ubuntu, debian类系统)</span><br></pre></td></tr></table></figure>
+
+<h2 id="打包和压缩文件"><a href="#打包和压缩文件" class="headerlink" title="打包和压缩文件"></a><strong>打包和压缩文件</strong></h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">bunzip2 file1<span class="selector-class">.bz2</span> 解压一个叫做 <span class="string">'file1.bz2'</span>的文件 </span><br><span class="line">bzip2 file1 压缩一个叫做 <span class="string">'file1'</span> 的文件 </span><br><span class="line">gunzip file1<span class="selector-class">.gz</span> 解压一个叫做 <span class="string">'file1.gz'</span>的文件 </span><br><span class="line">gzip file1 压缩一个叫做 <span class="string">'file1'</span>的文件 </span><br><span class="line">gzip -<span class="number">9</span> file1 最大程度压缩 </span><br><span class="line">rar <span class="selector-tag">a</span> file1<span class="selector-class">.rar</span> test_file 创建一个叫做 <span class="string">'file1.rar'</span> 的包 </span><br><span class="line">rar <span class="selector-tag">a</span> file1<span class="selector-class">.rar</span> file1 file2 dir1 同时压缩 <span class="string">'file1'</span>, <span class="string">'file2'</span> 以及目录 <span class="string">'dir1'</span> </span><br><span class="line">rar x file1<span class="selector-class">.rar</span> 解压rar包 </span><br><span class="line">unrar x file1<span class="selector-class">.rar</span> 解压rar包 </span><br><span class="line">tar -cvf archive<span class="selector-class">.tar</span> file1 创建一个非压缩的 tarball </span><br><span class="line">tar -cvf archive<span class="selector-class">.tar</span> file1 file2 dir1 创建一个包含了 <span class="string">'file1'</span>, <span class="string">'file2'</span> 以及 <span class="string">'dir1'</span>的档案文件 </span><br><span class="line">tar -tf archive<span class="selector-class">.tar</span> 显示一个包中的内容 </span><br><span class="line">tar -xvf archive<span class="selector-class">.tar</span> 释放一个包 </span><br><span class="line">tar -xvf archive<span class="selector-class">.tar</span> -C /tmp 将压缩包释放到 /tmp目录下 </span><br><span class="line">tar -cvfj archive<span class="selector-class">.tar</span><span class="selector-class">.bz2</span> dir1 创建一个bzip2格式的压缩包 </span><br><span class="line">tar -xvfj archive<span class="selector-class">.tar</span><span class="selector-class">.bz2</span> 解压一个bzip2格式的压缩包 </span><br><span class="line">tar -cvfz archive<span class="selector-class">.tar</span><span class="selector-class">.gz</span> dir1 创建一个gzip格式的压缩包 </span><br><span class="line">tar -xvfz archive<span class="selector-class">.tar</span><span class="selector-class">.gz</span> 解压一个gzip格式的压缩包 </span><br><span class="line">zip file1<span class="selector-class">.zip</span> file1 创建一个zip格式的压缩包 </span><br><span class="line">zip -r file1<span class="selector-class">.zip</span> file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包 </span><br><span class="line">unzip file1<span class="selector-class">.zip</span> 解压一个zip格式压缩包</span><br></pre></td></tr></table></figure>
+
+<h2 id="YUM-软件包升级器-（Fedora-RedHat及类似系统）"><a href="#YUM-软件包升级器-（Fedora-RedHat及类似系统）" class="headerlink" title="YUM 软件包升级器 - （Fedora, RedHat及类似系统）"></a><strong>YUM 软件包升级器 - （Fedora, RedHat及类似系统）</strong></h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">yum</span> <span class="string">install package_name 下载并安装一个rpm包 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">localinstall package_name.rpm 将安装一个rpm包，使用你自己的软件仓库为你解决所有依赖关系 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">update package_name.rpm 更新当前系统中所有安装的rpm包 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">update package_name 更新一个rpm包 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">remove package_name 删除一个rpm包 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">list 列出当前系统中安装的所有包 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">search package_name 在rpm仓库中搜寻软件包 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">clean packages 清理rpm缓存删除下载的包 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">clean headers 删除所有头文件 </span></span><br><span class="line"><span class="attr">yum</span> <span class="string">clean all 删除所有缓存的包和头文件</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="APT-软件工具-Debian-Ubuntu-以及类似系统"><a href="#APT-软件工具-Debian-Ubuntu-以及类似系统" class="headerlink" title="APT 软件工具 (Debian, Ubuntu 以及类似系统)"></a><strong>APT 软件工具 (Debian, Ubuntu 以及类似系统)</strong></h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install package_name 安装/更新一个 deb 包 </span><br><span class="line">apt-cdrom install package_name 从光盘安装/更新一个 deb 包 </span><br><span class="line">apt-<span class="builtin-name">get</span> update 升级列表中的软件包 </span><br><span class="line">apt-<span class="builtin-name">get</span><span class="built_in"> upgrade </span>升级所有已安装的软件 </span><br><span class="line">apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> package_name 从系统删除一个deb包 </span><br><span class="line">apt-<span class="builtin-name">get</span> check 确认依赖的软件仓库正确 </span><br><span class="line">apt-<span class="builtin-name">get</span> clean 从下载的软件包中清理缓存 </span><br><span class="line">apt-cache search searched-package 返回包含所要搜索字符串的软件包名称</span><br></pre></td></tr></table></figure>
+
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a><strong>网络</strong></h2><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">连接网络：ifup eth0</span><br><span class="line">查看网络信息：ifconfig</span><br><span class="line">查看端口占用：netstat -ntlp|grep <span class="number">80</span></span><br><span class="line">杀死进程：kill <span class="number">-9</span> <span class="number">7043</span></span><br><span class="line"></span><br><span class="line">ifconfig eth0 显示一个以太网卡的配置 </span><br><span class="line">ifup eth0 启用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifdown eth0 禁用一个 <span class="string">'eth0'</span> 网络设备 </span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> 控制IP地址 </span><br><span class="line">ifconfig eth0 promisc 设置 <span class="string">'eth0'</span> 成混杂模式以嗅探数据包 (sniffing) </span><br><span class="line">dhclient eth0 以dhcp模式启用 <span class="string">'eth0'</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+       <div class="post-tags" id="post-tags">
+		
+          <a href="/tags/Linux/" rel="tag"> Linux</a>
+		
+		</div>
+		
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/30/IDEA%E5%85%A5%E9%97%A8/" rel="next" title="IDEA入门">
+                <i class="fa fa-chevron-left"></i> IDEA入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/31/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" rel="prev" title="Linux安装软件">
+                Linux安装软件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Mr.Li" />
+            
+              <p class="site-author-name" itemprop="name">Mr.Li</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/index.html">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+			
+			
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/boom197/boom197.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1274540919@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux简介"><span class="nav-number">1.</span> <span class="nav-text">Linux简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux的发行版"><span class="nav-number">1.1.</span> <span class="nav-text">Linux的发行版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux的应用领域"><span class="nav-number">1.2.</span> <span class="nav-text">Linux的应用领域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux安装"><span class="nav-number">2.</span> <span class="nav-text">Linux安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux系统目录结构"><span class="nav-number">2.1.</span> <span class="nav-text">Linux系统目录结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux文件基本属性"><span class="nav-number">3.</span> <span class="nav-text">Linux文件基本属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux文件属主和属组"><span class="nav-number">3.1.</span> <span class="nav-text">Linux文件属主和属组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-文件与目录管理"><span class="nav-number">3.2.</span> <span class="nav-text">Linux 文件与目录管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理目录的常用命令"><span class="nav-number">4.</span> <span class="nav-text">处理目录的常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ls"><span class="nav-number">4.1.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd"><span class="nav-number">4.2.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pwd"><span class="nav-number">4.3.</span> <span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir"><span class="nav-number">4.4.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rmdir"><span class="nav-number">4.5.</span> <span class="nav-text">rmdir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp"><span class="nav-number">4.6.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rm"><span class="nav-number">4.7.</span> <span class="nav-text">rm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mv"><span class="nav-number">4.8.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-文件内容查看"><span class="nav-number">4.9.</span> <span class="nav-text">Linux 文件内容查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cat"><span class="nav-number">4.10.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nl"><span class="nav-number">4.11.</span> <span class="nav-text">nl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#more"><span class="nav-number">4.12.</span> <span class="nav-text">more</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-用户和用户组管理"><span class="nav-number">5.</span> <span class="nav-text">Linux 用户和用户组管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux系统用户账号的管理"><span class="nav-number">5.1.</span> <span class="nav-text">Linux系统用户账号的管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加用户"><span class="nav-number">5.1.1.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除账号"><span class="nav-number">5.1.2.</span> <span class="nav-text">删除账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改账号"><span class="nav-number">5.1.3.</span> <span class="nav-text">修改账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户口令得管理"><span class="nav-number">5.1.4.</span> <span class="nav-text">用户口令得管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-vi-vim"><span class="nav-number">6.</span> <span class="nav-text">Linux vi/vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-vim？"><span class="nav-number">6.1.</span> <span class="nav-text">什么是 vim？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vi-vim-的使用"><span class="nav-number">6.2.</span> <span class="nav-text">vi/vim 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式："><span class="nav-number">6.2.1.</span> <span class="nav-text">命令模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入模式"><span class="nav-number">6.2.2.</span> <span class="nav-text">输入模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底线命令模式"><span class="nav-number">6.2.3.</span> <span class="nav-text">底线命令模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vi-vim-使用实例"><span class="nav-number">6.3.</span> <span class="nav-text">vi/vim 使用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-vi-vim-进入一般模式"><span class="nav-number">6.3.1.</span> <span class="nav-text">使用 vi/vim 进入一般模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vi-vim-按键说明"><span class="nav-number">6.4.</span> <span class="nav-text">vi/vim 按键说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一般模式切换到指令行模式的可用的按钮说明"><span class="nav-number">6.4.1.</span> <span class="nav-text">一般模式切换到指令行模式的可用的按钮说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux命令大全"><span class="nav-number">7.</span> <span class="nav-text">Linux命令大全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统信息"><span class="nav-number">7.1.</span> <span class="nav-text">系统信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关机-系统的关机、重启以及登出"><span class="nav-number">7.2.</span> <span class="nav-text">关机 (系统的关机、重启以及登出 )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件和目录"><span class="nav-number">7.3.</span> <span class="nav-text">文件和目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件搜索"><span class="nav-number">7.4.</span> <span class="nav-text">文件搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载一个文件系统"><span class="nav-number">7.5.</span> <span class="nav-text">挂载一个文件系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘空间"><span class="nav-number">7.6.</span> <span class="nav-text">磁盘空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打包和压缩文件"><span class="nav-number">7.7.</span> <span class="nav-text">打包和压缩文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YUM-软件包升级器-（Fedora-RedHat及类似系统）"><span class="nav-number">7.8.</span> <span class="nav-text">YUM 软件包升级器 - （Fedora, RedHat及类似系统）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APT-软件工具-Debian-Ubuntu-以及类似系统"><span class="nav-number">7.9.</span> <span class="nav-text">APT 软件工具 (Debian, Ubuntu 以及类似系统)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络"><span class="nav-number">7.10.</span> <span class="nav-text">网络</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr.Li</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">网站字数&#58;</span>
+    
+    <span title="网站字数">45.8k</span>
+  
+</div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider"></span>
+</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://boom197.github.io/2019/10/31/Linux%EF%BC%88%E4%B8%80%EF%BC%89/';
+          this.page.identifier = '2019/10/31/Linux（一）/';
+          this.page.title = 'Linux入门';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+  
+   
+  
+  
+  <script src="/js/src/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: '4hwsKS94cnh5XlaFbRfq0c8N-gzGzoHsz',
+        appKey: 'CKzSBJhP5snOTe7QkYxsxAgC',
+        placeholder: '说点什么吧！',
+        avatar:'/images/avatar.png',
+        guest_info:['nick','mail'],
+        pageSize:'10' || 10,
+    });
+	 var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
