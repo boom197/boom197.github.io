@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CentOS7.6安装docker</title>
+    <url>/2020/07/26/CentOS7-6%E5%AE%89%E8%A3%85docker/</url>
+    <content><![CDATA[<p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux 或 Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+<a id="more"></a>
+
+<h1 id="docker介绍"><a href="#docker介绍" class="headerlink" title="docker介绍"></a>docker介绍</h1><p>docker 的核心思想是通过对应用的封装、分发、部署、运行生命周期进行管理，达到应用组件级别的 “一次性封装，到处运行”。这里的应用组件，可以是一个 web 应用，也可以是一个环境，更可以是一个数据库等等。</p>
+<h1 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h1><p>docker 要求 CentOS 在 7.0 以后的版本，如果你的系统版本还在 7.0 以前，请先升级一下版本在进行安装，同时不支持 32 位的系统，内核版本至少 3.10。</p>
+<p>请先确保没有安装过 docker，否则有可能会导致安装失败，如果之前安装过，可以尝试直接 yum isntall -y docker</p>
+<p>更新软件源</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">yum update</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight gml"><table><tr><td class="code"><pre><span class="line">yum install -<span class="symbol">y</span> yum-utils device-mapper-<span class="symbol">persistent</span>-data lvm2</span><br></pre></td></tr></table></figure>
+
+<p>添加 docker 稳定版本的 yum 软件源</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">add</span>-repo http<span class="variable">s:</span>//download.docker.<span class="keyword">com</span>/linux/centos/docker-<span class="keyword">ce</span>.repo</span><br></pre></td></tr></table></figure>
+
+<p>再次更新 yum 源，并安装 docker</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">yum update</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y docker-ce</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/26/CentOS7-6%E5%AE%89%E8%A3%85docker/E:%5Chexo%5Csource%5C_posts%5CCentOS7-6%E5%AE%89%E8%A3%85docker%5Cimage-20200726222852943.png" alt="image-20200726222852943"></p>
+<p>看到这个页面，表示docker已经安装成功了。</p>
+<p>除了上面的 yum 安装，还可以采用 shell 脚本安装，安装流程如下：</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -fsSL http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -qO- http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>安装完成之后启动 docker</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="literal">start</span> docker</span><br></pre></td></tr></table></figure>
+
+<p>重启</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">systemctl restart docker</span></span><br></pre></td></tr></table></figure>
+
+<p>停止</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">stop</span> docker</span><br></pre></td></tr></table></figure>
+
+<p>开机自启动</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">systemctl <span class="builtin-name">enable</span> docker</span><br></pre></td></tr></table></figure>
+
+<p>查看 docker 的状态</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">systemctl status docker</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CenOS6.x/CentOS7.x</title>
     <url>/2020/07/23/Linux-%E4%BA%8C/</url>
     <content><![CDATA[<h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><p>CentOS6.X：EXT4<br>        Ext4的单个文件系统容量达到1EB，单个文件大小则达到16TB</p>
