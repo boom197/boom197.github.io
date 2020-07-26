@@ -22,7 +22,7 @@
 
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y docker-ce</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/07/26/CentOS7-6%E5%AE%89%E8%A3%85docker/E:%5Chexo%5Csource%5C_posts%5CCentOS7-6%E5%AE%89%E8%A3%85docker%5Cimage-20200726222852943.png" alt="image-20200726222852943"></p>
+<p><img src="/2020/07/26/CentOS7-6%E5%AE%89%E8%A3%85docker/1.png" alt></p>
 <p>看到这个页面，表示docker已经安装成功了。</p>
 <p>除了上面的 yum 安装，还可以采用 shell 脚本安装，安装流程如下：</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -fsSL http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
