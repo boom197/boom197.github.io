@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux上安装svn</title>
+    <url>/2020/08/14/Linux%E4%B8%8A%E5%AE%89%E8%A3%85svn/</url>
+    <content><![CDATA[<p>Subversion(SVN) 是一个开源的版本控制系統, 也就是说 Subversion 管理着随时间改变的数据。 这些数据放置在一个中央资料档案库(repository) 中。 这个档案库很像一个普通的文件服务器, 不过它会记住每一次文件的变动。 这样你就可以把档案恢复到旧的版本, 或是浏览文件的变动历史。</p>
+<a id="more"></a>
+
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
+<li><strong>repository（源代码库）:</strong> 源代码统一存放的地方</li>
+<li><strong>Checkout（提取）:</strong> 当你手上没有源代码的时候，你需要从repository checkout一份</li>
+<li><strong>Commit（提交）:</strong> 当你已经修改了代码，你就需要Commit到repository</li>
+<li><strong>Update (更新):</strong> 当你已经Checkout了一份源代码， Update一下你就可以和Repository上的源代码同步，你手上的代码就会有最新的变更</li>
+</ul>
+<p>日常开发过程其实就是这样的（假设你已经Checkout并且已经工作了几天）：Update(获得最新的代码) –&gt;作出自己的修改并调试成功 –&gt; Commit(大家就可以看到你的修改了) 。</p>
+<p>如果两个程序员同时修改了同一个文件呢, SVN 可以合并这两个程序员的改动，实际上SVN管理源代码是以行为单位的，就是说两个程序员只要不是修改了同一行程序，SVN都会自动合并两种修改。如果是同一行，SVN 会提示文件 Conflict, 冲突，需要手动确认。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>检查是否安装了svn</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">svn <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
+
+<p>如果提示没有找到命令：bash: svn: command not found，则：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> subversion</span><br></pre></td></tr></table></figure>
+
+<p>检查subversion目录：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">which</span> svnserve</span><br></pre></td></tr></table></figure>
+
+<p>subversion默认以<strong>/var/svn</strong>作为数据根目录，可以通过<strong><em>vim /etc/sysconfig/svnserve</em></strong>修改这个默认位置</p>
+<p>使用svnadmin建立版本库svntest</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /<span class="built_in">var</span>/svn/svntest </span><br><span class="line">svnadmin create /<span class="built_in">var</span>/svn/svntest</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>进入<strong>/var/svn/svntest</strong>目录：<strong>cd /var/svn/svntest</strong></p>
+<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><p>编辑用户文件passwd，新增两个用户：admin和guest</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">vim conf/passwd</span><br><span class="line">[users]</span><br><span class="line">admin = admin</span><br><span class="line">guest = guest</span><br></pre></td></tr></table></figure>
+
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><p>编辑权限文件authz，用户admin设置可读写权限，guest设置只读权限。</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">vim conf/authz</span><br><span class="line">[/]</span><br><span class="line">admin = rw</span><br><span class="line">guest = r</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>编辑svnserve.conf文件</p>
+<figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">vim conf/svnserve.conf</span><br><span class="line">[general]<span class="attr">anon-access</span> = none <span class="comment">#控制非鉴权用户访问版本库的权限</span></span><br><span class="line"><span class="attr">auth-access</span> = write <span class="comment">#控制鉴权用户访问版本库的权限</span></span><br><span class="line"><span class="attr">password-db</span> = passwd <span class="comment">#指定用户名口令文件名</span></span><br><span class="line"><span class="attr">authz-db</span> = authz <span class="comment">#指定权限配置文件名</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><p>启动SVN服务：<strong>systemctl start svnserve.service</strong></p>
+<p>检查服务是否启动成功：<strong>ps aux | grep svn</strong></p>
+<p>设置成开机启动：<strong>systemctl enable svnserve.service</strong></p>
+<p>开放3690端口：<strong>firewall-cmd –zone=public –add-port=8080/tcp –permanent</strong></p>
+<p>重启防火墙：<strong>firewall-cmd –reload</strong></p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>查看文件日志：<strong>svn log path</strong></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>svn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS7.6安装docker</title>
     <url>/2020/07/26/CentOS7-6%E5%AE%89%E8%A3%85docker/</url>
     <content><![CDATA[<p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux 或 Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
